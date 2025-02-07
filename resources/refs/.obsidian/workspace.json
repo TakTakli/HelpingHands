@@ -13,15 +13,15 @@
             "state": {
               "type": "canvas",
               "state": {
-                "file": "bura beda app.canvas",
+                "file": "bura_beda_app.canvas",
                 "viewState": {
-                  "x": -33.32277807495065,
-                  "y": -637.2525331814314,
-                  "zoom": -0.7655032410324029
+                  "x": 182.13584391657432,
+                  "y": -489.29355779416125,
+                  "zoom": -0.8369667794515423
                 }
               },
               "icon": "lucide-layout-dashboard",
-              "title": "bura beda app"
+              "title": "bura_beda_app"
             }
           }
         ]
@@ -173,6 +173,8 @@
   },
   "active": "6e7d445fcc42ac90",
   "lastOpenFiles": [
+    "bura beda app.canvas",
+    "bura_beda_app.canvas",
     "Documentation/JavaFX Tutorial_files/AZ",
     "Documentation/JavaFX Tutorial_files/top-menu.js.download",
     "Documentation/JavaFX Tutorial_files/nav.js.download",
@@ -192,7 +194,6 @@
     "Documentation/JavaFX Documentation Project.html",
     "Documentation/JavaFX Documentation Project_files/prettify.min.css",
     "Documentation/JavaFX Documentation Project_files/prettify.min.js.download",
-    "Documentation/JavaFX Documentation Project_files",
-    "Documentation/JavaFX CSS Reference Guide.html"
+    "Documentation/JavaFX Documentation Project_files"
   ]
 }
