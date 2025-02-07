@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)https://jenkov.com/tutorials/javafx/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+    <meta name="viewport" content="width=device-width, height=device-height initial-scale=1, user-scalable=1">
+
+    <title>JavaFX Tutorial</title>
+
+    <meta name="description" content="JavaFX is a GUI toolkit for Java which makes it easier to create desktop applications in Java. JavaFX comes with a large set of built-in components too, as well as 2D and 3D graphics support and audio and video support.">
+    <meta name="keywords" content="javafx tutorial">
+    <meta name="author" content="Jakob Jenkov">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@jjenkov">
+    <meta name="twitter:title" content="JavaFX Tutorial">
+    <meta name="twitter:description" content="JavaFX is a GUI toolkit for Java which makes it easier to create desktop applications in Java. JavaFX comes with a large set of built-in components too, as well as 2D and 3D graphics support and audio and video support.">
+    <meta name="twitter:creator" content="@jjenkov">
+    <meta name="twitter:domain" content="jenkov.com">
+
+    <meta name="twitter:image:src" content="http://tutorials.jenkov.com/images/java-javafx/javafx-teaser-500-300.png">
+
+    <meta name="og:type" content="article">
+    <meta name="og:title" content="JavaFX Tutorial">
+    <meta property="og:url" content="http://jenkov.com/tutorials/javafx/index.html">
+    <meta property="og:description" content="JavaFX is a GUI toolkit for Java which makes it easier to create desktop applications in Java. JavaFX comes with a large set of built-in components too, as well as 2D and 3D graphics support and audio and video support.">
+
+    <meta property="og:image" content="http://tutorials.jenkov.com/images/java-javafx/javafx-teaser-500-300.png">
+
+    <meta name="google-site-verification" content="i_TwzdElg-by5uXLvyAjuIaCjxo0yjtW8LdRPUDEEcw">
+
+    <link rel="icon" href="https://jenkov.com/favicon.ico" type="image/x-icon">
+
+    <script defer="" src="./JavaFX Tutorial_files/AZ"></script>
+    <script defer="" src="./JavaFX Tutorial_files/top-menu.js.download"></script>
+</head>
+
+<body>
+<!-- Layout specific styles -->
+<style>
+#body{ margin: 0px; font-family: Arial; background-color: #222222; color: #ffffff;}
+body{ margin: 0px; font-family: Arial; background-color: #f0f0f0; color: #ffffff;}
+#header{ height: 66px; background-color: #000000; position:fixed; top: 0px; left: 0px; width: 100%; box-shadow: 0px 8px 6px -6px #999999;}
+
+#searchField { position: absolute; top:18px; left: 512px; }
+#searchField input { font-size:1.2em; padding: 4px; }
+#searchField input[type='text']  { color: #ffffff; background-color: #303030; border: none; }
+#menuButton { width: 20px; height: 18px; position: absolute; top: 24px; left: 24px; }
+#menuButton div { position:relative; height: 2px; width: 20px; margin-bottom: 4px; background-color: #ffffff; }
+#menuButton:hover{ cursor: pointer; }
+#topBarLogo { position:relative; left: 0px; top: 5px; width: 370px; }
+#logoLink { position:relative; top: -8px; left: 236px; height: 40px; width: 300px; }
+#logoLink:hover{ cursor: pointer; }
+
+#menuItems { width: 100%; height: 68px; margin: 66px 0px 0px 0px; background-color: #404040; display:none; border-bottom: 1px solid #484848; box-shadow: 0px 8px 6px -6px #999999; }
+.menuItem { color: #ffffff; display: inline-block; padding: 24px 24px; }
+#menuItems a { color:#ffffff; text-decoration: none; }
+
+#footer {
+    padding: 24px;
+    margin: 16px 0px 0px 0px;
+    background-color: #000000;
+}
+</style>
+<div id="header">
+
+    <div id="topBarLogo">
+        <a href="https://jenkov.com/" style="font-decoration: none;">
+        <svg x="0px" y="0px" width="380px" height="48px" viewBox="0 0 380 100" style="enable-background:new 0 0 380 100;" xml:space="preserve">
+        <path d="M3,32 l10,0  l0,26  c-7,21 -30,21 -53,10  l4,-9  c18,11 33,10 39,-3  z " style="stroke: none; stroke-width: 1; fill: #ffffff;"></path>
+            <path d="M19,32 l50,0  l0,9  l-50,0 z" style="stroke: none; stroke-width: 1; fill: #ffffff;"></path>
+            <path d="M19,49 l50,0  l0,9  l-50,0 z" style="stroke: none; stroke-width: 1; fill: #ffffff;"></path>
+            <path d="M19,65 l50,0  l0,9  l-50,0 z" style="stroke: none; stroke-width: 1; fill: #ffffff;"></path>
+            <path d="M76,32 l13,0  l40,31  l0,-31  l10,0  l0,42  l-10,0 l-43,-32 l0,32 l-10,0 z " style="stroke: none; stroke-width: 1; fill: #ffffff;"></path>
+            <path d="M129,32  l10,0  l0,15 l5,0  l32.5,-14.5  l19,0  l-41,19  l40,22  l-19,0  l-33,-18  l-3.5,0  l0,19  l-10,0 z " style="stroke: none; stroke-width: 1; fill: #ffffff;"></path>
+            <path d="M188,49  c10,-24 60,-24 70,0  l-11,0  c-10,-12 -38,-12 -48,0  z " style="stroke: none; stroke-width: 1; fill: #ffffff;"></path>
+            <path d="M188,57  c10,24 60,24 70,0  l-11,0  c-10,12 -38,12 -48,0  z " style="stroke: none; stroke-width: 1; fill: #ffffff;"></path>
+            <path d="M254,32  l13,0  l25,34 l25,-34  l13,0  l-32,42 l-12.5,0 z" style="stroke: none; stroke-width: 1; fill: #ffffff;"></path>
+            <path d="M319,65  l12,0 l0,8 l-12,0 z" style="stroke: none; stroke-width: 1; fill: #ffffff;"></path>
+            <path d="M340,53  c3,-27 54,-27 67,-10  l-15,0  c-10,-5 -40,-5 -41.5,10 l-10,0  " style="stroke: none;  stroke-width: 1; fill: #ffffff;"></path>
+            <path d="M340,53  c3,27 54,27 67,10  l-15,0  c-10,5 -40,5 -41.5,-10 l-10,0  " style="stroke: none;  stroke-width: 1; fill: #ffffff;"></path>
+            <path d="M410,49  c10,-24 60,-24 70,0  l-11,0  c-10,-12 -38,-12 -48,0  z " style="stroke: none; stroke-width: 1; fill: #ffffff;"></path>
+            <path d="M410,57  c10,24 60,24 70,0  l-11,0  c-10,12 -38,12 -48,0  z " style="stroke: none; stroke-width: 1; fill: #ffffff;"></path>
+            <path d="M484,34  l10,0  l0,6 c13,-10 26,-10 37,0  c12,-10 32,-10 39,3  l0,30  l-10,0  l0,-27  c-3,-9 -24,-9 -28,3 l0,24  -10,0  l0,-27  c-3,-9 -24,-9 -28,3 l0,24  -10,0 z" style="stroke: none; stroke-width: 1; fill: #ffffff;"></path>
+        </svg>
+        </a>
+    </div>
+
+    <div id="logoLink">Tech &amp; Media Labs</div>
+
+
+    <div id="menuButton">
+        <svg x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+            <rect x="0" y="0" width="24" height="24" style="stroke:none; fill: #000000;"></rect>
+            <path d="M0,2 l20,0" style="stroke: #ffffff; stroke-width: 2; fill: none;"></path>
+            <path d="M0,8 l20,0" style="stroke: #ffffff; stroke-width: 2; fill: none;"></path>
+            <path d="M0,14 l20,0" style="stroke: #ffffff; stroke-width: 2; fill: none;"></path>
+        </svg>
+    </div>
+
+    <div id="searchField">
+        <form id="searchForm" onsubmit="w(ei(&#39;searchButton&#39;)).click(); return false;"><input id="searchQuery" type="text" size="30" placeholder="Search within jenkov.com"><input type="button" id="searchButton" value="Search"></form>
+    </div>
+
+</div>
+
+<div id="menuItems">
+    <div class="menuItem"><a href="https://jenkov.com/">Home</a></div>
+    <div class="menuItem"><a href="https://jenkov.com/rss.xml">RSS</a></div>
+</div>
+
+<div id="menuMainDivider" style="height: 82px;"></div>
+
+<!-- Navigation Specific Styles -->
+<style>
+#navWrapper{
+  #visibility: hidden;
+  display: inline-block;
+  height: calc(100% - 164px);
+  background-color: #f0f0f0;
+  width: 412px;
+  color: #333333;
+}
+#navigation{
+  display: inline-block;
+}
+#navigation a{
+  color: #000000;
+
+}
+#navigation>div{
+  display: inline-block;
+  border-right: 1px solid #d0d0d0;
+  vertical-align: top;
+  cursor: pointer;
+}
+#navigation>div>div{
+  #padding: 6px 12px;
+  #border-bottom: 1px solid #000000;
+  border-top: 1px solid #d0d0d0;
+  #background-color: #d8d8d8;
+}
+#navThemes{
+  #width: 150px;
+  box-sizing: border-box;
+  #visibility: hidden;
+  display: none;
+}
+#navThemes>div{
+  padding: 6px 12px 6px 24px;
+  border-bottom: 1px solid #d0d0d0;
+  display: none;
+}
+#navTopics{
+  width: 160px;
+  box-sizing: border-box;
+}
+#navArticles{
+  width: 250px;
+  box-sizing: border-box;
+}
+#navTopics>div, #navArticles>div{
+  padding: 6px 12px;
+  border-bottom: 1px solid #d0d0d0;
+}
+.selected{
+  font-weight: bold;
+  background-color: #ffffff;
+}
+.notSelected{
+  #background-color: #ffffff;
+}
+#navPath{
+  padding: 8px 8px 8px 22px;
+  color: #666666;
+  font-size: 0.9em;
+  background-color: #ffffff;
+  border: 1px solid #d0d0d0;
+  box-shadow: 0px 4px 3px -3px #999999;
+  margin-bottom: 8px;
+}
+#navPath>a {
+  cursor: pointer;
+  font-weight: bold;
+}
+</style>
+
+
+<!-- article specific styles -->
+<style>
+#mainAreas { width: 100%; }
+.mainArea { display: inline-block; width: 25%; background-color: #2222222; padding: 24px; box-sizing: border-box;
+            border-top: 1px solid #333333; border-left: 1px solid #333333; border-bottom: 1px solid #000000; border-right: 1px solid #000000;
+            text-align: center; color: #ffffff; font-size: 1.2em;
+}
+</style>
+<style>
+#main {
+  display: inline-block;
+  text-align: left;
+  vertical-align: top;
+  padding: 20px 30px;
+  margin: 0px 0px 0px 2px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #d0d0d0;
+  box-shadow: 0px 8px 6px -6px #999999;
+}
+
+@media only screen and (min-width: 1px) and (max-width: 1000px) {
+    #navWrapper { display: none; }
+    #main{ width: calc(100% - 8px); max-width: 1000px; box-sizing: border-box; }
+}
+@media only screen and (min-width: 1000px) {
+    #main{ width: calc(100% - 430px); max-width: 1000px;box-sizing: border-box; }
+}
+
+
+#trailToc{
+  visibility: hidden;
+}
+#pageToc{
+    border: 1px solid #eeeeee;
+}
+#pageToc a{
+    text-decoration: none;
+    color: #000066;
+    font-size: 1.1em;
+}
+#pageToc li{
+    margin: 2px 0px;
+}
+
+#lastUpdate{
+    border: 1px solid #eeeeee;
+    border-top: none;
+    color: #666666;
+    font-size: 0.8em;
+}
+a{text-decoration: none; }
+#mainBody {font-size: 1.1em;}
+#mainBody a{font-weight: bold; color: #000066; }
+#mainBody img{ max-width: 100%; }
+#mainBody h2{ margin-top: 48px;}
+#mainBody h3{ margin-top: 40px;}
+
+#next a{font-weight: bold; color: #000066; }
+#next{
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+    padding: 8px 0px;
+    font-size: 1.2em;
+}
+.codebox, .codeBox {
+    border: 1px solid #cccccc;
+    padding: 8px;
+    font-family: monospace monospace;
+    background-color: #f0fff0;
+}
+</style>
+<style>
+#rightWrapper{
+    display: inline-block;
+    color: #000000;
+    vertical-align: top;
+    background-color: #ffffff;
+    border: 1px solid #d0d0d0;
+    box-shadow: 0px 8px 6px -6px #999999;
+
+    margin: 0px 0px 0px 8px;
+    padding: 20px;
+  }
+@media only screen and (min-width: 1px) and (max-width: 1650px) {
+    #rightWrapper{ display: none; }
+}
+@media only screen and (min-width: 1650px) {
+    #rightWrapper{ display: inline-block; }
+}
+
+
+</style>
+
+<div id="mainWrapper">
+    <div id="navWrapper">
+        <div id="navPath"><a onclick="nav.select(-1, -1, -1);">Top</a>&nbsp;»&nbsp;<a onclick="nav.select(5, -1, -1);">Java</a>&nbsp;»&nbsp;<a onclick="nav.select(5,12, -1);">Java JavaFX</a>&nbsp;»&nbsp;<a onclick="nav.select(5,12,0);">JavaFX Tutorial</a></div>
+        <div id="navigation">
+            <div id="navThemes"><div class="notSelected" onclick="nav.select(0,-1,-1);">Dev Essentials</div><div class="notSelected" onclick="nav.select(1,-1,-1);">Decentralized Systems</div><div class="notSelected" onclick="nav.select(2,-1,-1);">Polymorph</div><div class="notSelected" onclick="nav.select(3,-1,-1);">Data Formats</div><div class="notSelected" onclick="nav.select(4,-1,-1);">Web Tech</div><div class="selected" onclick="nav.select(-1,-1,-1);">Java</div><div class="notSelected" onclick="nav.select(6,-1,-1);">Java Web</div><div class="notSelected" onclick="nav.select(7,-1,-1);">GraalVM</div><div class="notSelected" onclick="nav.select(8,-1,-1);">Build Tools</div><div class="notSelected" onclick="nav.select(9,-1,-1);">Butterfly</div><div class="notSelected" onclick="nav.select(10,-1,-1);">Python</div><div class="notSelected" onclick="nav.select(11,-1,-1);">IT Architecture</div><div class="notSelected" onclick="nav.select(12,-1,-1);">AWS</div><div class="notSelected" onclick="nav.select(13,-1,-1);">Software Entrepreneurship</div><div class="notSelected" onclick="nav.select(14,-1,-1);">My Opinions</div><div class="notSelected" onclick="nav.select(15,-1,-1);">Scala</div></div><div id="navTopics"><div class="notSelected" onclick="nav.select(5,0,-1);">Java Language</div><div class="notSelected" onclick="nav.select(5,1,-1);">Java Collections</div><div class="notSelected" onclick="nav.select(5,2,-1);">Java Concurrency</div><div class="notSelected" onclick="nav.select(5,3,-1);">Java Concurrency Utils</div><div class="notSelected" onclick="nav.select(5,4,-1);">Java Cryptography</div><div class="notSelected" onclick="nav.select(5,5,-1);">Java Date &amp; Time</div><div class="notSelected" onclick="nav.select(5,6,-1);">Java Exception Handling</div><div class="notSelected" onclick="nav.select(5,7,-1);">Java Functional Programming</div><div class="notSelected" onclick="nav.select(5,8,-1);">Java Generics</div><div class="notSelected" onclick="nav.select(5,9,-1);">Java How-To</div><div class="notSelected" onclick="nav.select(5,10,-1);">Java Internationalization</div><div class="notSelected" onclick="nav.select(5,11,-1);">Java IO</div><div class="selected" onclick="nav.select(5,-1,-1);">Java JavaFX</div><div class="notSelected" onclick="nav.select(5,13,-1);">Java JDBC</div><div class="notSelected" onclick="nav.select(5,14,-1);">Java JSON</div><div class="notSelected" onclick="nav.select(5,15,-1);">Java Logging</div><div class="notSelected" onclick="nav.select(5,16,-1);">Java Multithreaded Servers</div><div class="notSelected" onclick="nav.select(5,17,-1);">Java Networking</div><div class="notSelected" onclick="nav.select(5,18,-1);">Java NIO</div><div class="notSelected" onclick="nav.select(5,19,-1);">Java Performance</div><div class="notSelected" onclick="nav.select(5,20,-1);">Java Persistence</div><div class="notSelected" onclick="nav.select(5,21,-1);">Java Reflection</div><div class="notSelected" onclick="nav.select(5,22,-1);">Java Regular Expressions</div><div class="notSelected" onclick="nav.select(5,23,-1);">Java Servlets</div><div class="notSelected" onclick="nav.select(5,24,-1);">Java Unit Testing</div><div class="notSelected" onclick="nav.select(5,25,-1);">Java XML</div><div class="notSelected" onclick="nav.select(5,26,-1);">Java Zip</div><div class="notSelected" onclick="nav.select(5,27,-1);">Exception Handling Strategies</div></div><div id="navArticles"><div class="selected"><a href="https://jenkov.com/tutorials/javafx/index.html">JavaFX Tutorial</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/overview.html">JavaFX Overview</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/your-first-javafx-application.html">Your First JavaFX Application</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/stage.html">JavaFX Stage</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/scene.html">JavaFX Scene</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/node.html">JavaFX Node</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/properties.html">JavaFX Properties</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/fxml.html">JavaFX FXML</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/css-styling.html">JavaFX CSS Styling</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/imageview.html">JavaFX ImageView</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/text.html">JavaFX Text</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/fonts.html">JavaFX Fonts</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/hyperlink.html">JavaFX Hyperlink</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/label.html">JavaFX Label</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/button.html">JavaFX Button</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/menubutton.html">JavaFX MenuButton</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/splitmenubutton.html">JavaFX SplitMenuButton</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/togglebutton.html">JavaFX ToggleButton</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/radiobutton.html">JavaFX RadioButton</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/checkbox.html">JavaFX CheckBox</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/choicebox.html">JavaFX ChoiceBox</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/combobox.html">JavaFX ComboBox</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/listview.html">JavaFX ListView</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/datepicker.html">JavaFX DatePicker</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/colorpicker.html">JavaFX ColorPicker</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/textfield.html">JavaFX TextField</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/passwordfield.html">JavaFX PasswordField</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/slider.html">JavaFX Slider</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/textarea.html">JavaFX TextArea</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/toolbar.html">JavaFX ToolBar</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/tooltip.html">JavaFX Tooltip</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/progressbar.html">JavaFX ProgressBar</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/filechooser.html">JavaFX FileChooser</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/directorychooser.html">JavaFX DirectoryChooser</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/accordion.html">JavaFX Accordion</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/titledpane.html">JavaFX TitledPane</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/splitpane.html">JavaFX SplitPane</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/tabpane.html">JavaFX TabPane</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/scrollpane.html">JavaFX ScrollPane</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/group.html">JavaFX Group</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/region.html">JavaFX Region</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/pane.html">JavaFX Pane</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/hbox.html">JavaFX HBox</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/vbox.html">JavaFX VBox</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/separator.html">JavaFX Separator</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/flowpane.html">JavaFX FlowPane</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/tilepane.html">JavaFX TilePane</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/gridpane.html">JavaFX GridPane</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/menubar.html">JavaFX MenuBar</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/contextmenu.html">JavaFX ContexMenu</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/webview.html">JavaFX WebView</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/piechart.html">JavaFX PieChart</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/tableview.html">JavaFX TableView</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/treeview.html">JavaFX TreeView</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/treetableview.html">JavaFX TreeTableView</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/htmleditor.html">JavaFX HTMLEditor</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/pagination.html">JavaFX Pagination</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/barchart.html">JavaFX BarChart</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/stackedbarchart.html">JavaFX StackedBarChart</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/scatterchart.html">JavaFX ScatterChart</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/linechart.html">JavaFX LineChart</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/areachart.html">JavaFX AreaChart</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/stackedareachart.html">JavaFX StackedAreaChart</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/color.html">JavaFX Color</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/2d.html">JavaFX 2D</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/3d.html">JavaFX 3D</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/effects.html">JavaFX Effects</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/transformation.html">JavaFX Transformation</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/animation.html">JavaFX Animation</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/media.html">JavaFX Media - JavaFX Video and Audio Support</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/canvas.html">JavaFX Canvas</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/drag-and-drop.html">JavaFX Drag and Drop</a></div><div class="notSelected"><a href="https://jenkov.com/tutorials/javafx/concurrency.html">JavaFX Concurrency</a></div></div>
+        </div>
+        <div id="trailToc">
+            <div id="trailTitle">JavaFX</div><ol><li><a href="https://jenkov.com/tutorials/javafx/index.html">JavaFX Tutorial</a></li><li><a href="https://jenkov.com/tutorials/javafx/overview.html">JavaFX Overview</a></li><li><a href="https://jenkov.com/tutorials/javafx/your-first-javafx-application.html">Your First JavaFX Application</a></li><li><a href="https://jenkov.com/tutorials/javafx/stage.html">JavaFX Stage</a></li><li><a href="https://jenkov.com/tutorials/javafx/scene.html">JavaFX Scene</a></li><li><a href="https://jenkov.com/tutorials/javafx/node.html">JavaFX Node</a></li><li><a href="https://jenkov.com/tutorials/javafx/properties.html">JavaFX Properties</a></li><li><a href="https://jenkov.com/tutorials/javafx/fxml.html">JavaFX FXML</a></li><li><a href="https://jenkov.com/tutorials/javafx/css-styling.html">JavaFX CSS Styling</a></li><li><a href="https://jenkov.com/tutorials/javafx/imageview.html">JavaFX ImageView</a></li><li><a href="https://jenkov.com/tutorials/javafx/text.html">JavaFX Text</a></li><li><a href="https://jenkov.com/tutorials/javafx/fonts.html">JavaFX Fonts</a></li><li><a href="https://jenkov.com/tutorials/javafx/hyperlink.html">JavaFX Hyperlink</a></li><li><a href="https://jenkov.com/tutorials/javafx/label.html">JavaFX Label</a></li><li><a href="https://jenkov.com/tutorials/javafx/button.html">JavaFX Button</a></li><li><a href="https://jenkov.com/tutorials/javafx/menubutton.html">JavaFX MenuButton</a></li><li><a href="https://jenkov.com/tutorials/javafx/splitmenubutton.html">JavaFX SplitMenuButton</a></li><li><a href="https://jenkov.com/tutorials/javafx/togglebutton.html">JavaFX ToggleButton</a></li><li><a href="https://jenkov.com/tutorials/javafx/radiobutton.html">JavaFX RadioButton</a></li><li><a href="https://jenkov.com/tutorials/javafx/checkbox.html">JavaFX CheckBox</a></li><li><a href="https://jenkov.com/tutorials/javafx/choicebox.html">JavaFX ChoiceBox</a></li><li><a href="https://jenkov.com/tutorials/javafx/combobox.html">JavaFX ComboBox</a></li><li><a href="https://jenkov.com/tutorials/javafx/listview.html">JavaFX ListView</a></li><li><a href="https://jenkov.com/tutorials/javafx/datepicker.html">JavaFX DatePicker</a></li><li><a href="https://jenkov.com/tutorials/javafx/colorpicker.html">JavaFX ColorPicker</a></li><li><a href="https://jenkov.com/tutorials/javafx/textfield.html">JavaFX TextField</a></li><li><a href="https://jenkov.com/tutorials/javafx/passwordfield.html">JavaFX PasswordField</a></li><li><a href="https://jenkov.com/tutorials/javafx/slider.html">JavaFX Slider</a></li><li><a href="https://jenkov.com/tutorials/javafx/textarea.html">JavaFX TextArea</a></li><li><a href="https://jenkov.com/tutorials/javafx/toolbar.html">JavaFX ToolBar</a></li><li><a href="https://jenkov.com/tutorials/javafx/tooltip.html">JavaFX Tooltip</a></li><li><a href="https://jenkov.com/tutorials/javafx/progressbar.html">JavaFX ProgressBar</a></li><li><a href="https://jenkov.com/tutorials/javafx/filechooser.html">JavaFX FileChooser</a></li><li><a href="https://jenkov.com/tutorials/javafx/directorychooser.html">JavaFX DirectoryChooser</a></li><li><a href="https://jenkov.com/tutorials/javafx/accordion.html">JavaFX Accordion</a></li><li><a href="https://jenkov.com/tutorials/javafx/titledpane.html">JavaFX TitledPane</a></li><li><a href="https://jenkov.com/tutorials/javafx/splitpane.html">JavaFX SplitPane</a></li><li><a href="https://jenkov.com/tutorials/javafx/tabpane.html">JavaFX TabPane</a></li><li><a href="https://jenkov.com/tutorials/javafx/scrollpane.html">JavaFX ScrollPane</a></li><li><a href="https://jenkov.com/tutorials/javafx/group.html">JavaFX Group</a></li><li><a href="https://jenkov.com/tutorials/javafx/region.html">JavaFX Region</a></li><li><a href="https://jenkov.com/tutorials/javafx/pane.html">JavaFX Pane</a></li><li><a href="https://jenkov.com/tutorials/javafx/hbox.html">JavaFX HBox</a></li><li><a href="https://jenkov.com/tutorials/javafx/vbox.html">JavaFX VBox</a></li><li><a href="https://jenkov.com/tutorials/javafx/separator.html">JavaFX Separator</a></li><li><a href="https://jenkov.com/tutorials/javafx/flowpane.html">JavaFX FlowPane</a></li><li><a href="https://jenkov.com/tutorials/javafx/tilepane.html">JavaFX TilePane</a></li><li><a href="https://jenkov.com/tutorials/javafx/gridpane.html">JavaFX GridPane</a></li><li><a href="https://jenkov.com/tutorials/javafx/menubar.html">JavaFX MenuBar</a></li><li><a href="https://jenkov.com/tutorials/javafx/contextmenu.html">JavaFX ContexMenu</a></li><li><a href="https://jenkov.com/tutorials/javafx/webview.html">JavaFX WebView</a></li><li><a href="https://jenkov.com/tutorials/javafx/piechart.html">JavaFX PieChart</a></li><li><a href="https://jenkov.com/tutorials/javafx/tableview.html">JavaFX TableView</a></li><li><a href="https://jenkov.com/tutorials/javafx/treeview.html">JavaFX TreeView</a></li><li><a href="https://jenkov.com/tutorials/javafx/treetableview.html">JavaFX TreeTableView</a></li><li><a href="https://jenkov.com/tutorials/javafx/htmleditor.html">JavaFX HTMLEditor</a></li><li><a href="https://jenkov.com/tutorials/javafx/pagination.html">JavaFX Pagination</a></li><li><a href="https://jenkov.com/tutorials/javafx/barchart.html">JavaFX BarChart</a></li><li><a href="https://jenkov.com/tutorials/javafx/stackedbarchart.html">JavaFX StackedBarChart</a></li><li><a href="https://jenkov.com/tutorials/javafx/scatterchart.html">JavaFX ScatterChart</a></li><li><a href="https://jenkov.com/tutorials/javafx/linechart.html">JavaFX LineChart</a></li><li><a href="https://jenkov.com/tutorials/javafx/areachart.html">JavaFX AreaChart</a></li><li><a href="https://jenkov.com/tutorials/javafx/stackedareachart.html">JavaFX StackedAreaChart</a></li><li><a href="https://jenkov.com/tutorials/javafx/color.html">JavaFX Color</a></li><li><a href="https://jenkov.com/tutorials/javafx/2d.html">JavaFX 2D</a></li><li><a href="https://jenkov.com/tutorials/javafx/effects.html">JavaFX Effects</a></li><li><a href="https://jenkov.com/tutorials/javafx/3d.html">JavaFX 3D</a></li><li><a href="https://jenkov.com/tutorials/javafx/transformation.html">JavaFX Transformation</a></li><li><a href="https://jenkov.com/tutorials/javafx/animation.html">JavaFX Animation</a></li><li><a href="https://jenkov.com/tutorials/javafx/media.html">JavaFX Media - JavaFX Video and Audio Support</a></li><li><a href="https://jenkov.com/tutorials/javafx/canvas.html">JavaFX Canvas</a></li><li><a href="https://jenkov.com/tutorials/javafx/drag-and-drop.html">JavaFX Drag and Drop</a></li><li><a href="https://jenkov.com/tutorials/javafx/concurrency.html">JavaFX Concurrency</a></li></ol>
+        </div>
+        <script src="./JavaFX Tutorial_files/nav.js.download"></script>
+        <script>
+            nav.select(5, 12, 0);
+            nav.generateNavPath();
+            nav.generateNavMenu();
+        </script>
+
+    </div>
+    <div id="main">
+
+        <h1 style="text-align: left;">JavaFX Tutorial</h1>
+
+        <div id="pageToc" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+            <ul><li><a href="https://jenkov.com/tutorials/javafx/index.html#why-javafx">Why JavaFX?</a></li><li><a href="https://jenkov.com/tutorials/javafx/index.html#javafx-features">JavaFX Features</a><ul><li><a href="https://jenkov.com/tutorials/javafx/index.html#third-party-javafx-resources">Third Party JavaFX Resources</a></li></ul></li><li><a href="https://jenkov.com/tutorials/javafx/index.html#javafx-apps">JavaFX Apps</a></li><li><a href="https://jenkov.com/tutorials/javafx/index.html#why-desktop-apps">Why Desktop Applications?</a></li><li><a href="https://jenkov.com/tutorials/javafx/index.html#javafx-use-cases">JavaFX Use Cases</a></li><li><a href="https://jenkov.com/tutorials/javafx/index.html#javafx-on-mobile-devices">JavaFX on Mobile Devices</a></li><li><a href="https://jenkov.com/tutorials/javafx/index.html#javafx-on-raspberry-pi">JavaFX on Raspberry Pi</a></li><li><a href="https://jenkov.com/tutorials/javafx/index.html#javafx-from-java-11">JavaFX From Java 11</a></li><li><a href="https://jenkov.com/tutorials/javafx/index.html#javafx-game-engine">JavaFX Game Engine</a></li><li><a href="https://jenkov.com/tutorials/javafx/index.html#javafx-vs-swing">JavaFX vs. Swing</a></li><li><a href="https://jenkov.com/tutorials/javafx/index.html#javafx-examples-on-github">JavaFX Examples on GitHub</a></li><li><a href="https://jenkov.com/tutorials/javafx/index.html#javafx-books">JavaFX Books</a></li><li><a href="https://jenkov.com/tutorials/javafx/index.html#javafx-javadoc">JavaFX JavaDoc</a></li></ul>
+        </div>
+
+        <div id="lastUpdate">
+            <table><tbody><tr><td class="authorPhoto"><img width="56" height="64" src="data:image/jpeg;base64,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" alt="Jakob Jenkov"></td>
+                <td><p style="margin: 0px 0px 6px 0px;">
+                    Jakob Jenkov<br>
+                    Last update: 2020-11-24
+                    </p>
+                    <div class="authorSocialLinks"><a class="iconLink" href="https://twitter.com/#!/jjenkov" title="Follow on Twitter" target="_blank"><img alt="Follow on Twitter" width="24" height="24" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABpElEQVRIx2NgwAOUlZWVFBUVqxQUFPYC8XMg/gvFIPZekBxIDQOpQAkIgAashhr2nwAGqVkN0kOU4UBXxQA1fCbCYHT8GaSXkOFlZBiMgkFm4HM5RYYjWYLqE2iYkxMsOIMLJU6gEUqqIaCUdB1PQlgNT4rYFAG9uRVXqgHKpejp6TFBfa8BFJsPpEHx9xtZHTgJQ9M5hkEqKipyQLkkIPs7mtxM9PizsLBgAloQBZR7jObIKgZoJsKwAKjBCOpCNSB/KcwioKYIbIkEKLceizl7GaBhiS0lLNXS0mKCGaCmpsYDtMwO6G05HBZgSyTPGXBFEtAgI3V1dS5iMqeqqqoIrvjCaQEQzyW2aAH6NgSfBc9xSILioQIYTByELACq3Y4rKeOMZGg81BEyHOgIFzx5ZS/OZIqEF4LiA4fhckD5p3gcWIUro4GS5FsgPg5UVASMRC4shpsA5R/iK8bhdQWWogJkwUSgIXrIhurr64MylBkoAaDlWtxFBRGF3Xsgvgwtd4gtED9jVEA0La6RLKFdhYPmE9pUmWhxQptKHxlQo9kCAHsFA8aGHksTAAAAAElFTkSuQmCC"></a> <a class="iconLink" href="http://www.linkedin.com/pub/jakob-jenkov/0/a8/4a3" title="Connect on LinkedIn" target="_blank"><img alt="Connect on LinkedIn" width="24" height="24" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABEklEQVRIx2NgwAOUlZWVFBUVqxQUFPYC8XMg/gvFIPZekBxIDQOpQAkIgAashhr2nwAGqVkN0kOU4UBXxQA1fCbCYHT8GaSXkOFlZBiMgkFm4HM5RYYjWYLqE2iYkxMsOIMLJU6gEYpL8XcoJtWS1fCkiCe1fAfKy4AwGZb8BSdhaDr/TwMLQHFRxQDNRP9pEEQgvJcBmitxKkKKp/9IKa5bTU2NT0VFRQoovh+P/ucMhHIrNguABosAg00MmgJ18MUDWRYA2beB+D6IbW1tzUTIApKDCCbX0tLChMzHFUR7aWjBXkLJlCILwMmUQEajBP+F1xUEigpy8Wr6FXY0L67pUuHQpcpEixPaVPrIgBrNFgAzO0iIN1MJVQAAAABJRU5ErkJggg=="></a> <a class="iconLink" href="https://www.youtube.com/user/jjenkov" title="Subscribe on YouTube" target="_blank"><img alt="Subscribe on YouTube" width="24" height="24" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABNElEQVRIx7VWSwrCMBANxYW48gTS2kJFaBfiHdq1uxbP4cJNz+K6eIQeR3oAlyI6T0Zpwlj7MYEHJZN5k8zMS6pUy/B9f+l53tF13YpQE+4MfFewYY3qO5Y0iKBksscPYE0Jn07ktKs9OVw7EJu4wvcX+WEAsQZwtO18FHkjiH4SzvmQtHxNl1YTLui/yN8oP60odMuFjrkLgmARhuE8juNpkiSToigcAN+Ygw1rsBY+Zne9Wpj73Mxh3re14SPwHBWLSDNgV4Lo3LYA8BHSVClWpWaIomhmEtD8jXCi2q2lAPARAtRKUmue544QoKncMwXaNu1ZljmSyscE2HQN0DdFq74psltk623aVWhpmg4TGufX3lWBYf2y4xzau64bQew9OMZJ7DyZRk3sPPqGuEb/tjwB4iHvG88CuqcAAAAASUVORK5CYII="></a> <a class="iconLink" href="http://jenkov.com/rss.xml" title="Subscribe to RSS Feed" target="_blank"><img alt="Subscribe to RSS Feed" width="24" height="24" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABqUlEQVRIx71WwUrDQBANEqQnP6AUSZo0JDnkByLSU/HkB0g/o0jJVUrx5MGvkHxDzuKxZ/HgoeQsOXiQom9kVjbJZhON7cKDbDI7M/vezG4MQzMcxxnbtp1YlpUBObBj0HNG38jG+O0YY8BBys4+W0A2Ka3p5BxZzbGg6OC4ioLWtjm//oPjEsiHLvNezqUg5Z0w5zVa4jg2XdcdYsEM81vgtStdJU1Y0JphdZdBEJgIdtUxUPpTippquYfDJZKZknMRCLs6wbeHtur6LmGu8y7bzmG78DzvWNLtrkWLxOAmUhog01PKHs8rYMvvNzK/LTvJDO5KpYHM/2QyGSCjNdO5FUGYriZNckPXrcQ/VZDv+6ZEy5zXbARdLLxSB20ACc9wciYFWXMCC5qHYXjUsIudliLgA3gC3oB3EYToYk1yUV3cJ0qKGkUGzZdcyiMO8iLoQrAbtpnyfKYUWVemURQNpGp5ZFouuPvPhU4s9lBZprpGg8GKgtBOmC56n7DDkWhGmtOxomw03VHRE2nrYdcDRe0C2utxfZAL5yBXZkWT/Vz68viP35Yv1q4mS+AFuV8AAAAASUVORK5CYII="></a> <a class="iconLink" href="https://t.me/jenkov_com" title="Subscribe to Telegram Channel" target="_blank"><img alt="Subscribe to Telegram Channel" width="24" height="24" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAA7EAAAOxAGVKw4bAAABv0lEQVRIx71WPUsDQRB9bya7FyQEI0QsJaSwsLKwFAsh/gArC/FnWARBUoullYWIiBxibRFSWVhbilhYBSuRVCbEIhs5l9vLaYgD09wy7+2++Togw1S1TrIJoA2gC2DgvAugTbKpqnX81lS1BiB2YMMJPgAQu5jJRnIPQC8HsO89F5sJfvAH4B/uMII3nwo8QfLzJU6/v8gSlMvPSTwF2AvJFoA773s8vn09Z7Uk/QPAuYhsVioVcZe89KtLVetwdZ4XuENy31pbKhaLVkR2Eyo8peSiCYyaKAv0meShqi6PkURkneSNiNQAwFq7EIhtA6Ou9A/eAZyJyEa1Wh1LAGNMieQJgAdVXUwQbgUIukjRP7bWzvllLCLbAF4A3BUKhVLO/hmkEfQAXJPcNcbMG2NK4wSSvIyiyKa00W0WQRdh/T9VdQ2jMXBcLpcF6faaJVFmkkkekbwIAMMYs5QR3xaSHWTYcDjcUdVTl4cVEVlJnvf7/fVQLMlOrkZT1VURWQPw5uTabzQa4kBaIf2Tu2LSqHjEqHST366iKFoEcB+Iib+f8h/DbrbjOkEyu4XjvWQ2K9PLyWyWvkc09W/LFx++dNA/GYlaAAAAAElFTkSuQmCC"></a> </div>
+                </td>
+            </tr>
+            </tbody></table>
+        </div>
+
+        <div id="mainBody">
+            <p>
+    <em>JavaFX</em> is a GUI toolkit for Java (GUI is short for Graphical User Interface). JavaFX makes it easier to create
+    desktop applications and games in Java. This JavaFX tutorial is a multi-page tutorial explaining the core features
+    of JavaFX. See the menu in the left side of this page to see all the topics covered in this JavaFX tutorial (on mobile,
+    check the Trail TOC in the bottom navigation bar). There is also an extensive list further down this page.
+</p>
+
+
+
+<a name="why-javafx"></a>
+<h2>Why JavaFX?</h2>
+
+<p>
+    There are several reasons why JavaFX is a great GUI application platform.
+    First of all, Java is still one of the most popular programming languages in the world, with a large set of standard
+    classes, and a rich set of open source toolkits developed by the Java developer community.
+</p>
+
+<p>
+    Second, JavaFX can run on all of the following OS'es and devices:
+</p>
+
+<ul>
+    <li>Windows</li>
+    <li>Linux</li>
+    <li>Mac</li>
+    <li>iOS</li>
+    <li>Android / Chromebook</li>
+    <li>Raspberry Pi</li>
+</ul>
+
+<p>
+    This makes JavaFX a versatile cross OS and cross device application toolkit.
+</p>
+
+<p>
+    Third, JavaFX comes with a rich set of GUI controls, and open source toolkits add even more tools to the
+    total ecosystem.
+</p>
+
+
+
+<a name="javafx-features"></a>
+<h2>JavaFX Features</h2>
+
+<p>
+    JavaFX comes with a large set of built-in GUI components, like buttons, text fields, tables, trees, menus, charts
+    and much more. JavaFX can be styled via CSS
+    and / or programmatically. JavaFX comes with a built-in chart library you can use for simple charts. JavaFX
+    has support for 2D and 3D Graphics. JavaFX has a WebView which can display modern web applications.
+</p>
+
+<p>
+    Here is a more complete list of concepts, components and features in JavaFX:
+</p>
+
+
+
+<ul>
+    <li><strong>Core</strong>
+
+        <ul>
+            <li><a href="https://jenkov.com/tutorials/javafx/stage.html">Stage</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/scene.html">Scene</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/node.html">Node</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/properties.html">Properties</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/fxml.html">FXML</a></li>
+        </ul>
+    </li>
+    <li><strong>Layout</strong>
+        <ul>
+            <li><a href="https://jenkov.com/tutorials/javafx/region.html">Region</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/pane.html">Pane</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/hbox.html">HBox</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/vbox.html">VBox</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/flowpane.html">FlowPane</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/tilepane.html">TilePane</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/gridpane.html">GridPane</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/group.html">Group</a></li>
+            <li>StackPane</li>
+            <li>AnchorPane</li>
+            <li>BorderPane</li>
+        </ul>
+    </li>
+    <li>
+        <strong>Basic Controls</strong>
+        <ul>
+            <li><a href="https://jenkov.com/tutorials/javafx/label.html">Label</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/button.html">Button</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/menubutton.html">MenuButton</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/splitmenubutton.html">SplitMenuButton</a></li>
+            <li>ButtonBar</li>
+            <li><a href="https://jenkov.com/tutorials/javafx/togglebutton.html">ToggleButton</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/radiobutton.html">RadioButton</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/checkbox.html">CheckBox</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/choicebox.html">ChoiceBox</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/combobox.html">ComboBox</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/listview">ListView</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/textfield.html">TextField</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/passwordfield.html">PasswordField</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/textarea.html">TextArea</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/imageview.html">ImageView</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/datepicker.html">DatePicker</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/colorpicker.html">ColorPicker</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/slider.html">Slider</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/tooltip.html">Tooltip</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/hyperlink.html">Hyperlink</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/progressbar.html">ProgressBar</a></li>
+            <li>ProgressIndicator</li>
+            <li><a href="https://jenkov.com/tutorials/javafx/menubar.html">MenuBar</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/contextmenu.html">ContextMenu</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/separator.html">Separator</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/tableview.html">TableView</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/treeview.html">TreeView</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/treetableview.html">TreeTableView</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/htmleditor.html">HTMLEditor</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/pagination.html">Pagination</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/filechooser.html">FileChooser</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/directorychooser.html">DirectoryChooser</a></li>
+            <li>Spinner</li>
+
+        </ul>
+    </li>
+    <li>
+        <strong>Container Controls</strong>
+        <ul>
+            <li><a href="https://jenkov.com/tutorials/javafx/accordion.html">Accordion</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/titledpane.html">TitledPane</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/tabpane.html">TabPane</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/splitpane.html">SplitPane</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/scrollpane.html">ScrollPane</a></li>
+        </ul>
+    </li>
+    <li>
+        <strong>Web</strong>
+        <ul>
+            <li><a href="https://jenkov.com/tutorials/javafx/webview.html">WebView</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/webview.html#webview-webengine">WebEngine</a></li>
+        </ul>
+    </li>
+    <li>
+        <strong>Charts</strong>
+        <ul>
+            <li><a href="https://jenkov.com/tutorials/javafx/piechart.html">PieChart</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/barchart.html">BarChart</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/stackedbarchart.html">StackedBarChart</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/scatterchart.html">ScatterChart</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/linechart.html">LineChart</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/areachart.html">AreaChart</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/stackedareachart.html">StackedAreaChart</a></li>
+            <li>BubbleChart</li>
+        </ul>
+    </li>
+    <li>
+        <strong>Other Concepts</strong>
+        <ul>
+            <li><a href="https://jenkov.com/tutorials/javafx/fonts.html">Fonts</a></li>
+            <li>TextFormatter</li>
+            <li>Dialogs</li>
+            <li><a href="https://jenkov.com/tutorials/javafx/color.html">Color</a>  </li>
+            <li><a href="https://jenkov.com/tutorials/javafx/2d.html">2D Shapes</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/3d.html">3D Shapes</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/effects.html">Effects</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/transformation.html">Transformations</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/animation.html">Animation</a></li>
+            <li><a href="https://jenkov.com/tutorials/javafx/canvas.html">Canvas</a></li>
+            <li>PixelBuffer</li>
+            <li><a href="https://jenkov.com/tutorials/javafx/drag-and-drop.html">Drag and Drop</a></li>
+            <li>Audio</li>
+            <li><a href="https://jenkov.com/tutorials/javafx/media.html">Video</a></li>
+            <li>Print API</li>
+            <li>High DPI resolution screen support</li>
+            <li><a href="https://jenkov.com/tutorials/javafx/concurrency.html">Concurrency in JavaFX</a></li>
+        </ul>
+    </li>
+</ul>
+
+
+
+<a name="third-party-javafx-resources"></a>
+<h3>Third Party JavaFX Resources</h3>
+
+<p>
+    There are a few, cool third party resources available out there. I have listed some of them here:
+</p>
+
+<ul>
+    <li><a href="https://github.com/eclipse-efx/efxclipse-drift">JavaFX Drift</a>
+        - OpenGL etc. support for JavaFX. Seamless integration into the scene graph.
+    </li>
+    <li>
+        <a href="https://github.com/controlsfx/controlsfx">ControlsFX</a> - Extra UI controls for JavaFX.
+    </li>
+    <li>
+        <a href="https://github.com/dlsc-software-consulting-gmbh/GemsFX">GemsFX</a> - Extra UI controls for JavaFX.
+    </li>
+    <li>
+        <a href="https://github.com/HanSolo/tilesfx">TilesFX</a> - Extra UI controls for JavaFX.
+    </li>
+
+</ul>
+
+<p>
+    Resources related to JavaFX:
+</p>
+
+<ul>
+    <li><a href="https://github.com/JetBrains/skija">Skija</a> - Fast 2D graphics for Java - using hardware accelerated graphics.</li>
+</ul>
+
+
+<a name="javafx-apps"></a>
+<h2>JavaFX Apps</h2>
+
+<p>
+    Here are some of the publicly available apps made with JavaFX, so you can see for yourself what is possible with
+    JavaFX:
+</p>
+
+<ul>
+    <li><a target="_blank" href="https://github.com/databasefx/dbfx">DBFX</a> - a free database management GUI app (management console).</li>
+</ul>
+
+
+
+
+
+<a name="why-desktop-apps"></a>
+<h2>Why Desktop Applications?</h2>
+
+<p>
+    Why are native / local apps preferred for mobile devices - but web apps preferred for desktop computers?
+    Why are native / local apps not preferred for both types of devices?
+</p>
+
+<p>
+    Native / local apps tend to provide a better user experience than web apps by being more responsive (faster, snappier),
+    having more advanced GUI controls, and by better integrating with the local device. The two biggest problems
+    for traditional desktop apps was low Internet bandwidth and a cumbersome installation process. Both of these
+    problems have pretty much been resolved with high speed Internet connections being quite common, and with app stores
+    for private devices and install-on-demand systems for corporate machines.
+</p>
+
+<p>
+    In my opinion native / local apps should be preferred for all apps that are being used often, or where
+    the workflow is somewhat complicated.
+    Native / local apps should also be preferred for applications that need to access the local disk of the computer it runs on,
+    or which needs to communicate with many different remote systems, and sometimes using other protocols than HTTP
+    (e.g. <a href="https://jenkov.com/iap/index.html">IAP</a> or streaming protocols etc.).
+    See <a href="https://jenkov.com/tutorials/javafx/index.html#javafx-use-cases">JavaFX use cases</a> for more application examples.
+</p>
+
+<p>
+    Apps the user use rarely, or which the user is not really motivated to
+    download and install should probably remain as web apps. For instance, an app to login in and administer your
+    insurance contracts is probably fine to implement as as a web app. But a project management tool that your
+    users are using several times per day is probably better off being a desktop app.
+</p>
+
+
+
+<a name="javafx-use-cases"></a>
+<h2>JavaFX Use Cases</h2>
+<p>
+    I have been asked several times if not desktop applications are dead - if there are really any use cases left for
+    something like JavaFX. It is true, that many applications fit well as web applications, because you access
+    them rarely, and the resources you access are stored on a server anyways. But, there are also several types of
+    applications that are better implemented as desktop applications.
+</p>
+
+<p>
+    As mentioned in the introduction we at <a href="https://nanosai.com/">Nanosai</a> are actually developing a
+    desktop application using JavaFX. We do so because that app needs access to the local disk, needs to
+    be able to communicate via other network protocols than HTTP, and needs several other features a standard
+    web browser simply does not provide.
+</p>
+
+<p>
+    Here is a list of some of general use cases I see for JavaFX:
+</p>
+
+<ul>
+    <li>Developer tools
+        <ul>
+            <li>IDE</li>
+            <li>Editors</li>
+            <li>File compression / encryption tools</li>
+            <li>Tools scanning the local disk</li>
+        </ul>
+    </li>
+    <li>Local system maintenance tools
+        <ul>
+            <li>Backup tools</li>
+            <li>Virus scans</li>
+        </ul>
+    </li>
+    <li>Utility apps
+        <ul>
+            <li>Skype / Messenger / Chat</li>
+            <li>Screen shot tools</li>
+            <li>Photo and video editing</li>
+            <li>Video players</li>
+            <li>Audio editing</li>
+            <li>Audio players</li>
+        </ul>
+    </li>
+    <li>Games</li>
+    <li>Data Science Tools</li>
+</ul>
+
+<p>
+    Here are some of the desktop apps I use regularly:
+</p>
+
+
+<ul>
+    <li>IntelliJ IDEA</li>
+    <li>Notepad++</li>
+    <li>SourceTree</li>
+    <li>SnagIt</li>
+    <li>Putty</li>
+    <li>WinSCP</li>
+    <li>Skype</li>
+    <li>Signal</li>
+    <li>Telegram</li>
+    <li>PhotoShop</li>
+    <li>Premiere Pro</li>
+    <li>VideoLAN (VLC)</li>
+    <li>EDraw</li>
+</ul>
+
+<p>
+    Additionally, several companies that have started with web applications have later added native / local desktop applications.
+    Some of these are:
+</p>
+
+<ul>
+    <li>YouTube Music</li>
+    <li>Spotify</li>
+    <li>Microsoft Teams</li>
+    <li>Slack</li>
+    <li>Google Drive</li>
+</ul>
+
+
+
+<a name="javafx-on-mobile-devices"></a>
+<h2>JavaFX on Mobile Devices</h2>
+
+<p>
+    <a href="https://gluonhq.com/">Gluon</a> offers a set of tools to help you build and package
+    your JavaFX application as native images for mobile (Android and iOS).
+</p>
+
+
+
+<a name="javafx-on-raspberry-pi"></a>
+<h2>JavaFX on Raspberry Pi</h2>
+
+<p>
+    It is also possible to run JavaFX on a Raspberry Pi computer. You can read more about how
+    to run JavaFX on Raspberry Pi in the book
+    <a href="https://leanpub.com/gettingstartedwithjavaontheraspberrypi">Getting started with Java on the Raspberry Pi</a>
+</p>
+
+
+
+<a name="javafx-from-java-11"></a>
+<h2>JavaFX From Java 11</h2>
+
+<p>
+    From Java 11, JavaFX has been removed from the Java SDK again. JavaFX has been detached into its own open source
+    project. This means that to download JavaFX from Java 11 / JavaFX 11, you have to go to:
+</p>
+
+<p>
+    <a href="https://openjfx.io/">http://openjfx.io</a>
+</p>
+
+<p>
+    However, JavaFX keeps evolving and is still very popular among its users.
+</p>
+
+
+
+<a name="javafx-game-engine"></a>
+<h2>JavaFX Game Engine</h2>
+
+<p>
+    Almas Baim has made the <a href="https://github.com/AlmasB/FXGL">FXGL JavaFX game engine</a>. You can find it at:
+</p>
+
+<p>
+    <a href="https://github.com/AlmasB/FXGL">https://github.com/AlmasB/FXGL</a>
+</p>
+
+
+
+
+<a name="javafx-vs-swing"></a>
+<h2>JavaFX vs. Swing</h2>
+<p>
+    You may be aware that Java also has another GUI toolkit called Java Swing (or JFC). In case you wonder what
+    the difference is between the two toolkits, I have listed some of the major differences below:
+</p>
+
+<table class="dataTable" cellspacing="5">
+    <tbody><tr>
+        <th valign="top">Feature</th>
+        <th valign="top">JavaFX</th>
+        <th valign="top">Swing</th>
+    </tr>
+    <tr>
+        <td valign="top">Property Bindings</td>
+        <td>JavaFX properties support binding, meaning you can listen for changes in their values.</td>
+        <td>Swing properties do not directly support binding.</td>
+    </tr>
+    <tr>
+        <td valign="top">Declarative Layout</td>
+        <td>JavaFX has support for declarative layout via FXML.</td>
+        <td>Swing has no built-in support for declarative layout.</td>
+    </tr>
+    <tr>
+        <td valign="top">Styling</td>
+        <td>JavaFX supports CSS based and code based styling.</td>
+        <td>Swing only supports code based styling.</td>
+    </tr>
+    <tr>
+        <td valign="top">WebView</td>
+        <td>JavaFX has a WebView that can render modern web pages.</td>
+        <td>Swing has no WebView.</td>
+    </tr>
+    <tr>
+        <td valign="top">Graphics</td>
+        <td>JavaFX uses vector based graphics.</td>
+        <td>Swing uses pixel based graphics.</td>
+    </tr>
+    <tr>
+        <td valign="top">3D Graphics</td>
+        <td>JavaFX has built-in support for 3D graphics.</td>
+        <td>Swing requires the Java 3D API for 3D graphics.</td>
+    </tr>
+    <tr>
+        <td valign="top">Concurrency API</td>
+        <td>JavaFX has a built-in concurrency API.</td>
+        <td>Swing has no built-in concurrency API.</td>
+    </tr>
+    <tr>
+        <td valign="top">Age of toolkit</td>
+        <td>JavaFX is newer.</td>
+        <td>Swing is older.</td>
+    </tr>
+    <tr>
+        <td valign="top">Included in Java SDK</td>
+        <td>JavaFX is not included from Java 11 and forward.</td>
+        <td>Swing is still included, but will probably be removed one day.</td>
+    </tr>
+</tbody></table>
+
+
+
+<a name="javafx-examples-on-github"></a>
+<h2>JavaFX Examples on GitHub</h2>
+
+<p>
+    I have started adding many of the JavaFX examples from this tutorial to a public GitHub repository for your convenience.
+    The examples are ready-to-run self-contained examples, each with its own class + main() method to run that
+    particular example. Here is the GitHub repository:
+</p>
+
+<p>
+    <a href="https://github.com/jjenkov/javafx-examples">JavaFX Examples on GitHub</a>
+</p>
+
+
+
+
+<a name="javafx-books"></a>
+<h2>JavaFX Books</h2>
+<p>
+    Here are the most useful books I have read about JavaFX:
+</p>
+
+<ul>
+    <li style="padding-bottom:10px;"><a target="_blank" href="https://www.apress.com/gp/book/9781484211434">Learn JavaFX 8</a></li>
+    <li><a target="_blank" href="https://www.apress.com/gp/book/9781484249253">The Definitive Guide to Modern Java Clients with JavaFX</a></li>
+</ul>
+
+
+
+
+<a name="javafx-javadoc"></a>
+<h2>JavaFX JavaDoc</h2>
+
+<p>
+    You can find the JavaFX 11 JavaDoc here:
+</p>
+
+<p>
+    <a href="https://openjfx.io/javadoc/11/">https://openjfx.io/javadoc/11/</a>
+</p>
+
+
+
+
+
+
+
+
+
+        </div>
+
+        <div id="next">Next: <a href="https://jenkov.com/tutorials/javafx/overview.html">JavaFX Overview</a></div>
+        <div id="bottomSocial">
+
+            <div style="display:inline-block;">
+                <table>
+                    <tbody><tr><td colspan="2">
+                        <a href="https://twitter.com/intent/tweet?url=http://tutorials.jenkov.com/tutorials/javafx/index.html&amp;original_referer=jjenkov" class="twitter-share-button" data-via="jjenkov" target="_blank">Tweet</a>
+                    </td></tr>
+                    <tr><td class="authorPhoto"><img width="56" height="64" src="data:image/jpeg;base64,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" alt="Jakob Jenkov"></td><td><p style="margin: 0px 0px 6px 0px;">Jakob Jenkov</p><div class="authorSocialLinks"><a class="iconLink" href="https://twitter.com/#!/jjenkov" title="Follow on Twitter" target="_blank"><img alt="Follow on Twitter" width="24" height="24" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABpElEQVRIx2NgwAOUlZWVFBUVqxQUFPYC8XMg/gvFIPZekBxIDQOpQAkIgAashhr2nwAGqVkN0kOU4UBXxQA1fCbCYHT8GaSXkOFlZBiMgkFm4HM5RYYjWYLqE2iYkxMsOIMLJU6gEUqqIaCUdB1PQlgNT4rYFAG9uRVXqgHKpejp6TFBfa8BFJsPpEHx9xtZHTgJQ9M5hkEqKipyQLkkIPs7mtxM9PizsLBgAloQBZR7jObIKgZoJsKwAKjBCOpCNSB/KcwioKYIbIkEKLceizl7GaBhiS0lLNXS0mKCGaCmpsYDtMwO6G05HBZgSyTPGXBFEtAgI3V1dS5iMqeqqqoIrvjCaQEQzyW2aAH6NgSfBc9xSILioQIYTByELACq3Y4rKeOMZGg81BEyHOgIFzx5ZS/OZIqEF4LiA4fhckD5p3gcWIUro4GS5FsgPg5UVASMRC4shpsA5R/iK8bhdQWWogJkwUSgIXrIhurr64MylBkoAaDlWtxFBRGF3Xsgvgwtd4gtED9jVEA0La6RLKFdhYPmE9pUmWhxQptKHxlQo9kCAHsFA8aGHksTAAAAAElFTkSuQmCC"></a> <a class="iconLink" href="http://www.linkedin.com/pub/jakob-jenkov/0/a8/4a3" title="Connect on LinkedIn" target="_blank"><img alt="Connect on LinkedIn" width="24" height="24" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABEklEQVRIx2NgwAOUlZWVFBUVqxQUFPYC8XMg/gvFIPZekBxIDQOpQAkIgAashhr2nwAGqVkN0kOU4UBXxQA1fCbCYHT8GaSXkOFlZBiMgkFm4HM5RYYjWYLqE2iYkxMsOIMLJU6gEYpL8XcoJtWS1fCkiCe1fAfKy4AwGZb8BSdhaDr/TwMLQHFRxQDNRP9pEEQgvJcBmitxKkKKp/9IKa5bTU2NT0VFRQoovh+P/ucMhHIrNguABosAg00MmgJ18MUDWRYA2beB+D6IbW1tzUTIApKDCCbX0tLChMzHFUR7aWjBXkLJlCILwMmUQEajBP+F1xUEigpy8Wr6FXY0L67pUuHQpcpEixPaVPrIgBrNFgAzO0iIN1MJVQAAAABJRU5ErkJggg=="></a> <a class="iconLink" href="https://www.youtube.com/user/jjenkov" title="Subscribe on YouTube" target="_blank"><img alt="Subscribe on YouTube" width="24" height="24" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABNElEQVRIx7VWSwrCMBANxYW48gTS2kJFaBfiHdq1uxbP4cJNz+K6eIQeR3oAlyI6T0Zpwlj7MYEHJZN5k8zMS6pUy/B9f+l53tF13YpQE+4MfFewYY3qO5Y0iKBksscPYE0Jn07ktKs9OVw7EJu4wvcX+WEAsQZwtO18FHkjiH4SzvmQtHxNl1YTLui/yN8oP60odMuFjrkLgmARhuE8juNpkiSToigcAN+Ygw1rsBY+Zne9Wpj73Mxh3re14SPwHBWLSDNgV4Lo3LYA8BHSVClWpWaIomhmEtD8jXCi2q2lAPARAtRKUmue544QoKncMwXaNu1ZljmSyscE2HQN0DdFq74psltk623aVWhpmg4TGufX3lWBYf2y4xzau64bQew9OMZJ7DyZRk3sPPqGuEb/tjwB4iHvG88CuqcAAAAASUVORK5CYII="></a> <a class="iconLink" href="http://jenkov.com/rss.xml" title="Subscribe to RSS Feed" target="_blank"><img alt="Subscribe to RSS Feed" width="24" height="24" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABqUlEQVRIx71WwUrDQBANEqQnP6AUSZo0JDnkByLSU/HkB0g/o0jJVUrx5MGvkHxDzuKxZ/HgoeQsOXiQom9kVjbJZhON7cKDbDI7M/vezG4MQzMcxxnbtp1YlpUBObBj0HNG38jG+O0YY8BBys4+W0A2Ka3p5BxZzbGg6OC4ioLWtjm//oPjEsiHLvNezqUg5Z0w5zVa4jg2XdcdYsEM81vgtStdJU1Y0JphdZdBEJgIdtUxUPpTippquYfDJZKZknMRCLs6wbeHtur6LmGu8y7bzmG78DzvWNLtrkWLxOAmUhog01PKHs8rYMvvNzK/LTvJDO5KpYHM/2QyGSCjNdO5FUGYriZNckPXrcQ/VZDv+6ZEy5zXbARdLLxSB20ACc9wciYFWXMCC5qHYXjUsIudliLgA3gC3oB3EYToYk1yUV3cJ0qKGkUGzZdcyiMO8iLoQrAbtpnyfKYUWVemURQNpGp5ZFouuPvPhU4s9lBZprpGg8GKgtBOmC56n7DDkWhGmtOxomw03VHRE2nrYdcDRe0C2utxfZAL5yBXZkWT/Vz68viP35Yv1q4mS+AFuV8AAAAASUVORK5CYII="></a> <a class="iconLink" href="https://t.me/jenkov_com" title="Subscribe to Telegram Channel" target="_blank"><img alt="Subscribe to Telegram Channel" width="24" height="24" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAA7EAAAOxAGVKw4bAAABv0lEQVRIx71WPUsDQRB9bya7FyQEI0QsJaSwsLKwFAsh/gArC/FnWARBUoullYWIiBxibRFSWVhbilhYBSuRVCbEIhs5l9vLaYgD09wy7+2++Togw1S1TrIJoA2gC2DgvAugTbKpqnX81lS1BiB2YMMJPgAQu5jJRnIPQC8HsO89F5sJfvAH4B/uMII3nwo8QfLzJU6/v8gSlMvPSTwF2AvJFoA773s8vn09Z7Uk/QPAuYhsVioVcZe89KtLVetwdZ4XuENy31pbKhaLVkR2Eyo8peSiCYyaKAv0meShqi6PkURkneSNiNQAwFq7EIhtA6Ou9A/eAZyJyEa1Wh1LAGNMieQJgAdVXUwQbgUIukjRP7bWzvllLCLbAF4A3BUKhVLO/hmkEfQAXJPcNcbMG2NK4wSSvIyiyKa00W0WQRdh/T9VdQ2jMXBcLpcF6faaJVFmkkkekbwIAMMYs5QR3xaSHWTYcDjcUdVTl4cVEVlJnvf7/fVQLMlOrkZT1VURWQPw5uTabzQa4kBaIf2Tu2LSqHjEqHST366iKFoEcB+Iib+f8h/DbrbjOkEyu4XjvWQ2K9PLyWyWvkc09W/LFx++dNA/GYlaAAAAAElFTkSuQmCC"></a> </div></td></tr>
+                </tbody></table>
+            </div>
+            <div style="display: none;" class="newsletterForm"></div>
+        </div>
+    </div>
+
+    <div id="rightWrapper">
+        <b>Featured Videos</b><br><br>
+
+        <a target="_blank" href="https://www.youtube.com/watch?v=OGXAs9fZYTc&amp;list=PLL8woMHwr36EDxjUoCzboZjedsnhLP1j4&amp;index=28"><img src="./JavaFX Tutorial_files/java-concurrentmap-video-screenshot-small.png" alt="Java ConcurrentMap + ConcurrentHashMap"></a><br><br>
+        <a target="_blank" href="https://www.youtube.com/watch?v=CKWw7J5MsyY&amp;list=PLL8woMHwr36GYaIsv6STX864waOm61gMt&amp;index=12"><img src="./JavaFX Tutorial_files/java-generics-video-screenshot-small.png" alt="Java Generics"></a><br><br>
+        <a target="_blank" href="https://www.youtube.com/watch?v=aiwuJQt7YJU&amp;list=PLL8woMHwr36EDxjUoCzboZjedsnhLP1j4&amp;searchIndex=27"><img src="./JavaFX Tutorial_files/java-forkjoinpool-video-screenshot-small.jpg" alt="Java ForkJoinPool"></a><br><br>
+        <a target="_blank" href="https://www.youtube.com/watch?v=Vw9ynzuGNSw&amp;list=PLL8woMHwr36F-1h7BE92ynHHOE3zebGpA&amp;searchIndex=1"><img src="./JavaFX Tutorial_files/p2p-networks-introduction-video-screenshot-small.jpg" alt="P2P Networks Introduction"></a><br><br>
+        <a target="_blank" href="https://www.youtube.com/watch?v=RrXZQLo1EOw&amp;list=PLL8woMHwr36HWMaOTIiWNf_fYYkZCHPxo&amp;searchIndex=5"><img src="./JavaFX Tutorial_files/conscious-software-design-video-screenshot-small.jpg"></a><br><br>
+        <a target="_blank" href="https://www.youtube.com/watch?v=bj9DoZsu7Ls&amp;list=PLL8woMHwr36HWMaOTIiWNf_fYYkZCHPxo&amp;searchIndex=4"><img src="./JavaFX Tutorial_files/structural-software-design-video-screenshot-small.webp"></a><br><br>
+        <a target="_blank" href="https://www.youtube.com/watch?v=x5Ruv5jotQk&amp;list=PLL8woMHwr36HWMaOTIiWNf_fYYkZCHPxo&amp;searchIndex=2"><img src="./JavaFX Tutorial_files/software-design-goals-video-screenshot-small.jpg"></a><br><br>
+        <a target="_blank" href="https://www.youtube.com/watch?v=wfQ_ZLttsPM&amp;list=PLL8woMHwr36HWMaOTIiWNf_fYYkZCHPxo&amp;searchIndex=13"><img src="./JavaFX Tutorial_files/software-design-video-screenshot-small.jpg"></a><br><br>
+        <a target="_blank" href="https://www.youtube.com/watch?v=OHLSZf8DJpQ&amp;list=PLL8woMHwr36EAeL4RIj4MAP27MXenwbDx&amp;searchIndex=3"><img src="./JavaFX Tutorial_files/designing-for-performance-video-screenshot-small.jpg"></a><br><br>
+        <!--<a target="_blank" href="https://www.youtube.com/watch?v=cmNg4TCrlmY&list=PLL8woMHwr36EAeL4RIj4MAP27MXenwbDx&searchIndex=2"><img src="/images/software-performance/compound-performance-penalty-problem-video-screenshot-small.jpg"></a><br><br>-->
+        <a target="_blank" href="https://www.youtube.com/watch?v=N2sskKGnCqc&amp;list=PLL8woMHwr36EDxjUoCzboZjedsnhLP1j4&amp;searchIndex=17"><img src="./JavaFX Tutorial_files/java-executorservice-virtual-threads-video-screenshot-small.jpg"></a><br><br>
+        <a target="_blank" href="https://www.youtube.com/watch?v=kirhhcFAGB4&amp;list=PLL8woMHwr36EDxjUoCzboZjedsnhLP1j4&amp;searchIndex=3"><img src="./JavaFX Tutorial_files/java-virtual-threads-video-screenshot-small.jpg"></a><br><br>
+        <a target="_blank" href="https://www.youtube.com/watch?v=mTGdtC9f4EU&amp;list=PLL8woMHwr36EDxjUoCzboZjedsnhLP1j4&amp;searchIndex=1"><img src="./JavaFX Tutorial_files/java-concurrency-video-screenshot-small.jpg"></a><br><br>
+
+
+    </div>
+</div>
+
+<div id="footer">
+    Copyright Jenkov Aps
+</div>
+
+<!--
+<script src="/nav.js"></script>
+<script>
+nav.select(5, 12, 0);
+nav.generateNavPath();
+nav.generateNavMenu();
+</script>
+-->
+
+
+<style>
+.navButton{color: #ffffff; font-weight: bold;}
+#trailTocFixedDiv{position: fixed;  top : 0px; left : 0px; width : 100%; height : 100%;  display : none; background-color: #ffffff;}
+#trailTocFixedInnerDiv{width: 400px; max-width: 94%; height: calc(100% - 72px); overflow : auto; margin: 20px auto 20px auto; padding: 0px 0px 180px 0px;}
+#trailTocFixedInnerDiv th{border-bottom: 1px solid #f0f0f0;padding: 6px 10px;text-align: left;font-size: 1.2em;}
+#trailTocFixedInnerDiv td{border-bottom: 1px solid #f0f0f0;padding: 6px 20px;vertical-align: top;}
+#trailTocFixedCloseButton{width : 72px; padding: 10px 20px; background-color: #009900; border: 2px solid #006600; color: #ffffff; font-size: 0.8em; font-weight: bold; position: absolute; right: 0px; cursor: pointer; box-shadow: 2px 2px 2px 2px #cccccc;}
+#bottomNavBarDiv{position:fixed; bottom: 0px; width: 100%;  background-color: #202020; border-top: 1px solid #444444;}
+.buttonNavBarButtonDivActive{background-color: #404040;}
+#bottomNavBarRow>div{border-left: 1px solid #404040; border-right: 1px solid #000000;  height: 48px;  padding-top:16px; text-align: center; cursor: pointer;}
+#bottomNavBarDiv a{color: #ffffff; font-weight: bold;}
+#bottomNavBarDiv br{display:none;}
+#bottomNavBarDiv img{ height: 20px; }
+#nextButton2{ display:none; }
+.dataTable{border-top: 1px solid #cccccc;border-right: 1px solid #cccccc; border-spacing: 0px; }
+.dataTable th{ padding: 4px 8px; border-left: 1px solid #cccccc; border-bottom: 1px solid #cccccc; background-color: #eeeeee; }
+.dataTable td{ padding: 4px 8px; border-left: 1px solid #cccccc; border-bottom: 1px solid #cccccc; }
+@media only screen and (max-width: 700px){
+  #bottomNavBarDiv, #bottomNavBarDiv [jqc-cell] { height: 58px; }
+  #bottomNavBarDiv [jqc-cell] {padding-top: 12px;}
+  #bottomNavBarDiv a { font-size: 0.8em; }
+  #bottomNavBarDiv br { display: inline; }
+  #nextButton1 { display: none; }
+  #nextButton2 { display: inline; }
+}
+@media only screen and (max-width: 400px){
+  #bottomNavBarDiv [jqc-cell] {padding-top: 10px;}
+  #bottomNavBarDiv a {font-size: 0.5em;}
+  #bottomNavBarDiv img {height: 24px;}
+}
+</style>
+<style>
+#bottomNavBar2Parent{position:fixed; bottom: 0px; width: 100%;  background-color: #202020; border-top: 1px solid #444444;}
+#bottomNavBar2>div{border-left: 1px solid #404040; border-right: 1px solid #000000;  height: 48px;  padding-top:16px; text-align: center; cursor: pointer;}
+
+
+#bottomNavBar2{
+  display: grid;
+}
+#allTrailsButtonDiv2{
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+#trailTocButtonDiv2 {
+  grid-column-start: 3;
+  grid-column-end: 5;
+}
+
+#pageTocButtonDiv2{
+  grid-column-start: 5;
+  grid-column-end: 7;
+}
+
+#prevButtonDiv2 {
+  grid-column-start: 7;
+  grid-column-end: 9;
+}
+
+#nextButtonDiv2 {
+  grid-column-start: 9;
+  grid-column-end: 13;
+}
+</style>
+
+<div id="trailTocFixedDiv">
+    <div id="trailTocFixedCloseButton">Close TOC</div>
+    <div id="trailTocFixedInnerDiv"></div>
+</div>
+
+<div id="bottomNavBar2Parent">
+    <div id="bottomNavBar2">
+
+        <div id="allTrailsButtonDiv2">
+            <span><img width="24" height="24" alt="All Tutorial Trails" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAbUlEQVRIx+3SQQrAIAxEUenNewrvmkXUQgVJEwWdQEED4kb+QzSEPw0z389yi6d3JJKaWY5ryBKgxSVS9jgF9OItQkRXRaBxDYHHJeISt34XND5EEHETQcY/iEfcvAkqbD7yAaYB1PkD7AB4TAY0StbUr69awQAAAABJRU5ErkJggg=="></span> <br>
+            <span class="navButton" style="position:relative; top:-4px;">All Trails</span>
+        </div>
+
+        <div id="trailTocButtonDiv2">
+            <span><img width="24" height="24" alt="Table of contents (TOC) for this tutorial trail" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAPElEQVRIx2P4TwPAgAzoZgEDrQDdLaB6cI1aMHgtoFriGRkWEB3eg9YHo0E08BaM8CAiWoLaFlAL0NwCANELs4XjmhvVAAAAAElFTkSuQmCC"></span> <br>
+            <span class="navButton" style="position:relative; top:-4px;">Trail TOC</span>
+        </div>
+
+        <div id="pageTocButtonDiv2">
+            <span><img width="24" height="24" alt="Table of contents (TOC) for this tutorial" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAANUlEQVRIx2NggIL/VAYM6GDUglELqGcBA4Vg1ALqWkBOhA4uH4wG0cBbMBpEw9QCagG6WQAAX980BcIgiscAAAAASUVORK5CYII="></span> <br>
+            <span class="navButton" style="position:relative; top:-4px;">Page TOC</span>
+        </div>
+
+        <div id="prevButtonDiv2">
+            <span><img width="24" height="24" alt="Previous tutorial in this tutorial trail" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuNvyMY98AAACCSURBVEhL3ZRRCsAgDEM9iez+dxJPUl0K9W+MtKMiC/RL80Lz0eKViNQxRpsvwnvHv8ssvGD8ORzjh7Odf4F34zxK30O1qImEV7Pw0nUJeEuFY/xwspZceKiWVLgqPUC1JQSAc0Iwh2+iZiIkdiqWdobknOslmM8JwcbxELaujSGl3GNH6mWcCMu2AAAAAElFTkSuQmCC"></span> <br>
+            <span class="navButton" style="position:relative; top:-4px;">Previous</span>
+        </div>
+
+        <div id="nextButtonDiv2">
+            <!--<span class="navButton" id="nextButton1_2" style="position:relative; top:-4px;">Next</span>-->
+            <span><img width="24" height="24" alt="Next tutorial in this tutorial trail" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAb0lEQVRIx82W2w1AIQhDmcS4/07GScDbu4AvUlMSv9QeA6RohnD3GhF9TAL7DeeK3cYuBEscgss6kBc16VlI2YTULKStIH9aMzXRgTxJlzaECpAQv+okaptSX35gFed+RBWn2jV14FBHJvVnwRT/AGJL6mWb6M7pAAAAAElFTkSuQmCC"></span> <br>
+            <span class="navButton" id="nextButton2_2" style="position:relative; top:-4px;">Next</span>
+        </div>
+
+    </div>
+</div>
+
+<!-- Top menu script -->
+<script>
+var state = {
+    menuVisible: false
+}
+
+event("topBarLogo", "mouseover", function() { console.log("mouse over topBarLogo"); } );
+event("logoLink"  , "click", function() { window.location.href = "/"; } );
+event("menuButton", "mouseover", function() { console.log("mouse over menuButton"); } );
+event("menuButton", "click", function() { toggleMenu(); } );
+
+function toggleMenu() {
+    if(state.menuVisible) {
+        eid("menuItems").style.display = "none";
+        eid("menuMainDivider").style.height = "82px";
+        eid("header").style["box-shadow"] = "0px 8px 6px -6px #999999";
+        state.menuVisible = false;
+    } else {
+        eid("menuItems").style.display = "block";
+        eid("menuMainDivider").style.height = "16px";
+        eid("header").style["box-shadow"] = "0px 8px 6px -6px #000000";
+        state.menuVisible = true;
+    }
+}
+
+function eid(elId){
+    return document.getElementById(elId);
+}
+function event(elId, eventId, f) {
+    eid(elId).addEventListener(eventId, function(e) { f(); e.stopPropagation(); });
+}
+</script>
+
+
+<!-- Nav bar code -->
+<script>
+var prevArticleInCategory = "";
+var nextArticleInCategory = "/tutorials/javafx/overview.html";
+
+function toggle(el){
+    if(el.isShown == null || el.isShown == false) {
+        el.isShown = true;
+        el.style.display = "block";
+    } else {
+        el.isShown = false;
+        el.style.display = "none";
+    }
+}
+
+qid("allTrailsButtonDiv2").addEventListener("mouseup", function(e) {
+    location.href="/";
+    e.preventDefault();
+    e.stopPropagation();
+});
+qid("trailTocButtonDiv2").addEventListener("mouseup", function(e) {
+    var tocHtml = qid("trailToc").innerHTML;
+    qid("trailTocFixedInnerDiv").innerHTML = tocHtml + "<br><br><br><br><br><br><br><br><br><br>";
+    toggle(qid("trailTocFixedDiv"));
+    e.preventDefault();
+    e.stopPropagation();
+});
+qid("trailTocFixedCloseButton").addEventListener("mouseup", function(e) {
+    toggle(qid("trailTocFixedDiv"));
+    e.preventDefault();
+    e.stopPropagation();
+});
+qid("pageTocButtonDiv2").addEventListener("mouseup", function(e) {
+    location.href="#pageToc";
+    e.preventDefault();
+    e.stopPropagation();
+});
+qid("prevButtonDiv2").addEventListener("mouseup", function(e) {
+    if(prevArticleInCategory != "") {
+        location.href = prevArticleInCategory;
+    } else {
+        alert("This is the first article in this trail");
+    }
+    e.preventDefault();
+    e.stopPropagation();
+});
+qid("nextButtonDiv2").addEventListener("mouseup", function(e) {
+  if(nextArticleInCategory != "") {
+    location.href= nextArticleInCategory;
+  } else {
+    alert("This is the last article in this trail.");
+  }
+  e.preventDefault();
+  e.stopPropagation();
+});
+</script>
+
+
+<script>
+function insertByCssClass(cssClass, html) {
+    var socialEls = document.getElementsByClassName(cssClass);
+
+    for(var i=0; i<socialEls.length; i++){
+        socialEls[i].innerHTML = html;
+    }
+}
+function soMeLink(href, title, src) { return '<a class="iconLink" href="'+href+'" title="'+title+'" target="_blank"><img alt="'+title+'" width="24" height="24" src="'+src+'"></a> '; }
+
+var soMeLinks =
+  soMeLink("https://twitter.com/#!/jjenkov", "Follow on Twitter", "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABpElEQVRIx2NgwAOUlZWVFBUVqxQUFPYC8XMg/gvFIPZekBxIDQOpQAkIgAashhr2nwAGqVkN0kOU4UBXxQA1fCbCYHT8GaSXkOFlZBiMgkFm4HM5RYYjWYLqE2iYkxMsOIMLJU6gEUqqIaCUdB1PQlgNT4rYFAG9uRVXqgHKpejp6TFBfa8BFJsPpEHx9xtZHTgJQ9M5hkEqKipyQLkkIPs7mtxM9PizsLBgAloQBZR7jObIKgZoJsKwAKjBCOpCNSB/KcwioKYIbIkEKLceizl7GaBhiS0lLNXS0mKCGaCmpsYDtMwO6G05HBZgSyTPGXBFEtAgI3V1dS5iMqeqqqoIrvjCaQEQzyW2aAH6NgSfBc9xSILioQIYTByELACq3Y4rKeOMZGg81BEyHOgIFzx5ZS/OZIqEF4LiA4fhckD5p3gcWIUro4GS5FsgPg5UVASMRC4shpsA5R/iK8bhdQWWogJkwUSgIXrIhurr64MylBkoAaDlWtxFBRGF3Xsgvgwtd4gtED9jVEA0La6RLKFdhYPmE9pUmWhxQptKHxlQo9kCAHsFA8aGHksTAAAAAElFTkSuQmCC")
++ soMeLink("http://www.linkedin.com/pub/jakob-jenkov/0/a8/4a3", "Connect on LinkedIn", "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABEklEQVRIx2NgwAOUlZWVFBUVqxQUFPYC8XMg/gvFIPZekBxIDQOpQAkIgAashhr2nwAGqVkN0kOU4UBXxQA1fCbCYHT8GaSXkOFlZBiMgkFm4HM5RYYjWYLqE2iYkxMsOIMLJU6gEYpL8XcoJtWS1fCkiCe1fAfKy4AwGZb8BSdhaDr/TwMLQHFRxQDNRP9pEEQgvJcBmitxKkKKp/9IKa5bTU2NT0VFRQoovh+P/ucMhHIrNguABosAg00MmgJ18MUDWRYA2beB+D6IbW1tzUTIApKDCCbX0tLChMzHFUR7aWjBXkLJlCILwMmUQEajBP+F1xUEigpy8Wr6FXY0L67pUuHQpcpEixPaVPrIgBrNFgAzO0iIN1MJVQAAAABJRU5ErkJggg==")
++ soMeLink("https://www.youtube.com/user/jjenkov", "Subscribe on YouTube", "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABNElEQVRIx7VWSwrCMBANxYW48gTS2kJFaBfiHdq1uxbP4cJNz+K6eIQeR3oAlyI6T0Zpwlj7MYEHJZN5k8zMS6pUy/B9f+l53tF13YpQE+4MfFewYY3qO5Y0iKBksscPYE0Jn07ktKs9OVw7EJu4wvcX+WEAsQZwtO18FHkjiH4SzvmQtHxNl1YTLui/yN8oP60odMuFjrkLgmARhuE8juNpkiSToigcAN+Ygw1rsBY+Zne9Wpj73Mxh3re14SPwHBWLSDNgV4Lo3LYA8BHSVClWpWaIomhmEtD8jXCi2q2lAPARAtRKUmue544QoKncMwXaNu1ZljmSyscE2HQN0DdFq74psltk623aVWhpmg4TGufX3lWBYf2y4xzau64bQew9OMZJ7DyZRk3sPPqGuEb/tjwB4iHvG88CuqcAAAAASUVORK5CYII=")
++ soMeLink("http://jenkov.com/rss.xml", "Subscribe to RSS Feed", "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABqUlEQVRIx71WwUrDQBANEqQnP6AUSZo0JDnkByLSU/HkB0g/o0jJVUrx5MGvkHxDzuKxZ/HgoeQsOXiQom9kVjbJZhON7cKDbDI7M/vezG4MQzMcxxnbtp1YlpUBObBj0HNG38jG+O0YY8BBys4+W0A2Ka3p5BxZzbGg6OC4ioLWtjm//oPjEsiHLvNezqUg5Z0w5zVa4jg2XdcdYsEM81vgtStdJU1Y0JphdZdBEJgIdtUxUPpTippquYfDJZKZknMRCLs6wbeHtur6LmGu8y7bzmG78DzvWNLtrkWLxOAmUhog01PKHs8rYMvvNzK/LTvJDO5KpYHM/2QyGSCjNdO5FUGYriZNckPXrcQ/VZDv+6ZEy5zXbARdLLxSB20ACc9wciYFWXMCC5qHYXjUsIudliLgA3gC3oB3EYToYk1yUV3cJ0qKGkUGzZdcyiMO8iLoQrAbtpnyfKYUWVemURQNpGp5ZFouuPvPhU4s9lBZprpGg8GKgtBOmC56n7DDkWhGmtOxomw03VHRE2nrYdcDRe0C2utxfZAL5yBXZkWT/Vz68viP35Yv1q4mS+AFuV8AAAAASUVORK5CYII=")
++ soMeLink("https://t.me/jenkov_com", "Subscribe to Telegram Channel", "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAA7EAAAOxAGVKw4bAAABv0lEQVRIx71WPUsDQRB9bya7FyQEI0QsJaSwsLKwFAsh/gArC/FnWARBUoullYWIiBxibRFSWVhbilhYBSuRVCbEIhs5l9vLaYgD09wy7+2++Togw1S1TrIJoA2gC2DgvAugTbKpqnX81lS1BiB2YMMJPgAQu5jJRnIPQC8HsO89F5sJfvAH4B/uMII3nwo8QfLzJU6/v8gSlMvPSTwF2AvJFoA773s8vn09Z7Uk/QPAuYhsVioVcZe89KtLVetwdZ4XuENy31pbKhaLVkR2Eyo8peSiCYyaKAv0meShqi6PkURkneSNiNQAwFq7EIhtA6Ou9A/eAZyJyEa1Wh1LAGNMieQJgAdVXUwQbgUIukjRP7bWzvllLCLbAF4A3BUKhVLO/hmkEfQAXJPcNcbMG2NK4wSSvIyiyKa00W0WQRdh/T9VdQ2jMXBcLpcF6faaJVFmkkkekbwIAMMYs5QR3xaSHWTYcDjcUdVTl4cVEVlJnvf7/fVQLMlOrkZT1VURWQPw5uTabzQa4kBaIf2Tu2LSqHjEqHST366iKFoEcB+Iib+f8h/DbrbjOkEyu4XjvWQ2K9PLyWyWvkc09W/LFx++dNA/GYlaAAAAAElFTkSuQmCC")
+  ;
+
+insertByCssClass("authorSocialLinks", soMeLinks);
+
+var authorPhoto = "<img width='56' height='64' src='data:image/jpeg;base64,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' alt='Jakob Jenkov' />"
+
+insertByCssClass("authorPhoto", authorPhoto);
+</script>
+
+
+<!-- Google Analytics Script -->
+<!--
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  //ga('create', 'UA-4036229-1', 'auto');
+  ga('create', 'UA-4036229-1', { 'storage': 'none' });
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+</script>
+-->
+
+
+</body></html>
