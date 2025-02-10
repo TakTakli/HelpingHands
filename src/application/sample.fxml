@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+
+<HBox xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <!-- Keeping your existing sidebar -->
+    <VBox prefWidth="200.0" style="-fx-background-color: #044DDB;" HBox.hgrow="NEVER">
+        <children>
+            <Button maxWidth="Infinity" prefHeight="50.0" mnemonicParsing="false" text="Profile" 
+                    styleClass="nav-button"/>
+            <Button maxWidth="Infinity" prefHeight="50.0" mnemonicParsing="false" text="Home" 
+                    styleClass="nav-button"/>
+            <Button maxWidth="Infinity" prefHeight="50.0" mnemonicParsing="false" text="Tracker" 
+                    styleClass="nav-button"/>
+            <Button maxWidth="Infinity" prefHeight="50.0" mnemonicParsing="false" text="Diet" 
+                    styleClass="nav-button"/>
+            <Button maxWidth="Infinity" prefHeight="50.0" mnemonicParsing="false" text="Calendar" 
+                    styleClass="nav-button"/>
+            <Button maxWidth="Infinity" prefHeight="50.0" mnemonicParsing="false" text="E-pharmacy" 
+                    styleClass="nav-button"/>
+            <Button maxWidth="Infinity" prefHeight="50.0" mnemonicParsing="false" text="Nearby Facilities" 
+                    styleClass="nav-button"/>
+            <Button maxWidth="Infinity" prefHeight="50.0" mnemonicParsing="false" text="Exercise Guide" 
+                    styleClass="nav-button"/>
+        </children>
+    </VBox>
+
+    <!-- Medication Tracker Main Content -->
+    <VBox HBox.hgrow="ALWAYS" spacing="20" style="-fx-background-color: white;">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
+        <!-- Header Section -->
+        <HBox alignment="CENTER_LEFT" spacing="20">
+            <Text styleClass="header-text" text="Medication Tracker"/>
+            <Button styleClass="add-med-button" text="+ Add New Medication"/>
+        </HBox>
+
+        <!-- Today's Medications -->
+        <VBox spacing="10" styleClass="section-box">
+            <Text styleClass="section-header" text="Today's Medications"/>
+            <GridPane vgap="10" hgap="10">
+                <!-- Morning Medications -->
+                <VBox GridPane.columnIndex="0" GridPane.rowIndex="0" 
+                      styleClass="time-slot-box">
+                    <Text text="Morning"/>
+                    <CheckBox text="Metformin 500mg"/>
+                    <CheckBox text="Vitamin D3"/>
+                </VBox>
+
+                <!-- Afternoon Medications -->
+                <VBox GridPane.columnIndex="1" GridPane.rowIndex="0" 
+                      styleClass="time-slot-box">
+                    <Text text="Afternoon"/>
+                    <CheckBox text="Glipizide 5mg"/>
+                </VBox>
+
+                <!-- Evening Medications -->
+                <VBox GridPane.columnIndex="2" GridPane.rowIndex="0" 
+                      styleClass="time-slot-box">
+                    <Text text="Evening"/>
+                    <CheckBox text="Metformin 500mg"/>
+                </VBox>
+
+                <!-- Night Medications -->
+                <VBox GridPane.columnIndex="3" GridPane.rowIndex="0" 
+                      styleClass="time-slot-box">
+                    <Text text="Night"/>
+                    <CheckBox text="Insulin Shot"/>
+                </VBox>
+            </GridPane>
+        </VBox>
+
+        <!-- Medication Schedule -->
+        <VBox spacing="10" styleClass="section-box">
+            <Text styleClass="section-header" text="Medication Schedule"/>
+            <TableView VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn text="Medication Name" prefWidth="150"/>
+                    <TableColumn text="Dosage" prefWidth="100"/>
+                    <TableColumn text="Time" prefWidth="100"/>
+                    <TableColumn text="With Food" prefWidth="100"/>
+                    <TableColumn text="Status" prefWidth="100"/>
+                </columns>
+            </TableView>
+        </VBox>
+
+        <!-- Medication Stats -->
+        <HBox spacing="20">
+            <VBox styleClass="stat-box">
+                <Text text="Today's Progress"/>
+                <Text text="4/6 Taken"/>
+            </VBox>
+            <VBox styleClass="stat-box">
+                <Text text="Weekly Adherence"/>
+                <Text text="92%"/>
+            </VBox>
+            <VBox styleClass="stat-box">
+                <Text text="Refills Needed"/>
+                <Text text="2 Medications"/>
+            </VBox>
+        </HBox>
+    </VBox>
+</HBox>

@@ -1,1 +1,70 @@
-/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+/* Existing sidebar styles */
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 0 20px;
+    -fx-border-width: 0;
+}
+
+.nav-button:hover {
+    -fx-background-color: #0339A6;
+}
+
+.nav-button:pressed {
+    -fx-background-color: #022C87;
+}
+
+/* New Medication Tracker styles */
+.header-text {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.add-med-button {
+    -fx-background-color: #044DDB;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 8 16;
+    -fx-background-radius: 5;
+}
+
+.section-box {
+    -fx-background-color: #f8f9fa;
+    -fx-padding: 15;
+    -fx-background-radius: 5;
+}
+
+.section-header {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.time-slot-box {
+    -fx-background-color: white;
+    -fx-padding: 10;
+    -fx-background-radius: 5;
+    -fx-border-color: #e9ecef;
+    -fx-border-radius: 5;
+}
+
+.stat-box {
+    -fx-background-color: #f8f9fa;
+    -fx-padding: 15;
+    -fx-background-radius: 5;
+    -fx-min-width: 150;
+    -fx-alignment: CENTER;
+}
+
+.table-view {
+    -fx-background-color: transparent;
+}
+
+.check-box {
+    -fx-padding: 5;
+}
+
+.check-box:selected .box {
+    -fx-background-color: #044DDB;
+}
