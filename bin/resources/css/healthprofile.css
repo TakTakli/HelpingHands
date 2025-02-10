@@ -68,18 +68,3 @@
 {
   -fx-text-fill: #7098d4
 }
-
-.check-box .text
-{
-  -fx-font-size: 20px;
-}
-
-.check-box:selected .box
-{
-  -fx-background-color: #044dbb;
-}
-
-.check-box:selected .mark
-{
-  -fx-background-color: #fff;
-}

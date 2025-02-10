@@ -12,9 +12,9 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent root= FXMLLoader.load(getClass().getResource("/resources/fxml/Main.fxml"));
+			Parent root= FXMLLoader.load(getClass().getResource("/controllers/HealthProfile.fxml"));
 			Scene scene = new Scene(root);
-			scene.getStylesheets().add(getClass().getResource("/resources/css/application.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("/resources/css/healthprofile.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {
