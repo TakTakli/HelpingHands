@@ -1,0 +1,52 @@
+@font-face {
+  src: url(../fonts/PlusJakartaSans-Regular.ttf);
+}
+@font-face {
+  src: url(../fonts/PlusJakartaSans-Medium.ttf);
+}
+@font-face {
+  src: url(../fonts/PlusJakartaSans-SemiBold.ttf);
+}
+@font-face {
+  src: url(../fonts/PlusJakartaSans-Bold.ttf);
+}
+
+
+.label
+{
+  /* -fx-font-family: "Plus Jakarta Sans Medium"; */
+  -fx-font-size: 24px;
+}
+#title
+{
+  -fx-font-family: "Plus Jakarta Sans SemiBold";
+  -fx-font-size: 44px;
+}
+.text-field
+{
+  -fx-border-width: 1 1 2 1;
+  -fx-border-radius: 4;
+  -fx-border-color: #b7bac4 #b7bac4 #044dbb #b7bac4;
+  -fx-background-color: #fff;
+  -fx-font-size: 24px;
+  -fx-font-family: "Plus Jakarta Sans";
+}
+
+#small-text
+{
+  -fx-font-family: "Plus Jakarta Sans";
+  -fx-font-size: 18px;
+  -fx-text-fill: #aeaeae
+}
+
+#dob
+{
+  -fx-border-width: 1px;
+  -fx-border-color: #b7bac4;
+  -fx-border-radius: 4;
+}
+
+.radio-button
+{
+  -fx-font-size: 20px;
+}
