@@ -81,6 +81,8 @@
 {
   -fx-background-color:#fff;
   -fx-border-color: #044dbb;
+  -fx-border-radius: 50;
+  -fx-border-width: 2;
 }
 .radio-button:selected > .radio > .dot {
   -fx-background-color: #044dbb;
@@ -98,9 +100,9 @@
 {
   -fx-background-color: #fff;
   -fx-border-color:#044dbb;
-  -fx-border-width: 4;
-  -fx-padding: 10;
-  -fx-font-size: 20;
+  -fx-border-width: 2;
+  -fx-padding: 4;
+  /*-fx-font-size: 20;*/
   -fx-text-fill:#19202c;
   -fx-font-family: "Plus Jakarta Sans Medium";
 } 

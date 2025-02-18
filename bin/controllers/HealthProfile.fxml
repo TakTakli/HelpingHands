@@ -211,52 +211,52 @@
                            <children>
                               <CheckBox id="check" fx:id="diabetescheck" mnemonicParsing="false" text="Diabetes" textFill="#19202c">
                                  <font>
-                                    <Font name="Plus Jakarta Sans Medium" size="12.0" />
+                                    <Font size="20.0" />
                                  </font>
                               </CheckBox>
                               <CheckBox id="check" fx:id="hypercheck" mnemonicParsing="false" text="Hypertension" textFill="#19202c" GridPane.rowIndex="1">
                                  <font>
-                                    <Font name="Plus Jakarta Sans Medium" size="12.0" />
+                                    <Font size="20.0" />
                                  </font></CheckBox>
                               <CheckBox id="check" mnemonicParsing="false" text="Low Blood Pressure" textFill="#19202c" GridPane.rowIndex="2">
                                  <font>
-                                    <Font name="Plus Jakarta Sans Medium" size="12.0" />
+                                    <Font size="20.0" />
                                  </font></CheckBox>
                               <CheckBox id="check" layoutX="10.0" layoutY="64.0" mnemonicParsing="false" text="Arthritis" textFill="#19202c" GridPane.rowIndex="3">
                                  <font>
-                                    <Font name="Plus Jakarta Sans Medium" size="12.0" />
+                                    <Font size="20.0" />
                                  </font></CheckBox>
                               <CheckBox id="check" layoutX="10.0" layoutY="9.0" mnemonicParsing="false" text="Chronic Bronchitis" textFill="#19202c" GridPane.columnIndex="1">
                                  <font>
-                                    <Font name="Plus Jakarta Sans Medium" size="12.0" />
+                                    <Font size="20.0" />
                                  </font></CheckBox>
                               <CheckBox id="check" mnemonicParsing="false" text="Fatty Liver" textFill="#19202c" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <font>
-                                    <Font name="Plus Jakarta Sans Medium" size="12.0" />
+                                    <Font size="20.0" />
                                  </font></CheckBox>
                               <CheckBox id="check" mnemonicParsing="false" text="Osteoporosis" textFill="#19202c" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <font>
-                                    <Font name="Plus Jakarta Sans Medium" size="12.0" />
+                                    <Font size="20.0" />
                                  </font></CheckBox>
                               <CheckBox id="check" mnemonicParsing="false" text="Chronic Kidney Disease" textFill="#19202c" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                  <font>
-                                    <Font name="Plus Jakarta Sans Medium" size="12.0" />
+                                    <Font size="20.0" />
                                  </font></CheckBox>
                               <CheckBox id="check" mnemonicParsing="false" text="Asthma" textFill="#19202c" GridPane.columnIndex="2">
                                  <font>
-                                    <Font name="Plus Jakarta Sans Medium" size="12.0" />
+                                    <Font size="20.0" />
                                  </font></CheckBox>
                               <CheckBox id="check" mnemonicParsing="false" text="Cancer" textFill="#19202c" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                  <font>
-                                    <Font name="Plus Jakarta Sans Medium" size="12.0" />
+                                    <Font size="20.0" />
                                  </font></CheckBox>
                               <CheckBox id="check" mnemonicParsing="false" text="Dementia" textFill="#19202c" GridPane.columnIndex="2" GridPane.rowIndex="2">
                                  <font>
-                                    <Font name="Plus Jakarta Sans Medium" size="12.0" />
+                                    <Font size="20.0" />
                                  </font></CheckBox>
                               <CheckBox id="check" mnemonicParsing="false" text="Alzheimer's" textFill="#19202c" GridPane.columnIndex="2" GridPane.rowIndex="3">
                                  <font>
-                                    <Font name="Plus Jakarta Sans Medium" size="12.0" />
+                                    <Font size="20.0" />
                                  </font></CheckBox>
                            </children>
                            <VBox.margin>
@@ -267,9 +267,14 @@
                            <children>
                               <CheckBox id="check" mnemonicParsing="false" text="Other:" textFill="#19202c">
                                  <font>
-                                    <Font name="Plus Jakarta Sans Medium" size="12.0" />
+                                    <Font name="Plus Jakarta Sans Medium" size="20.0" />
                                  </font></CheckBox>
                               <TextField fx:id="otherdis" prefHeight="8.0" prefWidth="242.0" />
+                              <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Add">
+                                 <HBox.margin>
+                                    <Insets left="8.0" />
+                                 </HBox.margin>
+                              </Button>
                            </children>
                         </HBox>
                      </children>
@@ -299,43 +304,43 @@
                            <children>
                               <CheckBox id="check" mnemonicParsing="false" text="Peanut" textFill="#19202c">
                                  <font>
-                                    <Font name="Plus Jakarta Sans Medium" size="12.0" />
+                                    <Font name="Plus Jakarta Sans Medium" size="20.0" />
                                  </font></CheckBox>
                               <CheckBox id="check" mnemonicParsing="false" text="Soy" textFill="#19202c" GridPane.rowIndex="1">
                                  <font>
-                                    <Font name="Plus Jakarta Sans Medium" size="12.0" />
+                                    <Font name="Plus Jakarta Sans Medium" size="20.0" />
                                  </font></CheckBox>
                               <CheckBox id="check" mnemonicParsing="false" text="Dairy" textFill="#19202c" GridPane.rowIndex="2">
                                  <font>
-                                    <Font name="Plus Jakarta Sans Medium" size="12.0" />
+                                    <Font name="Plus Jakarta Sans Medium" size="20.0" />
                                  </font></CheckBox>
                               <CheckBox id="check" layoutX="10.0" layoutY="64.0" mnemonicParsing="false" text="Eggs" textFill="#19202c" GridPane.rowIndex="3">
                                  <font>
-                                    <Font name="Plus Jakarta Sans Medium" size="12.0" />
+                                    <Font name="Plus Jakarta Sans Medium" size="20.0" />
                                  </font></CheckBox>
                               <CheckBox id="check" layoutX="10.0" layoutY="9.0" mnemonicParsing="false" text="Wheat" textFill="#19202c" GridPane.columnIndex="1">
                                  <font>
-                                    <Font name="Plus Jakarta Sans Medium" size="12.0" />
+                                    <Font name="Plus Jakarta Sans Medium" size="20.0" />
                                  </font></CheckBox>
                               <CheckBox id="check" mnemonicParsing="false" text="Tree Nuts" textFill="#19202c" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <font>
-                                    <Font name="Plus Jakarta Sans Medium" size="12.0" />
+                                    <Font name="Plus Jakarta Sans Medium" size="20.0" />
                                  </font></CheckBox>
                               <CheckBox id="check" mnemonicParsing="false" text="Shellfish" textFill="#19202c" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <font>
-                                    <Font name="Plus Jakarta Sans Medium" size="12.0" />
+                                    <Font name="Plus Jakarta Sans Medium" size="20.0" />
                                  </font></CheckBox>
                               <CheckBox id="check" mnemonicParsing="false" text="Beef" textFill="#19202c" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                  <font>
-                                    <Font name="Plus Jakarta Sans Medium" size="12.0" />
+                                    <Font name="Plus Jakarta Sans Medium" size="20.0" />
                                  </font></CheckBox>
                               <CheckBox id="check" mnemonicParsing="false" text="Pollen" textFill="#19202c" GridPane.columnIndex="2">
                                  <font>
-                                    <Font name="Plus Jakarta Sans Medium" size="12.0" />
+                                    <Font name="Plus Jakarta Sans Medium" size="20.0" />
                                  </font></CheckBox>
                               <CheckBox id="check" mnemonicParsing="false" text="Mold" textFill="#19202c" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                  <font>
-                                    <Font name="Plus Jakarta Sans Medium" size="12.0" />
+                                    <Font name="Plus Jakarta Sans Medium" size="20.0" />
                                  </font></CheckBox>
                            </children>
                            <VBox.margin>
@@ -346,9 +351,14 @@
                            <children>
                               <CheckBox id="check" mnemonicParsing="false" text="Other:" textFill="#19202c">
                                  <font>
-                                    <Font name="Plus Jakarta Sans Medium" size="12.0" />
+                                    <Font name="Plus Jakarta Sans Medium" size="20.0" />
                                  </font></CheckBox>
                               <TextField fx:id="otherallergy" prefHeight="8.0" prefWidth="242.0" />
+                              <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Add">
+                                 <HBox.margin>
+                                    <Insets left="8.0" />
+                                 </HBox.margin>
+                              </Button>
                            </children>
                         </HBox>
                      </children>
