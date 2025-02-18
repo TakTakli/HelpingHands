@@ -11,32 +11,41 @@
   src: url(../fonts/PlusJakartaSans-Bold.ttf);
 }
 
-.scroll-pane {
+
+#fku > .viewport {
+  -fx-background-color: transparent;
+}
+
+#fku {
   -fx-background-insets: 0;
   -fx-padding: 0;
+  -fx-background: #fff;
 }
 
-.scroll-pane:focused {
+
+#fku:focused {
   -fx-background-insets: 0;
 }
 
-.scroll-pane .corner {
+#fku .corner {
   -fx-background-insets: 0;
 }
 
-#headbar-sep .line
+#sub
 {
-  -fx-background-color: #044dbb;
-  -fx-pref-height: 2;
-  -fx-border-color: null;
+  -fx-text-fill: #044dbb;
+  -fx-font-family: "Plus Jakarta Sans Medium";
+  -fx-font-size: 24px;
 }
 
-.label
+#headers
 {
-  /* -fx-font-family: "Plus Jakarta Sans Medium"; */
+  -fx-font-family: "Plus Jakarta Sans Medium";
   -fx-font-size: 24px;
   -fx-text-fill: #19202c;
 }
+
+
 #title
 {
   -fx-font-family: "Plus Jakarta Sans SemiBold";
@@ -68,12 +77,8 @@
   -fx-border-radius: 4;
 }
 
-.radio-button
-{
-  -fx-font-size: 20px;
-}
 
-.radio-button:selected .radio .dot {
+.radio-button:selected > .radio > .dot {
   -fx-background-color: #044dbb;
   -fx-background-insets: 0;
 }
@@ -84,21 +89,19 @@
   -fx-text-fill: #7098d4
 }
 
-.check-box .text
-{
-  -fx-font-size: 20px;
-}
 
-.check-box
+#check .box
 {
   -fx-background-color: #fff;
-}
-.check-box:selected .box
+  -fx-padding: 20;
+} 
+
+#check:selected .box
 {
   -fx-background-color: #044dbb;
 }
 
-.check-box:selected .mark
+#check:selected .mark
 {
   -fx-background-color: #fff;
   -fx-color: #fff;
@@ -117,11 +120,13 @@
   -fx-font-size: 20;
   -fx-font-family: "Plus Jakarta Sans SemiBold";
   -fx-effect: none;
+  -fx-text-fill: #fff;
 }
 
 .button:focused
 {
   -fx-effect:none;
+  -fx-text-fill: #fff;
 }
 
 .button:hover
@@ -130,12 +135,16 @@
   -fx-background-color: #c9e8ff;
   -fx-text-fill: #044dbb;
 }
+
 .button:pressed
 {
   -fx-background-color: #adcce3;
   -fx-text-fill: #044dbb;
 }
+
+
+/* 
 .date-picker
 {
 
-}
+} */
