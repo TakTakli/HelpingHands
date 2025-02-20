@@ -1,0 +1,88 @@
+@font-face {
+  src: url(../fonts/PlusJakartaSans-Regular.ttf);
+}
+@font-face {
+  src: url(../fonts/PlusJakartaSans-Medium.ttf);
+}
+@font-face {
+  src: url(../fonts/PlusJakartaSans-SemiBold.ttf);
+}
+@font-face {
+  src: url(../fonts/PlusJakartaSans-Bold.ttf);
+}
+
+.root
+{
+  -fx-dark-blue: #044dbb;
+  -fx-black-text: #19202c;
+  -fx-dot-color: #c8deed;
+}
+
+.vbox
+{
+  -fx-background-color: #fff;
+}
+#logoimg
+{
+  -fx-background-image: url(../icons/helpinghands_logo.png);
+  -fx-background-size: contain;
+  -fx-background-repeat: stretch;
+  -fx-background-position: center center;
+}
+
+#trackimg
+{
+  -fx-background-image: url(../icons/tracker_onboarding_gfx.png);
+  -fx-background-size: contain;
+  -fx-background-repeat: stretch;
+  -fx-background-position: center center;
+  
+}
+
+#heading
+{
+  -fx-text-fill: -fx-black-text;
+  -fx-font-family: "Plus Jakarta Sans Bold";
+  -fx-font-size: 48;
+}
+
+#desc
+{
+  -fx-text-fill: -fx-dark-blue;
+  -fx-font-family: "Plus Jakarta Sans";
+  -fx-font-size: 28;
+}
+
+.dot
+{
+  -fx-fill: -fx-dot-color;
+}
+
+#selected-dot
+{
+  -fx-fill: -fx-dark-blue;
+}
+
+.button
+{
+  -fx-font-family: "Plus Jakarta Sans Medium";
+  -fx-font-size: 24;
+  -fx-text-fill:-fx-dark-blue;
+  -fx-background-color: #fff;
+  -fx-background-radius: 28;
+  -fx-border-radius: 28;
+  -fx-border-color: -fx-dark-blue;
+  -fx-border-width: 2;
+}
+
+.button:pressed
+{
+  -fx-background-color: -fx-dark-blue;
+  -fx-text-fill:#fff;
+}
+
+#getstarted
+{
+  -fx-text-fill:#fff;
+  -fx-background-color: -fx-dark-blue;
+}
