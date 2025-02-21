@@ -14,9 +14,9 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent root= FXMLLoader.load(getClass().getResource("/controllers/OnboardingScreen1.fxml"));
+			Parent root= FXMLLoader.load(getClass().getResource("/controllers/AccountExistOrNot.fxml"));
 			Scene scene = new Scene(root, Color.WHITE);
-			scene.getStylesheets().add(getClass().getResource("/resources/css/onboarding.css").toExternalForm());
+//			scene.getStylesheets().add(getClass().getResource("/resources/css/onboarding.css").toExternalForm());
 			primaryStage.setScene(scene);
 //			primaryStage.setFullScreen(true);
 			primaryStage.getIcons().add(new Image(Main.class.getResourceAsStream("/resources/icons/helpinghands_logo.png")));

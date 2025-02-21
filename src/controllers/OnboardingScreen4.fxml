@@ -25,12 +25,12 @@
             </ImageView>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Label id="heading" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="64.0" prefWidth="1280.0" text="Easy-to-Use &amp; Accessible" textAlignment="CENTER">
+                  <Label alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="64.0" prefWidth="1280.0" styleClass="heading" text="Easy-to-Use &amp; Accessible" textAlignment="CENTER">
                      <VBox.margin>
                         <Insets top="40.0" />
                      </VBox.margin>
                   </Label>
-                  <Label id="desc" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="121.0" prefWidth="754.0" text="Your comfort, our priority." textAlignment="CENTER" wrapText="true">
+                  <Label alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="121.0" prefWidth="754.0" styleClass="desc" text="Your comfort, our priority." textAlignment="CENTER" wrapText="true">
                      <VBox.margin>
                         <Insets top="-8.0" />
                      </VBox.margin>
@@ -45,13 +45,13 @@
                   <Circle fill="DODGERBLUE" radius="6.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="dot" />
                   <Circle fill="DODGERBLUE" radius="6.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="dot" />
                   <Circle fill="DODGERBLUE" radius="6.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="dot" />
-                  <Circle id="selected-dot" fill="DODGERBLUE" radius="6.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="dot" />
+                  <Circle fill="DODGERBLUE" radius="6.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="selected-dot" />
                </children>
                <VBox.margin>
                   <Insets top="20.0" />
                </VBox.margin>
             </HBox>
-            <Button fx:id="getstarted" contentDisplay="RIGHT" graphicTextGap="8.0" mnemonicParsing="false" onAction="#fadeout4" onMousePressed="#finalButtonClick" onMouseReleased="#finalButtonRelease" text="Get Started">
+            <Button fx:id="getstarted" contentDisplay="RIGHT" graphicTextGap="8.0" mnemonicParsing="false" onAction="#fadeout4" onMouseEntered="#getStartedButtonHover" onMouseExited="#getStartedButtonExit" onMousePressed="#getStartedButtonClick" onMouseReleased="#getStartedButtonRelease" text="Get Started">
                <VBox.margin>
                   <Insets top="32.0" />
                </VBox.margin>

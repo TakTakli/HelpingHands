@@ -12,39 +12,52 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class HealthProfileController implements Initializable {
-	@FXML private TextField fname=new TextField();
-	@FXML private TextField lname=new TextField();
-	@FXML private TextField phone=new TextField();
-	@FXML private TextField mail=new TextField();
-	@FXML private TextField otherdis=new TextField();
-	@FXML private TextField otherallergy=new TextField();
-	@FXML private Button submit = new Button();
-	@FXML private VBox rootvb = new VBox(); 
+public class LoginController implements Initializable {
+	@FXML private Button login = new Button();
+	@FXML private VBox rootvb = new VBox();
 	
-
-	
-	void getInputFromField()
+	public void loginButtonClick(MouseEvent e)
 	{
-	
+		login.setStyle(
+				  "-fx-text-fill:#044dbb;"+
+				  "-fx-background-color: #fff;"+
+				  "-fx-border-color: #044dbb;"
+				);
+	}
+	public void loginButtonRelease(MouseEvent e)
+	{
+		login.setStyle(
+				  "-fx-text-fill:#fff;"+
+				  "-fx-background-color: #044dbb;"
+				);
 	}
 	
-	void getSelectedCheckBox()
+	public void loginButtonHover(MouseEvent e)
 	{
-		
+		login.setStyle(
+				  "-fx-background-color: #bcdcfa;"+
+				  "-fx-text-fill:#044dbb;"
+				);
+	}
+	public void loginButtonExit(MouseEvent e)
+	{
+		login.setStyle(
+				"-fx-background-color: #044dbb;"+
+				"-fx-text-fill:#fff;"
+				);
 	}
 	
-	public void switchToSignupCheck()
+	private void switchToHome()
 	{
 		Parent root;
 		try 
 		{
-			root = FXMLLoader.load(getClass().getResource("/controllers/SignupOrNot.fxml"));
+			root = FXMLLoader.load(getClass().getResource("/controllers/HomeScreen.fxml"));
 			Scene scene = new Scene(root);
 			Stage stage= (Stage)rootvb.getScene().getWindow();
 			stage.setScene(scene);
@@ -56,16 +69,16 @@ public class HealthProfileController implements Initializable {
 		}
 	}
 	
-	public void fadeOutToSignup()
+	public void fadeOutToHome()
 	{
 		FadeTransition fade= new FadeTransition();
-		fade.setDuration(Duration.millis(1000));
+		fade.setDuration(Duration.millis(200));
 		fade.setNode(rootvb);
 		fade.setFromValue(1);
 		fade.setToValue(0);
 		fade.setOnFinished((ActionEvent e)->
 		{
-			switchToSignupCheck();
+			switchToHome();
 		});
 		fade.play();
 	}

@@ -39,14 +39,14 @@
   
 }
 
-#heading
+.heading
 {
   -fx-text-fill: -fx-black-text;
   -fx-font-family: "Plus Jakarta Sans Bold";
   -fx-font-size: 48;
 }
 
-#desc
+.desc
 {
   -fx-text-fill: -fx-dark-blue;
   -fx-font-family: "Plus Jakarta Sans";
@@ -58,7 +58,7 @@
   -fx-fill: -fx-dot-color;
 }
 
-#selected-dot
+.selected-dot
 {
   -fx-fill: -fx-dark-blue;
 }
@@ -75,14 +75,10 @@
   -fx-border-width: 2;
 }
 
-.button:pressed
-{
-  -fx-background-color: -fx-dark-blue;
-  -fx-text-fill:#fff;
-}
-
 #getstarted
 {
   -fx-text-fill:#fff;
   -fx-background-color: -fx-dark-blue;
 }
+
+

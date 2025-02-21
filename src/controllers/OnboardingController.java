@@ -30,40 +30,82 @@ public class OnboardingController {
 	
 	private FadeTransition fade=new FadeTransition();
 	
-	public void buttonClick(MouseEvent e)
+	private void setArrowWhite()
 	{
 		arrowbase.setStroke(Color.WHITE);
 		arrowtop.setStroke(Color.WHITE);
 		arrowbot.setStroke(Color.WHITE);
 	}
 	
-	public void buttonRelease(MouseEvent e)
+	private void setArrowBlue()
 	{
 		arrowbase.setStroke(Color.web("#044dbb"));
 		arrowtop.setStroke(Color.web("#044dbb"));
 		arrowbot.setStroke(Color.web("#044dbb"));
 	}
 	
-	public void finalButtonClick(MouseEvent e)
+	public void ButtonClicked(MouseEvent e)
+	{
+		next.setStyle(
+				"-fx-background-color: #044dbb;"+
+				"-fx-text-fill: #fff;");
+		this.setArrowWhite();
+	}
+	
+	public void ButtonReleased(MouseEvent e)
+	{
+		next.setStyle(
+				"-fx-background-color: #fff;"+
+				"-fx-text-fill: #044dbb;");
+		this.setArrowBlue();
+	}
+	
+	public void ButtonHover(MouseEvent e)
+	{
+		next.setStyle(
+				  "-fx-background-color: #bcdcfa;"+
+				  "-fx-text-fill:#044dbb;"
+				);
+		this.setArrowBlue();
+	}
+	public void ButtonExit(MouseEvent e)
+	{
+		next.setStyle("-fx-background-color: #fff");
+	}
+	
+	public void getStartedButtonClick(MouseEvent e)
 	{
 		getstarted.setStyle(
 				  "-fx-text-fill:#044dbb;"+
 				  "-fx-background-color: #fff;"+
 				  "-fx-border-color: #044dbb;"
 				);
-		arrowbase.setStroke(Color.web("#044dbb"));
-		arrowtop.setStroke(Color.web("#044dbb"));
-		arrowbot.setStroke(Color.web("#044dbb"));
+		setArrowBlue();
 	}
-	public void finalButtonRelease(MouseEvent e)
+	public void getStartedButtonRelease(MouseEvent e)
 	{
 		getstarted.setStyle(
 				  "-fx-text-fill:#fff;"+
 				  "-fx-background-color: #044dbb;"
 				);
-		arrowbase.setStroke(Color.WHITE);
-		arrowtop.setStroke(Color.WHITE);
-		arrowbot.setStroke(Color.WHITE);
+		setArrowWhite();
+	}
+	
+	public void getStartedButtonHover(MouseEvent e)
+	{
+		getstarted.setStyle(
+				  "-fx-background-color: #bcdcfa;"+
+				  "-fx-text-fill:#044dbb;"
+				);
+		setArrowBlue();
+	}
+	public void getStartedButtonExit(MouseEvent e)
+	{
+		getstarted.setStyle(
+				"-fx-background-color: #044dbb;"+
+						"-fx-text-fill:#fff;"
+				);
+		setArrowWhite();
 	}
 	
 	public void fadeout1()
@@ -110,7 +152,7 @@ public class OnboardingController {
 		fade.setToValue(0);
 		fade.setOnFinished((ActionEvent e)->
 		{
-			switchToHealthProfile();
+			switchToAccountCheck();
 		});
 		fade.play();
 	}
@@ -169,12 +211,12 @@ public class OnboardingController {
 		}
 
 	}
-	public void switchToHealthProfile()
+	public void switchToAccountCheck()
 	{
 		Parent root;
 		try 
 		{
-			root = FXMLLoader.load(getClass().getResource("/controllers/HealthProfile.fxml"));
+			root = FXMLLoader.load(getClass().getResource("/controllers/AccountExistOrNot.fxml"));
 			Scene scene = new Scene(root);
 			Stage stage= (Stage)vb4.getScene().getWindow();
 			stage.setScene(scene);
