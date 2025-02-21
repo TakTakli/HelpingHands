@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="536.0" prefWidth="477.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.loginpagecontrol">
+   <children>
+      <AnchorPane prefHeight="526.0" prefWidth="478.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <AnchorPane layoutX="15.0" layoutY="15.0" prefHeight="506.0" prefWidth="447.0" style="-fx-border-color: #044DDB; -fx-border-width: 2; -fx-border-radius: 4;">
+               <children>
+                  <Label layoutX="137.0" layoutY="119.0" text="Login Account" textFill="#044ddb">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="26.0" />
+                     </font>
+                  </Label>
+                  <TextField id="Username" layoutX="72.0" layoutY="182.0" prefHeight="26.0" prefWidth="317.0" promptText="Username" style="-fx-border-color: #000000; -fx-border-width: 1; -fx-border-radius: 4;" />
+                  <TextField layoutX="72.0" layoutY="229.0" prefHeight="26.0" prefWidth="318.0" promptText="Password" visible="false" />
+                  <Button id="Login" layoutX="120.0" layoutY="356.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="218.0" style="-fx-background-color: #044DDB;" text="Login" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="26.0" />
+                     </font>
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </Button>
+                  <Label layoutX="72.0" layoutY="163.0" text="Username" />
+                  <TextField id="Email" layoutX="72.0" layoutY="240.0" prefHeight="26.0" prefWidth="317.0" promptText="Email" style="-fx-border-color: #000000; -fx-border-width: 1; -fx-border-radius: 4;" />
+                  <Label layoutX="72.0" layoutY="220.0" text="Email" />
+                  <Label layoutX="72.0" layoutY="285.0" text="Password" />
+                  <PasswordField id="Password" layoutX="72.0" layoutY="303.0" prefHeight="26.0" prefWidth="318.0" promptText="Password" style="-fx-border-color: #000000; -fx-border-width: 1; -fx-border-radius: 4;" />
+                  <TextField layoutX="72.0" layoutY="304.0" prefHeight="26.0" prefWidth="318.0" visible="false" />
+                  <Button id="signup" layoutX="248.0" layoutY="443.0" mnemonicParsing="false" text="Sign Up" />
+                  <Label layoutX="89.0" layoutY="449.0" text="Don't have an account?" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

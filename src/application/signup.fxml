@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.signupcontrol">
+   <children>
+      <TextField id="Username" layoutX="97.0" layoutY="108.0" prefHeight="26.0" prefWidth="362.0" text="Username" />
+      <TextField id="Email" layoutX="97.0" layoutY="155.0" prefHeight="26.0" prefWidth="362.0" text="Email" />
+      <TextField id="Password" layoutX="97.0" layoutY="209.0" prefHeight="26.0" prefWidth="362.0" text="Password" />
+      <Button id="Signup" layoutX="222.0" layoutY="271.0" mnemonicParsing="false" text="SignUp" />
+      <Label layoutX="112.0" layoutY="318.0" text="Already signedup?" />
+      <Button id="login" layoutX="262.0" layoutY="323.0" mnemonicParsing="false" text="Login" />
+   </children>
+</AnchorPane>
