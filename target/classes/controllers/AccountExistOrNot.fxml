@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="beginvb" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AccountExistingController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="359.0" prefWidth="1280.0">
+         <children>
+            <Label alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="64.0" prefWidth="1280.0" styleClass="heading" text="Before we begin" textAlignment="CENTER">
+               <VBox.margin>
+                  <Insets bottom="40.0" />
+               </VBox.margin>
+            </Label>
+            <HBox alignment="TOP_CENTER" prefHeight="72.0" prefWidth="1280.0">
+               <children>
+                  <ImageView fitHeight="92.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" scaleX="2.0" scaleY="2.0" translateX="36.0" translateY="-40.0">
+                     <image>
+                        <Image url="@../resources/icons/signup_begin_left.png" />
+                     </image>
+                  </ImageView>
+                  <Label id="accountexist" alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="44.0" prefWidth="694.0" styleClass="desc" text="Do you already have a HelpingHands account?" textAlignment="CENTER" wrapText="true">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin></Label>
+                  <ImageView fitHeight="97.0" fitWidth="112.0" pickOnBounds="true" preserveRatio="true" scaleX="2.0" scaleY="2.0" translateX="-44.0" translateY="-40.0">
+                     <image>
+                        <Image url="@../resources/icons/signup_begin_right.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="117.0" prefWidth="1280.0" spacing="40.0">
+               <children>
+                  <Button fx:id="login" contentDisplay="RIGHT" graphicTextGap="8.0" mnemonicParsing="false" onAction="#fadeOutToLoginScreen" onMouseEntered="#loginButtonHover" onMouseExited="#loginButtonExit" onMousePressed="#loginButtonClick" onMouseReleased="#loginButtonRelease" style="-fx-background-color: #044dbb; -fx-text-fill: white;" text="Yes, login">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <VBox alignment="CENTER" prefHeight="84.0" prefWidth="192.0" spacing="8.0">
+                     <children>
+                        <Button fx:id="proceed" contentDisplay="RIGHT" graphicTextGap="8.0" mnemonicParsing="false" onAction="#fadeOutToHealthProfile" onMouseEntered="#proceedButtonHover" onMouseExited="#proceedButtonExit" onMousePressed="#proceedButtonClicked" onMouseReleased="#proceedButtonReleased" prefHeight="52.0" prefWidth="192.0" text="No, proceed" />
+                        <Label id="proceedtxt" prefHeight="70.0" prefWidth="192.0" text="You will get the option to create one later" textAlignment="CENTER" wrapText="true" />
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <stylesheets>
+      <URL value="@../resources/css/onboarding.css" />
+      <URL value="@../resources/css/signup.css" />
+   </stylesheets>
+</VBox>
