@@ -1,0 +1,52 @@
+@font-face {
+  src: url(../fonts/PlusJakartaSans-Regular.ttf);
+}
+@font-face {
+  src: url(../fonts/PlusJakartaSans-Medium.ttf);
+}
+@font-face {
+  src: url(../fonts/PlusJakartaSans-SemiBold.ttf);
+}
+@font-face {
+  src: url(../fonts/PlusJakartaSans-Bold.ttf);
+}
+
+.root
+{
+  -fx-dark-blue: #044dbb;
+  -fx-black-text: #19202c;
+  -fx-dot-color: #c8deed;
+}
+
+#accountexist
+{
+  -fx-font-family: "Plus Jakarta Sans SemiBold";
+}
+
+#proceedtxt
+{
+  -fx-text-fill: #717171;
+  -fx-font-family: "Plus Jakarta Sans";
+  -fx-font-size: 18;
+}
+
+#beginvb
+{
+  -fx-background-image: url(../icons/signup_BG_IMGv1.png);
+  -fx-background-repeat: no-repeat;
+  -fx-background-size: contain;
+  -fx-background-position: center;
+  
+}
+
+/* #login
+{
+  -fx-text-fill:#fff;
+  -fx-background-color: -fx-dark-blue;
+}
+
+#login:pressed
+{
+  -fx-text-fill:-fx-dark-blue;
+  -fx-background-color: #fff;
+} */

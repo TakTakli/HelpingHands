@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="rootvb" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;" stylesheets="@../resources/css/healthprofile.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HealthProfileController">
+   <children>
+      <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1280.0" style="-fx-background-color: #044dbb;">
+         <children>
+            <Label fx:id="title" prefHeight="65.0" prefWidth="290.0" text="Health Profile">
+               <HBox.margin>
+                  <Insets left="60.0" top="20.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <ScrollPane id="fku" prefHeight="964.0" prefWidth="1280.0" vbarPolicy="ALWAYS">
+         <content>
+            <VBox prefHeight="2065.0" prefWidth="1268.0" spacing="36.0">
+               <children>
+                  <VBox fillWidth="false" prefHeight="88.0" prefWidth="1220.0">
+                     <children>
+                        <Label id="head" text="Personal Details :">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Separator id="sep" prefWidth="2600.0" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets bottom="12.0" />
+                           </VBox.margin>
+                        </Separator>
+                        <Label id="headers" text="Name :">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="8.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets top="12.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" fillHeight="false" prefHeight="57.0" prefWidth="1220.0">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <children>
+                              <VBox fillWidth="false" prefHeight="66.0" prefWidth="450.0">
+                                 <children>
+                                    <TextField fx:id="fname" prefHeight="36.0" prefWidth="360.0" scaleShape="false" />
+                                    <Label id="small-text" text="First Name">
+                                       <VBox.margin>
+                                          <Insets top="8.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox fillWidth="false" prefHeight="66.0" prefWidth="450.0">
+                                 <children>
+                                    <TextField fx:id="lname" prefHeight="36.0" prefWidth="360.0" scaleShape="false" />
+                                    <Label id="small-text" text="Last Name">
+                                       <VBox.margin>
+                                          <Insets top="8.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="36.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <VBox fillWidth="false" prefHeight="88.0" prefWidth="1220.0">
+                     <children>
+                        <HBox fillHeight="false" prefHeight="57.0" prefWidth="1220.0">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <children>
+                              <VBox fillWidth="false" prefHeight="66.0" prefWidth="450.0">
+                                 <children>
+                                    <Label id="headers" text="Phone Number :">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="8.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="phone" prefHeight="36.0" prefWidth="360.0" scaleShape="false" />
+                                 </children>
+                              </VBox>
+                              <VBox fillWidth="false" prefHeight="66.0" prefWidth="450.0">
+                                 <children>
+                                    <Label id="headers" text="Email Address :">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="8.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="mail" prefHeight="36.0" prefWidth="360.0" scaleShape="false" />
+                                    <Label id="small-text" text="example123@example-mail.com">
+                                       <VBox.margin>
+                                          <Insets top="8.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="203.0">
+                     <children>
+                        <Label id="headers" alignment="TOP_LEFT" prefHeight="40.0" prefWidth="162.0" text="Date of Birth :">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="8.0" />
+                           </padding>
+                        </Label>
+                        <DatePicker fx:id="dob" prefHeight="10.0" prefWidth="203.0" />
+                        <Label id="small-text" text="MM/DD/YYYY">
+                           <VBox.margin>
+                              <Insets top="8.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </VBox>
+                  <VBox prefHeight="103.0" prefWidth="1268.0">
+                     <children>
+                        <Label id="headers" alignment="TOP_LEFT" prefHeight="39.0" prefWidth="140.0" text="Gender :">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="8.0" />
+                           </VBox.margin>
+                        </Label>
+                        <RadioButton fx:id="male" mnemonicParsing="false" text="Male" textFill="#19202c">
+                           <VBox.margin>
+                              <Insets bottom="12.0" />
+                           </VBox.margin>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="gender" />
+                           </toggleGroup>
+                           <font>
+                              <Font name="Plus Jakarta Sans Regular" size="20.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton fx:id="female" mnemonicParsing="false" text="Female" textFill="#19202c" toggleGroup="$gender">
+                           <font>
+                              <Font name="Plus Jakarta Sans Regular" size="20.0" />
+                           </font></RadioButton>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label id="head" text="Diagnosis : " />
+                        <Separator id="sep" prefWidth="0.0" VBox.vgrow="ALWAYS" />
+                        <Label id="choosetxt" text="Choose all that apply.">
+                           <VBox.margin>
+                              <Insets top="8.0" />
+                           </VBox.margin>
+                        </Label>
+                        <GridPane hgap="12.0" prefHeight="169.0" prefWidth="1208.0" vgap="48.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="697.0" minWidth="10.0" prefWidth="607.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="605.0" minWidth="10.0" prefWidth="601.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="605.0" minWidth="10.0" prefWidth="601.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <CheckBox id="check" fx:id="diabetescheck" mnemonicParsing="false" text="Diabetes" textFill="#19202c">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </CheckBox>
+                              <CheckBox id="check" fx:id="hypercheck" mnemonicParsing="false" text="Hypertension" textFill="#19202c" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font></CheckBox>
+                              <CheckBox id="check" mnemonicParsing="false" text="Low Blood Pressure" textFill="#19202c" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font></CheckBox>
+                              <CheckBox id="check" layoutX="10.0" layoutY="64.0" mnemonicParsing="false" text="Arthritis" textFill="#19202c" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font></CheckBox>
+                              <CheckBox id="check" layoutX="10.0" layoutY="9.0" mnemonicParsing="false" text="Chronic Bronchitis" textFill="#19202c" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font></CheckBox>
+                              <CheckBox id="check" mnemonicParsing="false" text="Fatty Liver" textFill="#19202c" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font></CheckBox>
+                              <CheckBox id="check" mnemonicParsing="false" text="Osteoporosis" textFill="#19202c" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font></CheckBox>
+                              <CheckBox id="check" mnemonicParsing="false" text="Chronic Kidney Disease" textFill="#19202c" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font></CheckBox>
+                              <CheckBox id="check" mnemonicParsing="false" text="Asthma" textFill="#19202c" GridPane.columnIndex="2">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font></CheckBox>
+                              <CheckBox id="check" mnemonicParsing="false" text="Cancer" textFill="#19202c" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font></CheckBox>
+                              <CheckBox id="check" mnemonicParsing="false" text="Dementia" textFill="#19202c" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font></CheckBox>
+                              <CheckBox id="check" mnemonicParsing="false" text="Alzheimer's" textFill="#19202c" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font></CheckBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="32.0" />
+                           </VBox.margin>
+                        </GridPane>
+                        <HBox alignment="CENTER_LEFT" fillHeight="false" prefHeight="0.0" prefWidth="398.0" spacing="8.0">
+                           <children>
+                              <CheckBox id="check" mnemonicParsing="false" text="Other:" textFill="#19202c">
+                                 <font>
+                                    <Font name="Plus Jakarta Sans Medium" size="20.0" />
+                                 </font></CheckBox>
+                              <TextField fx:id="otherdis" prefHeight="8.0" prefWidth="242.0" />
+                              <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Add">
+                                 <HBox.margin>
+                                    <Insets left="8.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label id="head" text="Allergies :" />
+                        <Separator id="sep" prefHeight="0.0" prefWidth="1920.0" VBox.vgrow="ALWAYS" />
+                        <Label id="choosetxt" fx:id="choosetxt1" text="Choose all that apply.">
+                           <VBox.margin>
+                              <Insets top="8.0" />
+                           </VBox.margin>
+                        </Label>
+                        <GridPane hgap="12.0" prefHeight="169.0" prefWidth="1208.0" vgap="48.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="697.0" minWidth="10.0" prefWidth="607.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="605.0" minWidth="10.0" prefWidth="601.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="605.0" minWidth="10.0" prefWidth="601.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <CheckBox id="check" mnemonicParsing="false" text="Peanut" textFill="#19202c">
+                                 <font>
+                                    <Font name="Plus Jakarta Sans Medium" size="20.0" />
+                                 </font></CheckBox>
+                              <CheckBox id="check" mnemonicParsing="false" text="Soy" textFill="#19202c" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Plus Jakarta Sans Medium" size="20.0" />
+                                 </font></CheckBox>
+                              <CheckBox id="check" mnemonicParsing="false" text="Dairy" textFill="#19202c" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Plus Jakarta Sans Medium" size="20.0" />
+                                 </font></CheckBox>
+                              <CheckBox id="check" layoutX="10.0" layoutY="64.0" mnemonicParsing="false" text="Eggs" textFill="#19202c" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Plus Jakarta Sans Medium" size="20.0" />
+                                 </font></CheckBox>
+                              <CheckBox id="check" layoutX="10.0" layoutY="9.0" mnemonicParsing="false" text="Wheat" textFill="#19202c" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="Plus Jakarta Sans Medium" size="20.0" />
+                                 </font></CheckBox>
+                              <CheckBox id="check" mnemonicParsing="false" text="Tree Nuts" textFill="#19202c" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Plus Jakarta Sans Medium" size="20.0" />
+                                 </font></CheckBox>
+                              <CheckBox id="check" mnemonicParsing="false" text="Shellfish" textFill="#19202c" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Plus Jakarta Sans Medium" size="20.0" />
+                                 </font></CheckBox>
+                              <CheckBox id="check" mnemonicParsing="false" text="Beef" textFill="#19202c" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Plus Jakarta Sans Medium" size="20.0" />
+                                 </font></CheckBox>
+                              <CheckBox id="check" mnemonicParsing="false" text="Pollen" textFill="#19202c" GridPane.columnIndex="2">
+                                 <font>
+                                    <Font name="Plus Jakarta Sans Medium" size="20.0" />
+                                 </font></CheckBox>
+                              <CheckBox id="check" mnemonicParsing="false" text="Mold" textFill="#19202c" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Plus Jakarta Sans Medium" size="20.0" />
+                                 </font></CheckBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="32.0" />
+                           </VBox.margin>
+                        </GridPane>
+                        <HBox alignment="CENTER_LEFT" fillHeight="false" prefHeight="0.0" prefWidth="398.0" spacing="8.0">
+                           <children>
+                              <CheckBox id="check" mnemonicParsing="false" text="Other:" textFill="#19202c">
+                                 <font>
+                                    <Font name="Plus Jakarta Sans Medium" size="20.0" />
+                                 </font></CheckBox>
+                              <TextField fx:id="otherallergy" prefHeight="8.0" prefWidth="242.0" />
+                              <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Add">
+                                 <HBox.margin>
+                                    <Insets left="8.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <children>
+                        <Label id="head" text="Medication" />
+                        <Separator id="sep" prefHeight="0.0" prefWidth="1920.0" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Separator>
+                        <Label id="choosetxt" fx:id="choosetxt12" text="Add your prescribed medication (if any). Click &quot;Add More&quot; to list multiple medications.">
+                           <VBox.margin>
+                              <Insets top="8.0" />
+                           </VBox.margin>
+                        </Label>
+                        <GridPane hgap="20.0" minHeight="-Infinity" prefHeight="120.0" prefWidth="1208.0" vgap="20.0" VBox.vgrow="ALWAYS">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" prefWidth="470.5" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="717.5" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="-Infinity" prefHeight="48.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="-Infinity" prefHeight="48.0" />
+                            <RowConstraints maxHeight="21.5" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <TextField prefHeight="44.0" prefWidth="568.0" />
+                              <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Add" GridPane.columnIndex="1" />
+                              <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="136.0" text="Add More" GridPane.rowIndex="1" />
+                           </children>
+                           <VBox.margin>
+                              <Insets right="60.0" top="32.0" />
+                           </VBox.margin>
+                        </GridPane>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label id="head" text="Emergency Contact:" />
+                        <Separator id="sep" prefHeight="0.0" prefWidth="1920.0" VBox.vgrow="ALWAYS" />
+                        <Label id="choosetxt" fx:id="choosetxt11" text="Tell us who to contact in case of an emergency.">
+                           <VBox.margin>
+                              <Insets top="8.0" />
+                           </VBox.margin></Label>
+                        <Label id="headers" text="Name :">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="8.0" top="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" fillHeight="false" prefHeight="57.0" prefWidth="1220.0">
+                           <children>
+                              <VBox fillWidth="false" prefHeight="66.0" prefWidth="450.0">
+                                 <children>
+                                    <TextField fx:id="fname1" prefHeight="36.0" prefWidth="360.0" scaleShape="false" />
+                                    <Label id="small-text" text="First Name">
+                                       <VBox.margin>
+                                          <Insets top="8.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox fillWidth="false" prefHeight="66.0" prefWidth="450.0">
+                                 <children>
+                                    <TextField fx:id="lname1" prefHeight="36.0" prefWidth="360.0" scaleShape="false" />
+                                    <Label id="small-text" text="Last Name">
+                                       <VBox.margin>
+                                          <Insets top="8.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox fillHeight="false" prefHeight="57.0" prefWidth="1220.0">
+                           <children>
+                              <VBox fillWidth="false" prefHeight="66.0" prefWidth="450.0">
+                                 <children>
+                                    <Label id="headers" text="Phone Number :">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="8.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextField fx:id="phone1" prefHeight="36.0" prefWidth="360.0" scaleShape="false" />
+                                 </children>
+                              </VBox>
+                              <VBox fillWidth="false" prefHeight="66.0" prefWidth="450.0">
+                                 <children>
+                                    <Label id="headers" text="Email Address :">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="8.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="mail1" prefHeight="36.0" prefWidth="360.0" scaleShape="false" />
+                                    <Label id="small-text" text="example123@example-mail.com">
+                                       <VBox.margin>
+                                          <Insets top="8.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </VBox>
+                  <Label id="headers" text="Click &quot;Submit&quot; to save your profile.">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="8.0" />
+                     </padding>
+                  </Label>
+                  <Button fx:id="submit" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#switchToSignupCheck" text="Submit">
+                     <VBox.margin>
+                        <Insets bottom="60.0" top="-28.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+            </VBox>
+         </content>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </ScrollPane>
+   </children>
+</VBox>
