@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
 <VBox fx:id="rootvb" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;" stylesheets="@../resources/css/registrationform.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RegistrationController">
    <children>
@@ -20,42 +15,46 @@
          <children>
             <VBox prefHeight="108.0" prefWidth="460.0">
                <children>
-                  <Label alignment="TOP_LEFT" text="Username" />
-                  <TextField prefHeight="60.0" prefWidth="460.0" promptText="example123" />
+                  <Label text="Username"/>
+                  <TextField fx:id="username" prefHeight="60.0" prefWidth="460.0" promptText="example123"/>
                </children>
-               <VBox.margin>
-                  <Insets top="-100.0" />
-               </VBox.margin>
             </VBox>
+
             <VBox prefHeight="108.0" prefWidth="460.0">
                <children>
-                  <Label alignment="TOP_LEFT" text="E-mail" />
-                  <TextField prefHeight="60.0" prefWidth="460.0" promptText="example123@examplemail.com" />
+                  <Label text="E-mail"/>
+                  <TextField fx:id="email" prefHeight="60.0" prefWidth="460.0" promptText="example123@examplemail.com"/>
                </children>
             </VBox>
+
             <VBox prefHeight="108.0" prefWidth="460.0">
                <children>
-                  <Label alignment="TOP_LEFT" text="Password" />
-                  <PasswordField prefHeight="60.0" prefWidth="460.0" promptText="At least 6 characters" />
+                  <Label text="Password"/>
+                  <PasswordField fx:id="password" prefHeight="60.0" prefWidth="460.0" promptText="Password"/>
+                  <TextField fx:id="passwordVisible" prefHeight="60.0" prefWidth="460.0" promptText="Password" visible="false"/>
                </children>
             </VBox>
-            <HBox alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="460.0" spacing="12.0">
+
+            <HBox alignment="CENTER_RIGHT" spacing="12.0" prefHeight="27.0" prefWidth="460.0">
                <children>
-                  <CheckBox alignment="CENTER_RIGHT" mnemonicParsing="false" />
-                  <Label id="showpass" text="Show password?" />
+                  <CheckBox fx:id="showPassword" text="Show password?" mnemonicParsing="false" onAction="#togglePasswordVisibility"/>
                </children>
             </HBox>
-            <Button fx:id="signup" mnemonicParsing="false" onAction="#fadeOutToHome" onMouseEntered="#signupButtonHover" onMouseExited="#signupButtonExit" onMousePressed="#signupButtonClick" onMouseReleased="#signupButtonRelease" prefHeight="52.0" prefWidth="171.0" text="Sign Up">
+
+            <Button fx:id="signup" text="Sign Up" prefHeight="52.0" prefWidth="171.0"
+                    onAction="#signup" onMouseEntered="#signupButtonHover"
+                    onMouseExited="#signupButtonExit" onMousePressed="#signupButtonClick"
+                    onMouseReleased="#signupButtonRelease">
                <VBox.margin>
-                  <Insets top="36.0" />
+                  <Insets top="36.0"/>
                </VBox.margin>
             </Button>
          </children>
          <VBox.margin>
-            <Insets top="20.0" />
+            <Insets top="20.0"/>
          </VBox.margin>
          <padding>
-            <Insets top="16.0" />
+            <Insets top="16.0"/>
          </padding>
       </VBox>
    </children>
