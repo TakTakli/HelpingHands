@@ -20,23 +20,31 @@
          <children>
             <VBox prefHeight="108.0" prefWidth="460.0">
                <children>
-                  <Label alignment="TOP_LEFT" text="Username" />
-                  <TextField prefHeight="60.0" prefWidth="460.0" promptText="example123" />
+
+    
+                  <Label alignment="TOP_LEFT" text="Username or Email" />
+                  <TextField fx:id="usernameOrEmail" prefHeight="60.0" prefWidth="460.0" promptText="example123 or email@example.com" />
                </children>
             </VBox>
+
             <VBox prefHeight="108.0" prefWidth="460.0">
                <children>
                   <Label alignment="TOP_LEFT" text="Password" />
-                  <PasswordField prefHeight="60.0" prefWidth="460.0" promptText="At least 6 characters" />
+                  <PasswordField fx:id="password" prefHeight="60.0" prefWidth="460.0" promptText="Password" />
+                  <TextField fx:id="passwordVisible" prefHeight="60.0" prefWidth="460.0" promptText="Password" visible="false"/>
                </children>
             </VBox>
+
             <HBox alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="460.0" spacing="12.0">
                <children>
-                  <CheckBox alignment="CENTER_RIGHT" mnemonicParsing="false" />
-                  <Label id="showpass" text="Show password?" />
+                  <CheckBox fx:id="showPassword" alignment="CENTER_RIGHT" mnemonicParsing="false" text="Show password?" onAction="#togglePasswordVisibility" />
                </children>
             </HBox>
-            <Button fx:id="login" mnemonicParsing="false" onMouseEntered="#loginButtonHover" onMouseExited="#loginButtonExit" onMousePressed="#loginButtonClick" onMouseReleased="#loginButtonRelease" prefHeight="52.0" prefWidth="171.0" text="Login">
+
+            <Button fx:id="login" mnemonicParsing="false" onAction="#handleLogin"
+                    onMouseEntered="#loginButtonHover" onMouseExited="#loginButtonExit"
+                    onMousePressed="#loginButtonClick" onMouseReleased="#loginButtonRelease"
+                    prefHeight="52.0" prefWidth="171.0" text="Login">
                <VBox.margin>
                   <Insets top="36.0" />
                </VBox.margin>
@@ -45,9 +53,6 @@
          <VBox.margin>
             <Insets top="-40.0" />
          </VBox.margin>
-         <padding>
-            <Insets top="16.0" />
-         </padding>
       </VBox>
    </children>
 </VBox>
