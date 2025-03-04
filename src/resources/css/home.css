@@ -1,0 +1,52 @@
+@font-face {
+  src: url(../fonts/PlusJakartaSans-Regular.ttf);
+}
+@font-face {
+  src: url(../fonts/PlusJakartaSans-Medium.ttf);
+}
+@font-face {
+  src: url(../fonts/PlusJakartaSans-SemiBold.ttf);
+}
+@font-face {
+  src: url(../fonts/PlusJakartaSans-Bold.ttf);
+}
+
+.root
+{
+  -fx-dark-blue: #044dbb;
+  -fx-black-text: #19202c;
+  -fx-dot-color: #c8deed;
+  -fx-font-family: "Plus Jakarta Sans";
+}
+
+#logotxt
+{
+  -fx-text-fill: #044dbb;
+  -fx-font-size: 40;
+  -fx-font-family: "Plus Jakarta Sans Bold";
+  -fx-letter-spacing: -3%;
+}
+
+/* #logoimg
+{
+  -fx-background-image: url(../icons/helpinghands_logo.png);
+  -fx-background-size: contain;
+  -fx-background-repeat: stretch;
+} */
+
+#settings, #profile
+{
+  -fx-background-color: transparent;
+}
+
+#headerbox
+{
+  -fx-background-color: white;
+  -fx-effect: dropshadow(one-pass-box, #002d7123, 12, 0.0, 0, 3);
+}
+
+#sidebar
+{
+  -fx-background-color: #044dbb;
+  -fx-effect: dropshadow(one-pass-box, #002d7123, 12, 0.0, 5, 0);
+}

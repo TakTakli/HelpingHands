@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../resources/css/home.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox id="sidebar" alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="112.0" spacing="20.0">
+         <children>
+            <Button id="profile" mnemonicParsing="false">
+               <graphic>
+                  <ImageView fitHeight="60.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/icons/icons8-male-user-96.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button id="settings" alignment="BOTTOM_CENTER" mnemonicParsing="false" VBox.vgrow="ALWAYS">
+               <graphic>
+                  <ImageView fitHeight="47.0" fitWidth="60.0" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/icons/icons8-gear-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </VBox>
+      <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1146.0" spacing="28.0" HBox.hgrow="ALWAYS">
+         <children>
+            <HBox id="headerbox" alignment="CENTER_LEFT" prefHeight="116.0" prefWidth="1168.0" spacing="12.0">
+               <children>
+                  <Pane prefHeight="83.0" prefWidth="87.0">
+                     <children>
+                        <ImageView id="logoimg" fitHeight="47.0" fitWidth="45.0" layoutX="44.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/icons/helpinghands_logo.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Label id="logotxt" alignment="TOP_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="47.0" prefWidth="206.0" text="Welcome!" wrapText="true" />
+               </children>
+            </HBox>
+            <HBox prefHeight="652.0" prefWidth="1170.0" spacing="28.0">
+               <children>
+                  <VBox prefHeight="626.0" prefWidth="348.0" style="-fx-border-color: red;">
+                     <HBox.margin>
+                        <Insets bottom="28.0" left="28.0" />
+                     </HBox.margin></VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="626.0" prefWidth="794.0" spacing="28.0">
+                     <children>
+                        <HBox prefHeight="299.0" prefWidth="765.0" spacing="28.0">
+                           <children>
+                              <VBox prefHeight="255.0" prefWidth="704.0" style="-fx-border-color: blue;" />
+                              <VBox prefHeight="100.0" prefWidth="424.0" style="-fx-border-color: blue;" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="316.0" prefWidth="765.0" spacing="28.0">
+                           <children>
+                              <VBox prefHeight="100.0" prefWidth="482.0" style="-fx-border-color: blue;" />
+                              <VBox prefHeight="257.0" prefWidth="491.0" style="-fx-border-color: blue;" />
+                              <VBox prefHeight="257.0" prefWidth="475.0" style="-fx-border-color: blue;" />
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="28.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets right="28.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</HBox>
