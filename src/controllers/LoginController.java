@@ -124,7 +124,7 @@ public class LoginController implements Initializable {
     /** Switch to Home Screen */
     private void switchToHome() {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/controllers/HomeScreen.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/controllers/Home.fxml"));
             Stage stage = (Stage) rootvb.getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();

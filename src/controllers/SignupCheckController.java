@@ -101,7 +101,7 @@ public class SignupCheckController implements Initializable {
 		Parent root;
 		try 
 		{
-			root = FXMLLoader.load(getClass().getResource("/controllers/HomeScreen.fxml"));
+			root = FXMLLoader.load(getClass().getResource("/controllers/Home.fxml"));
 			Scene scene = new Scene(root);
 			Stage stage= (Stage)beginvb.getScene().getWindow();
 			stage.setScene(scene);

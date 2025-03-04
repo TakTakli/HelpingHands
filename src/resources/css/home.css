@@ -17,6 +17,7 @@
   -fx-black-text: #19202c;
   -fx-dot-color: #c8deed;
   -fx-font-family: "Plus Jakarta Sans";
+  -fx-text-fill: #1d2366;
 }
 
 #logotxt
@@ -49,4 +50,70 @@
 {
   -fx-background-color: #044dbb;
   -fx-effect: dropshadow(one-pass-box, #002d7123, 12, 0.0, 5, 0);
+}
+
+.container
+{
+  -fx-border-radius: 20;
+  -fx-font-family: "Plus Jakarta Sans Bold";
+  -fx-background-radius: 20;
+}
+
+.containerheader
+{
+  -fx-font-size: 28;
+}
+
+.container-inner-txt
+{
+  -fx-font-family: "Plus Jakarta Sans SemiBold";
+  -fx-font-size: 20;
+}
+
+.container-inner-txt > .text
+{
+  -fx-line-spacing: -4;
+}
+
+#duetxt
+{
+  -fx-font-size: 24;
+}
+#calendar
+{
+  -fx-background-color: #c2dbff;
+}
+
+#medtrack
+{
+  -fx-background-color: #cbdaef;
+}
+
+#meal, #map
+{
+  -fx-background-color: #d1e4ff;
+}
+
+#store, #exguide
+{
+  -fx-background-color: #d4edff;
+}
+
+.container-btn
+{
+  -fx-background-color: #044dbb;
+  -fx-background-radius: 24;
+  -fx-border-radius: 24;
+  -fx-text-fill: #fff;
+  -fx-font-size: 20;
+  -fx-effect: none;
+}
+
+.container-btn:hover
+{
+  -fx-background-color: #ffffff;
+  -fx-border-width: 2;
+  -fx-border-color: #044dbb;
+  -fx-text-fill: #044dbb;
+  -fx-background-insets:2;
 }
