@@ -17,12 +17,6 @@
 -fx-text-fill: #1d2366;
 }
 
-#sidebar
-{
-  -fx-background-color: #044dbb;
-  -fx-effect: dropshadow(one-pass-box, #002d7123, 12, 0.0, 5, 0);
-}
-
 #headerbox
 {
   -fx-background-color: white;
@@ -66,16 +60,21 @@
   -fx-border-radius: 16;
 }
 
-.sidebar-btn
+.viewport-btn:hover
 {
-  -fx-font-size: 20;
-  -fx-text-fill:#fff;
-  -fx-background-color: #044dbb;
+  -fx-background-color: #d1e4ff;
+  -fx-border-width: 2;
+  /* -fx-border-color: #044dbb; */
+  -fx-text-fill: #044dbb;
+  -fx-background-insets:2;
 }
 
-.separator .line
+.viewport-btn:focused
 {
-  -fx-background-color: #6a9dff;
-  -fx-pref-height: 1;
-  -fx-border-color:null;
+  -fx-effect: none;
+}
+
+.button
+{
+  -fx-effect: none;
 }

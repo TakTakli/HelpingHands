@@ -1,0 +1,124 @@
+@font-face {
+  src: url(../fonts/PlusJakartaSans-Regular.ttf);
+}
+@font-face {
+  src: url(../fonts/PlusJakartaSans-Medium.ttf);
+}
+@font-face {
+  src: url(../fonts/PlusJakartaSans-SemiBold.ttf);
+}
+@font-face {
+  src: url(../fonts/PlusJakartaSans-Bold.ttf);
+}
+
+.root
+{
+  -fx-font-family: "Plus Jakarta Sans Bold";
+  -fx-text-fill: #1d2366;
+}
+
+.scroll-pane > .viewport {
+  -fx-background-color: transparent;
+}
+
+.scroll-pane {
+  -fx-background-insets: 0;
+  -fx-padding: 0;
+  -fx-background: #fff;
+}
+
+
+.scroll-pane:focused {
+  -fx-background-insets: 0;
+}
+
+.scroll-pane .corner {
+  -fx-background-insets: 0;
+}
+
+.button
+{
+  -fx-effect: none;
+}
+
+.bg-box
+{
+  -fx-background-color: #fff;
+  -fx-border-radius: 20;
+  -fx-background-radius: 20;
+  -fx-effect: dropshadow(one-pass-box, #002d7123, 20, 0.5, 0, 0);
+}
+
+#header
+{
+  -fx-font-size: 36;
+}
+
+#headerbox
+{
+  -fx-background-color: white;
+  -fx-effect: dropshadow(one-pass-box, #002d7123, 12, 0.0, 0, 3);
+}
+
+#MonthYearTxt
+{
+    -fx-font-size: 28;
+    -fx-text-fill: #044dbb;
+}
+
+.week
+{
+  -fx-font-size: 24;
+}
+
+.datetxt
+{
+  -fx-font-size: 20;
+  -fx-text-fill: #044dbb;
+}
+
+.date-circle
+{
+  -fx-border-radius: 60;
+  -fx-background-color: #044dbb;
+  /* -fx-fill: #fff; */
+  /* -fx-stroke: none; */
+  -fx-effect: dropshadow(three-pass-box, 20, 0.5, 0, 0);
+}
+
+#viewlog-btn
+{
+  -fx-font-size: 20;
+  -fx-background-color: #044dbb;
+  -fx-border-radius: 16;
+  -fx-background-radius: 16;
+}
+
+#medheader
+{
+  -fx-font-size: 28;
+}
+
+#duetxt
+{
+  -fx-font-size: 24;
+  -fx-text-fill: #044dbb;
+}
+
+/* Add Medicine Screen unique styles */
+.subheader
+{
+  -fx-font-size: 28;
+  -fx-text-fill: #044dbb;
+}
+
+.medtypebtn
+{
+  -fx-background-color: #fff;
+  -fx-border-radius: 20;
+  -fx-background-radius: 20;
+  -fx-effect: dropshadow(one-pass-box, #002d7123, 20, 0.5, 0, 0);
+  -fx-font-size: 20;
+  -fx-text-fill: #044dbb;
+  -fx-font-family: "Plus Jakarta Sans Medium";
+}

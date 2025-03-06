@@ -98,16 +98,16 @@ public class HomeController implements Initializable{
     		e.printStackTrace();
     	}
     }
-//    private void switchToSettings() {
-//    	try {
-//    		Parent root = FXMLLoader.load(getClass().getResource("/controllers/Settings.fxml"));
-//    		Stage stage = (Stage) roothb.getScene().getWindow();
-//    		stage.setScene(new Scene(root));
-//    		stage.show();
-//    	} catch (IOException e) {
-//    		e.printStackTrace();
-//    	}
-//    }
+    private void switchToSettings() {
+    	try {
+    		Parent root = FXMLLoader.load(getClass().getResource("/controllers/Settings.fxml"));
+    		Stage stage = (Stage) roothb.getScene().getWindow();
+    		stage.setScene(new Scene(root));
+    		stage.show();
+    	} catch (IOException e) {
+    		e.printStackTrace();
+    	}
+    }
     
     public void fadeOutToCalendar() {
         FadeTransition fade = new FadeTransition(Duration.millis(200), roothb);
@@ -158,13 +158,13 @@ public class HomeController implements Initializable{
     	fade.setOnFinished(event -> switchToProfile());
     	fade.play();
     }
-//    public void fadeOutToSettings() {
-//    	FadeTransition fade = new FadeTransition(Duration.millis(200), roothb);
-//    	fade.setFromValue(1);
-//    	fade.setToValue(0);
-//    	fade.setOnFinished(event -> switchToSettings());
-//    	fade.play();
-//    }
+    public void fadeOutToSettings() {
+    	FadeTransition fade = new FadeTransition(Duration.millis(200), roothb);
+    	fade.setFromValue(1);
+    	fade.setToValue(0);
+    	fade.setOnFinished(event -> switchToSettings());
+    	fade.play();
+    }
     
 	private void fadeIn() {
 	       FadeTransition fade = new FadeTransition(Duration.millis(500), roothb);

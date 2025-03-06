@@ -99,6 +99,11 @@
   -fx-background-color: #d4edff;
 }
 
+.button
+{
+  -fx-effect: none;
+}
+
 .container-btn
 {
   -fx-background-color: #044dbb;
