@@ -1,25 +1,34 @@
-# _PLACEHOLDER_
+# HelpingHands
 
 ## **About the Project**
 
-bla bla bla
+Wellbeing App for the Elderly
 
 ## **Tools used**
-- bla
-- ahaj
-  
-## **Installation**
-  
-  jhsjAS
-  
+- Java(Maven)
+- JavaFX
+- MySQL
+   
 ## **Features**
-  - skjdas
-  - djasdkas
-  - dasjda
+  - Account Authentication
+  - Health Profile
+  - Medication Tracker
+  - Meal Planner
+  - Calendar
+  - Map
+  - E-pharmacy
+  - Exercise Guide
 
 ## **Contributions**
-- djasdj
+- Alvi Binte Zamil
   
-  COntact : 0194394329
+  Contact : 0194394329
   
-  Email: dkjkad@kjasdas.com
+  E-mail: dkjkad@kjasdas.com
+
+- Than Than Thay
+  
+  Contact : 0194394329
+  
+  E-mail: dkjkad@kjasdas.com
+
