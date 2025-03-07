@@ -20,8 +20,6 @@
 .button
 {
   -fx-effect: none;
-  -fx-background-color: transparent;
-  -fx-border-color: #044dbb; /*temporary*/
 }
 
 #header, #monthyear
@@ -56,6 +54,9 @@
 #monthyear
 {
   -fx-font-size: 28;
+  -fx-font-family: "Plus Jakarta Sans SemiBold";
+  -fx-text-fill: #044dbb;
+  
 }
 
 #appointment
@@ -75,4 +76,16 @@
 {
   -fx-pref-height: 2;
   -fx-border-color:null;
+}
+
+.chevron
+{
+  -fx-background-color: transparent;
+}
+
+.week
+{
+  -fx-font-family: "Plus Jakarta Sans SemiBold";
+  -fx-text-fill: #044dbb;
+  -fx-font-size: 24;
 }

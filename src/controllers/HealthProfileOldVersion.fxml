@@ -177,7 +177,8 @@
                         <RadioButton fx:id="female" mnemonicParsing="false" text="Female" textFill="#19202c" toggleGroup="$gender">
                            <font>
                               <Font name="Plus Jakarta Sans Regular" size="20.0" />
-                           </font></RadioButton>
+                           </font>
+                        </RadioButton>
                      </children>
                      <opaqueInsets>
                         <Insets />
@@ -196,18 +197,18 @@
                            </VBox.margin>
                         </Label>
                         <GridPane hgap="12.0" prefHeight="169.0" prefWidth="1208.0" vgap="48.0">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="697.0" minWidth="10.0" prefWidth="607.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="605.0" minWidth="10.0" prefWidth="601.0" />
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="697.0" minWidth="10.0" prefWidth="607.0" />
                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="605.0" minWidth="10.0" prefWidth="601.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="605.0" minWidth="10.0" prefWidth="601.0" />
+                           </columnConstraints>
+                           <rowConstraints>
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
                            <children>
                               <CheckBox id="check" fx:id="diabetescheck" mnemonicParsing="false" text="Diabetes" textFill="#19202c">
                                  <font>
@@ -217,47 +218,58 @@
                               <CheckBox id="check" fx:id="hypercheck" mnemonicParsing="false" text="Hypertension" textFill="#19202c" GridPane.rowIndex="1">
                                  <font>
                                     <Font size="20.0" />
-                                 </font></CheckBox>
+                                 </font>
+                              </CheckBox>
                               <CheckBox id="check" mnemonicParsing="false" text="Low Blood Pressure" textFill="#19202c" GridPane.rowIndex="2">
                                  <font>
                                     <Font size="20.0" />
-                                 </font></CheckBox>
+                                 </font>
+                              </CheckBox>
                               <CheckBox id="check" layoutX="10.0" layoutY="64.0" mnemonicParsing="false" text="Arthritis" textFill="#19202c" GridPane.rowIndex="3">
                                  <font>
                                     <Font size="20.0" />
-                                 </font></CheckBox>
+                                 </font>
+                              </CheckBox>
                               <CheckBox id="check" layoutX="10.0" layoutY="9.0" mnemonicParsing="false" text="Chronic Bronchitis" textFill="#19202c" GridPane.columnIndex="1">
                                  <font>
                                     <Font size="20.0" />
-                                 </font></CheckBox>
+                                 </font>
+                              </CheckBox>
                               <CheckBox id="check" mnemonicParsing="false" text="Fatty Liver" textFill="#19202c" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <font>
                                     <Font size="20.0" />
-                                 </font></CheckBox>
+                                 </font>
+                              </CheckBox>
                               <CheckBox id="check" mnemonicParsing="false" text="Osteoporosis" textFill="#19202c" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <font>
                                     <Font size="20.0" />
-                                 </font></CheckBox>
+                                 </font>
+                              </CheckBox>
                               <CheckBox id="check" mnemonicParsing="false" text="Chronic Kidney Disease" textFill="#19202c" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                  <font>
                                     <Font size="20.0" />
-                                 </font></CheckBox>
+                                 </font>
+                              </CheckBox>
                               <CheckBox id="check" mnemonicParsing="false" text="Asthma" textFill="#19202c" GridPane.columnIndex="2">
                                  <font>
                                     <Font size="20.0" />
-                                 </font></CheckBox>
+                                 </font>
+                              </CheckBox>
                               <CheckBox id="check" mnemonicParsing="false" text="Cancer" textFill="#19202c" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                  <font>
                                     <Font size="20.0" />
-                                 </font></CheckBox>
+                                 </font>
+                              </CheckBox>
                               <CheckBox id="check" mnemonicParsing="false" text="Dementia" textFill="#19202c" GridPane.columnIndex="2" GridPane.rowIndex="2">
                                  <font>
                                     <Font size="20.0" />
-                                 </font></CheckBox>
+                                 </font>
+                              </CheckBox>
                               <CheckBox id="check" mnemonicParsing="false" text="Alzheimer's" textFill="#19202c" GridPane.columnIndex="2" GridPane.rowIndex="3">
                                  <font>
                                     <Font size="20.0" />
-                                 </font></CheckBox>
+                                 </font>
+                              </CheckBox>
                            </children>
                            <VBox.margin>
                               <Insets top="32.0" />
@@ -268,7 +280,8 @@
                               <CheckBox id="check" mnemonicParsing="false" text="Other:" textFill="#19202c">
                                  <font>
                                     <Font name="Plus Jakarta Sans Medium" size="20.0" />
-                                 </font></CheckBox>
+                                 </font>
+                              </CheckBox>
                               <TextField fx:id="otherdis" prefHeight="8.0" prefWidth="242.0" />
                               <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Add">
                                  <HBox.margin>
@@ -305,43 +318,53 @@
                               <CheckBox id="check" mnemonicParsing="false" text="Peanut" textFill="#19202c">
                                  <font>
                                     <Font name="Plus Jakarta Sans Medium" size="20.0" />
-                                 </font></CheckBox>
+                                 </font>
+                              </CheckBox>
                               <CheckBox id="check" mnemonicParsing="false" text="Soy" textFill="#19202c" GridPane.rowIndex="1">
                                  <font>
                                     <Font name="Plus Jakarta Sans Medium" size="20.0" />
-                                 </font></CheckBox>
+                                 </font>
+                              </CheckBox>
                               <CheckBox id="check" mnemonicParsing="false" text="Dairy" textFill="#19202c" GridPane.rowIndex="2">
                                  <font>
                                     <Font name="Plus Jakarta Sans Medium" size="20.0" />
-                                 </font></CheckBox>
+                                 </font>
+                              </CheckBox>
                               <CheckBox id="check" layoutX="10.0" layoutY="64.0" mnemonicParsing="false" text="Eggs" textFill="#19202c" GridPane.rowIndex="3">
                                  <font>
                                     <Font name="Plus Jakarta Sans Medium" size="20.0" />
-                                 </font></CheckBox>
+                                 </font>
+                              </CheckBox>
                               <CheckBox id="check" layoutX="10.0" layoutY="9.0" mnemonicParsing="false" text="Wheat" textFill="#19202c" GridPane.columnIndex="1">
                                  <font>
                                     <Font name="Plus Jakarta Sans Medium" size="20.0" />
-                                 </font></CheckBox>
+                                 </font>
+                              </CheckBox>
                               <CheckBox id="check" mnemonicParsing="false" text="Tree Nuts" textFill="#19202c" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <font>
                                     <Font name="Plus Jakarta Sans Medium" size="20.0" />
-                                 </font></CheckBox>
+                                 </font>
+                              </CheckBox>
                               <CheckBox id="check" mnemonicParsing="false" text="Shellfish" textFill="#19202c" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <font>
                                     <Font name="Plus Jakarta Sans Medium" size="20.0" />
-                                 </font></CheckBox>
+                                 </font>
+                              </CheckBox>
                               <CheckBox id="check" mnemonicParsing="false" text="Beef" textFill="#19202c" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                  <font>
                                     <Font name="Plus Jakarta Sans Medium" size="20.0" />
-                                 </font></CheckBox>
+                                 </font>
+                              </CheckBox>
                               <CheckBox id="check" mnemonicParsing="false" text="Pollen" textFill="#19202c" GridPane.columnIndex="2">
                                  <font>
                                     <Font name="Plus Jakarta Sans Medium" size="20.0" />
-                                 </font></CheckBox>
+                                 </font>
+                              </CheckBox>
                               <CheckBox id="check" mnemonicParsing="false" text="Mold" textFill="#19202c" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                  <font>
                                     <Font name="Plus Jakarta Sans Medium" size="20.0" />
-                                 </font></CheckBox>
+                                 </font>
+                              </CheckBox>
                            </children>
                            <VBox.margin>
                               <Insets top="32.0" />
@@ -352,7 +375,8 @@
                               <CheckBox id="check" mnemonicParsing="false" text="Other:" textFill="#19202c">
                                  <font>
                                     <Font name="Plus Jakarta Sans Medium" size="20.0" />
-                                 </font></CheckBox>
+                                 </font>
+                              </CheckBox>
                               <TextField fx:id="otherallergy" prefHeight="8.0" prefWidth="242.0" />
                               <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Add">
                                  <HBox.margin>
@@ -367,13 +391,51 @@
                      </VBox.margin>
                   </VBox>
                   <VBox prefHeight="200.0" prefWidth="100.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <children>
+                        <Label id="head" text="Medication" />
+                        <Separator id="sep" prefHeight="0.0" prefWidth="1920.0" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Separator>
+                        <Label id="choosetxt" fx:id="choosetxt12" text="Add your prescribed medication (if any). Click &quot;Add More&quot; to list multiple medications.">
+                           <VBox.margin>
+                              <Insets top="8.0" />
+                           </VBox.margin>
+                        </Label>
+                        <GridPane hgap="20.0" minHeight="-Infinity" prefHeight="120.0" prefWidth="1208.0" vgap="20.0" VBox.vgrow="ALWAYS">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" prefWidth="470.5" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="717.5" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="-Infinity" prefHeight="48.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="-Infinity" prefHeight="48.0" />
+                              <RowConstraints maxHeight="21.5" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TextField prefHeight="44.0" prefWidth="568.0" />
+                              <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Add" GridPane.columnIndex="1" />
+                              <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="136.0" text="Add More" GridPane.rowIndex="1" />
+                           </children>
+                           <VBox.margin>
+                              <Insets right="60.0" top="32.0" />
+                           </VBox.margin>
+                        </GridPane>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
                         <Label id="head" text="Emergency Contact:" />
                         <Separator id="sep" prefHeight="0.0" prefWidth="1920.0" VBox.vgrow="ALWAYS" />
                         <Label id="choosetxt" fx:id="choosetxt11" text="Tell us who to contact in case of an emergency.">
                            <VBox.margin>
                               <Insets top="8.0" />
-                           </VBox.margin></Label>
+                           </VBox.margin>
+                        </Label>
                         <Label id="headers" text="Name :">
                            <font>
                               <Font size="20.0" />

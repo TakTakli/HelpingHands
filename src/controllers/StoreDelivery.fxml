@@ -14,11 +14,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 
-<HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StoreCartController">
+<HBox fx:id="roothb" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StoreDeliveryController">
    <children>
       <VBox id="sidebar" alignment="TOP_CENTER" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="274.0">
          <children>
-            <Button graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="341.0" styleClass="sidebar-btn" text="Profile">
+            <Button fx:id="profile_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="341.0" styleClass="sidebar-btn" text="Profile">
                <graphic>
                   <ImageView fitHeight="51.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -31,7 +31,7 @@
                </padding>
             </Button>
             <Separator prefWidth="200.0" />
-            <Button graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="283.0" styleClass="sidebar-btn" text="Home">
+            <Button fx:id="home_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="283.0" styleClass="sidebar-btn" text="Home">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -44,7 +44,7 @@
                </padding>
             </Button>
             <Separator prefWidth="200.0" />
-            <Button graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="284.0" styleClass="sidebar-btn" text="Calendar">
+            <Button fx:id="calendar_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="284.0" styleClass="sidebar-btn" text="Calendar">
                <graphic>
                   <ImageView fitHeight="38.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -57,7 +57,7 @@
                </padding>
             </Button>
             <Separator prefWidth="200.0" />
-            <Button graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="281.0" styleClass="sidebar-btn" text="Medication Tracker" wrapText="true">
+            <Button fx:id="med_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="281.0" styleClass="sidebar-btn" text="Medication Tracker" wrapText="true">
                <graphic>
                   <ImageView fitHeight="41.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -70,7 +70,7 @@
                </padding>
             </Button>
             <Separator prefWidth="200.0" />
-            <Button graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="279.0" styleClass="sidebar-btn" text="Meal Planner">
+            <Button fx:id="meal_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="279.0" styleClass="sidebar-btn" text="Meal Planner">
                <graphic>
                   <ImageView fitHeight="61.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -83,7 +83,7 @@
                </padding>
             </Button>
             <Separator prefWidth="200.0" />
-            <Button id="selected" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="336.0" styleClass="sidebar-btn" text="E-Store">
+            <Button id="selected" fx:id="store_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="336.0" styleClass="sidebar-btn" text="E-Store">
                <graphic>
                   <ImageView fitHeight="48.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -96,7 +96,7 @@
                </padding>
             </Button>
             <Separator prefWidth="200.0" />
-            <Button graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="315.0" styleClass="sidebar-btn" text="Map">
+            <Button fx:id="map_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="315.0" styleClass="sidebar-btn" text="Map">
                <graphic>
                   <ImageView fitHeight="41.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -112,7 +112,7 @@
                </padding>
             </Button>
             <Separator prefWidth="200.0" />
-            <Button graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="301.0" styleClass="sidebar-btn" text="Exercise Guide">
+            <Button fx:id="guide_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="301.0" styleClass="sidebar-btn" text="Exercise Guide">
                <graphic>
                   <ImageView fitHeight="43.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -130,7 +130,7 @@
          <children>
             <HBox id="headerbox" alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="79.0" prefWidth="1006.0" spacing="12.0">
                <children>
-                  <StackPane prefHeight="25.0" prefWidth="30.0">
+                  <StackPane fx:id="return_btn" prefHeight="25.0" prefWidth="30.0">
                      <children>
                         <Line fx:id="arrowbase" endX="20.0" stroke="#1d2366" strokeWidth="4.0" />
                         <Line fx:id="arrowtop" endX="12.0" rotate="-135.0" stroke="#1d2366" strokeWidth="4.0">

@@ -93,6 +93,27 @@
   -fx-font-family: "Plus Jakarta Sans";
 }
 
+.productname
+{
+  -fx-font-size: 24;
+  -fx-text-fill:#1d2366;
+  -fx-font-family: "Plus Jakarta Sans SemiBold";
+}
+
+.productsubdetails
+{
+  -fx-font-size: 20;
+  -fx-text-fill:#1d2366;
+  -fx-font-family: "Plus Jakarta Sans Medium";
+}
+
+#prodseparator .line
+{
+  -fx-background-color: #044dbb;
+  -fx-pref-height: 2;
+  -fx-border-color:null;
+}
+
 /*purchase page*/
 .productdetails, #quantity
 {

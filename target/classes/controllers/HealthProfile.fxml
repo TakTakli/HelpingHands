@@ -367,43 +367,6 @@
                      </VBox.margin>
                   </VBox>
                   <VBox prefHeight="200.0" prefWidth="100.0">
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                     <children>
-                        <Label id="head" text="Medication" />
-                        <Separator id="sep" prefHeight="0.0" prefWidth="1920.0" VBox.vgrow="ALWAYS">
-                           <VBox.margin>
-                              <Insets />
-                           </VBox.margin>
-                        </Separator>
-                        <Label id="choosetxt" fx:id="choosetxt12" text="Add your prescribed medication (if any). Click &quot;Add More&quot; to list multiple medications.">
-                           <VBox.margin>
-                              <Insets top="8.0" />
-                           </VBox.margin>
-                        </Label>
-                        <GridPane hgap="20.0" minHeight="-Infinity" prefHeight="120.0" prefWidth="1208.0" vgap="20.0" VBox.vgrow="ALWAYS">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" prefWidth="470.5" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="717.5" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints minHeight="-Infinity" prefHeight="48.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="-Infinity" prefHeight="48.0" />
-                            <RowConstraints maxHeight="21.5" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
-                           <children>
-                              <TextField prefHeight="44.0" prefWidth="568.0" />
-                              <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Add" GridPane.columnIndex="1" />
-                              <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="136.0" text="Add More" GridPane.rowIndex="1" />
-                           </children>
-                           <VBox.margin>
-                              <Insets right="60.0" top="32.0" />
-                           </VBox.margin>
-                        </GridPane>
-                     </children>
-                  </VBox>
-                  <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
                         <Label id="head" text="Emergency Contact:" />
                         <Separator id="sep" prefHeight="0.0" prefWidth="1920.0" VBox.vgrow="ALWAYS" />

@@ -8,9 +8,9 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 
@@ -161,16 +161,16 @@
                      <children>
                         <Label styleClass="desc" text="Click on a date to set an appointment.">
                            <VBox.margin>
-                              <Insets top="8.0" />
+                              <Insets top="16.0" />
                            </VBox.margin>
                         </Label>
                         <StackPane prefHeight="150.0" prefWidth="200.0">
                            <children>
-                              <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="430.0" prefWidth="616.0" styleClass="calbg">
+                              <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="659.0" prefWidth="780.0" styleClass="calbg">
                                  <children>
-                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="100.0">
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0">
                                        <children>
-                                          <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" text="Button">
+                                          <Button fx:id="prev_month" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" styleClass="chevron" text="Button">
                                              <graphic>
                                                 <ImageView fitHeight="31.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
@@ -180,7 +180,7 @@
                                              </graphic>
                                           </Button>
                                           <Label fx:id="monthyear" text="Label" />
-                                          <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" text="Button">
+                                          <Button fx:id="next_month" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" styleClass="chevron" text="Button">
                                              <graphic>
                                                 <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
@@ -190,42 +190,34 @@
                                              </graphic>
                                           </Button>
                                        </children>
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
                                     </HBox>
-                                    <FlowPane alignment="CENTER_LEFT" columnHalignment="CENTER" hgap="40.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="387.0" prefWidth="520.0" prefWrapLength="560.0" vgap="40.0">
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="60.0">
                                        <children>
-                                          <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" text="#" />
-                                          <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" text="#" />
-                                          <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" text="#" />
-                                          <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" text="#" />
-                                          <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" text="#" />
-                                          <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" text="#" />
-                                          <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" text="#" />
-                                          <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" text="#" />
-                                          <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" text="#" />
-                                          <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" text="#" />
-                                          <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" text="#" />
-                                          <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" text="#" />
-                                          <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" text="#" />
-                                          <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" text="#" />
-                                          <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" text="#" />
-                                          <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" text="#" />
-                                          <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" text="#" />
-                                          <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" text="#" />
-                                          <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" text="#" />
-                                          <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" text="#" />
-                                          <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" text="#" />
-                                          <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" text="#" />
-                                          <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" text="#" />
-                                          <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" text="#" />
-                                          <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" text="#" />
-                                          <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" text="#" />
-                                          <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" text="#" />
-                                          <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" text="#" />
-                                          <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" text="#" />
-                                          <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" text="#" />
+                                          <Label fx:id="monthyear1" styleClass="week" text="Sun" />
+                                          <Label fx:id="monthyear11" styleClass="week" text="Mon" />
+                                          <Label fx:id="monthyear12" styleClass="week" text="Tue" />
+                                          <Label fx:id="monthyear13" styleClass="week" text="Wed" />
+                                          <Label fx:id="monthyear14" styleClass="week" text="Thur" />
+                                          <Label fx:id="monthyear15" styleClass="week" text="Fri" />
+                                          <Label fx:id="monthyear16" styleClass="week" text="Sat" />
                                        </children>
-                                    </FlowPane>
+                                       <VBox.margin>
+                                          <Insets top="12.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <TilePane fx:id="calendarflow" alignment="CENTER" hgap="40.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="701.0" vgap="40.0">
+                                       <padding>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                       </padding>
+                                    </TilePane>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" />
                                  </children>
+                                 <StackPane.margin>
+                                    <Insets />
+                                 </StackPane.margin>
                               </VBox>
                            </children>
                            <VBox.margin>

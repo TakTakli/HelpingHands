@@ -17,11 +17,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 
-<HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StorePurchaseController">
+<HBox fx:id="roothb" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StorePurchaseController">
    <children>
       <VBox id="sidebar" alignment="TOP_CENTER" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="274.0">
          <children>
-            <Button graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="341.0" styleClass="sidebar-btn" text="Profile">
+            <Button fx:id="profile_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="341.0" styleClass="sidebar-btn" text="Profile">
                <graphic>
                   <ImageView fitHeight="51.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -34,7 +34,7 @@
                </padding>
             </Button>
             <Separator prefWidth="200.0" />
-            <Button graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="283.0" styleClass="sidebar-btn" text="Home">
+            <Button fx:id="home_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="283.0" styleClass="sidebar-btn" text="Home">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -60,7 +60,7 @@
                </padding>
             </Button>
             <Separator prefWidth="200.0" />
-            <Button graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="281.0" styleClass="sidebar-btn" text="Medication Tracker" wrapText="true">
+            <Button fx:id="med_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="281.0" styleClass="sidebar-btn" text="Medication Tracker" wrapText="true">
                <graphic>
                   <ImageView fitHeight="41.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -73,7 +73,7 @@
                </padding>
             </Button>
             <Separator prefWidth="200.0" />
-            <Button graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="279.0" styleClass="sidebar-btn" text="Meal Planner">
+            <Button fx:id="meal_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="279.0" styleClass="sidebar-btn" text="Meal Planner">
                <graphic>
                   <ImageView fitHeight="61.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -86,7 +86,7 @@
                </padding>
             </Button>
             <Separator prefWidth="200.0" />
-            <Button id="selected" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="336.0" styleClass="sidebar-btn" text="E-Store">
+            <Button id="selected" fx:id="store_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="336.0" styleClass="sidebar-btn" text="E-Store">
                <graphic>
                   <ImageView fitHeight="48.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -99,7 +99,7 @@
                </padding>
             </Button>
             <Separator prefWidth="200.0" />
-            <Button graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="315.0" styleClass="sidebar-btn" text="Map">
+            <Button fx:id="map_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="315.0" styleClass="sidebar-btn" text="Map">
                <graphic>
                   <ImageView fitHeight="41.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -115,7 +115,7 @@
                </padding>
             </Button>
             <Separator prefWidth="200.0" />
-            <Button graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="301.0" styleClass="sidebar-btn" text="Exercise Guide">
+            <Button fx:id="guide_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="301.0" styleClass="sidebar-btn" text="Exercise Guide">
                <graphic>
                   <ImageView fitHeight="43.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -133,7 +133,7 @@
          <children>
             <HBox id="headerbox" alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="79.0" prefWidth="1006.0" spacing="12.0">
                <children>
-                  <StackPane prefHeight="25.0" prefWidth="30.0">
+                  <StackPane fx:id="return_btn" prefHeight="25.0" prefWidth="30.0">
                      <children>
                         <Line fx:id="arrowbase" endX="20.0" stroke="#1d2366" strokeWidth="4.0" />
                         <Line fx:id="arrowtop" endX="12.0" rotate="-135.0" stroke="#1d2366" strokeWidth="4.0">
@@ -168,31 +168,65 @@
                   <Insets left="60.0" top="40.0" />
                </VBox.margin>
             </Label>
-            <HBox alignment="CENTER_LEFT" prefHeight="251.0" prefWidth="934.0" spacing="40.0" styleClass="bg-box">
+            <HBox alignment="CENTER_LEFT" prefHeight="334.0" prefWidth="934.0" spacing="40.0" styleClass="bg-box">
                <children>
-                  <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-                  <GridPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="209.0" prefWidth="668.0">
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="342.0" minWidth="10.0" prefWidth="239.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="457.0" minWidth="10.0" prefWidth="415.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
+                  <ImageView fx:id="prodimg" fitHeight="283.0" fitWidth="237.0" pickOnBounds="true" preserveRatio="true" />
+                  <StackPane prefHeight="251.0" prefWidth="677.0">
                      <children>
-                        <Label styleClass="productdetails" text="Name :" />
-                        <Label fx:id="medname" styleClass="productdetails" text="Label" GridPane.columnIndex="1" />
-                        <Label styleClass="productdetails" text="Dose :" GridPane.rowIndex="1" />
-                        <Label fx:id="meddose" styleClass="productdetails" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Label styleClass="productdetails" text="Amount :" GridPane.rowIndex="2" />
-                        <Label fx:id="medamt" styleClass="productdetails" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label styleClass="productdetails" text="Purchase Quantity :" GridPane.rowIndex="3" />
-                        <TextField fx:id="quantity" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="41.0" prefWidth="99.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <GridPane fx:id="buygrid" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="273.0" prefWidth="611.0" vgap="16.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="342.0" minWidth="10.0" prefWidth="256.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="457.0" minWidth="10.0" prefWidth="355.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label styleClass="productdetails" text="Name :" />
+                              <Label fx:id="medname" styleClass="productdetails" text="Label" GridPane.columnIndex="1" />
+                              <Label styleClass="productdetails" text="Dose :" GridPane.rowIndex="1" />
+                              <Label fx:id="meddose" styleClass="productdetails" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label styleClass="productdetails" text="Amount :" GridPane.rowIndex="2" />
+                              <Label fx:id="medamt" styleClass="productdetails" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label styleClass="productdetails" text="Purchase Quantity :" GridPane.rowIndex="4" />
+                              <TextField fx:id="quantity" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="41.0" prefWidth="99.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label styleClass="productdetails" text="Price/Unit :" GridPane.rowIndex="3" />
+                              <Label fx:id="medprice" styleClass="productdetails" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label styleClass="productdetails" text="Total Price : " GridPane.rowIndex="6" />
+                              <Label fx:id="calc_total" styleClass="productdetails" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                           </children>
+                        </GridPane>
+                        <GridPane fx:id="rentgrid" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="242.0" prefWidth="617.0" visible="false">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="342.0" minWidth="10.0" prefWidth="239.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="457.0" minWidth="10.0" prefWidth="415.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="99.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="152.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="152.0" minHeight="10.0" prefHeight="77.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="152.0" minHeight="0.0" prefHeight="22.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="152.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label styleClass="productdetails" text="Name :" />
+                              <Label fx:id="eqname" styleClass="productdetails" text="Label" GridPane.columnIndex="1" />
+                              <Label prefHeight="65.0" prefWidth="192.0" styleClass="productdetails" text="Amount of days to rent :" wrapText="true" GridPane.rowIndex="2" />
+                              <TextField fx:id="quantity1" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="41.0" prefWidth="99.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label styleClass="productdetails" text="Price/Day :" GridPane.rowIndex="1" />
+                              <Label styleClass="productdetails" text="Total Price :" GridPane.rowIndex="4" />
+                              <Label fx:id="calc_total_rent" styleClass="productdetails" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label fx:id="rentprice" styleClass="productdetails" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
                      </children>
-                  </GridPane>
+                  </StackPane>
                </children>
                <VBox.margin>
                   <Insets left="60.0" right="12.0" top="20.0" />
@@ -203,7 +237,7 @@
             </HBox>
             <ButtonBar prefHeight="43.0" prefWidth="926.0">
                <buttons>
-                  <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="143.0" styleClass="notsearch" text="Add to Cart" />
+                  <Button fx:id="addcart" mnemonicParsing="false" prefHeight="42.0" prefWidth="143.0" styleClass="notsearch" text="Add to Cart" />
                </buttons>
                <VBox.margin>
                   <Insets left="60.0" right="24.0" top="20.0" />

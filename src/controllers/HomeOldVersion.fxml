@@ -63,7 +63,8 @@
                         <Label styleClass="containerheader" text="Calendar">
                            <VBox.margin>
                               <Insets left="16.0" top="16.0" />
-                           </VBox.margin></Label>
+                           </VBox.margin>
+                        </Label>
                         <VBox alignment="TOP_CENTER" prefHeight="542.0" prefWidth="328.0">
                            <children>
                               <ImageView fitHeight="375.0" fitWidth="327.0" pickOnBounds="true" preserveRatio="true" translateY="-20.0">
@@ -79,7 +80,8 @@
                               <Button fx:id="caldetails_btn" mnemonicParsing="false" prefHeight="49.0" prefWidth="157.0" styleClass="container-btn" text="View Details" />
                            </children>
                         </VBox>
-                     </children></VBox>
+                     </children>
+                  </VBox>
                   <VBox prefHeight="614.0" prefWidth="720.0" spacing="28.0" HBox.hgrow="ALWAYS">
                      <children>
                         <HBox minWidth="-Infinity" prefHeight="299.0" prefWidth="765.0" spacing="28.0">
@@ -89,7 +91,8 @@
                                     <Label styleClass="containerheader" text="Medication Tracker">
                                        <VBox.margin>
                                           <Insets left="16.0" top="16.0" />
-                                       </VBox.margin></Label>
+                                       </VBox.margin>
+                                    </Label>
                                     <HBox prefHeight="125.0" prefWidth="500.0" spacing="40.0">
                                        <VBox.margin>
                                           <Insets top="20.0" />
@@ -125,20 +128,22 @@
                                        </children>
                                     </HBox>
                                     <ButtonBar prefHeight="61.0" prefWidth="443.0">
-                                      <buttons>
+                                       <buttons>
                                           <Button fx:id="medtracker_btn" mnemonicParsing="false" prefHeight="41.0" prefWidth="125.0" styleClass="container-btn" text="See All" />
-                                      </buttons>
+                                       </buttons>
                                        <VBox.margin>
                                           <Insets right="32.0" />
                                        </VBox.margin>
                                     </ButtonBar>
-                                 </children></VBox>
+                                 </children>
+                              </VBox>
                               <VBox id="meal" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="237.0" styleClass="container" HBox.hgrow="ALWAYS">
                                  <children>
                                     <Label styleClass="containerheader" text="Meal Planner">
                                        <VBox.margin>
                                           <Insets left="16.0" top="16.0" />
-                                       </VBox.margin></Label>
+                                       </VBox.margin>
+                                    </Label>
                                     <VBox alignment="TOP_CENTER" prefHeight="221.0" prefWidth="225.0">
                                        <children>
                                           <ImageView fitHeight="87.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
@@ -161,7 +166,8 @@
                                           </Button>
                                        </children>
                                     </VBox>
-                                 </children></VBox>
+                                 </children>
+                              </VBox>
                            </children>
                            <VBox.margin>
                               <Insets />
@@ -177,7 +183,8 @@
                                     <Label styleClass="containerheader" text="E-Store">
                                        <VBox.margin>
                                           <Insets left="16.0" top="16.0" />
-                                       </VBox.margin></Label>
+                                       </VBox.margin>
+                                    </Label>
                                     <VBox alignment="TOP_CENTER" prefHeight="221.0" prefWidth="225.0">
                                        <children>
                                           <ImageView fitHeight="87.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
@@ -200,7 +207,39 @@
                                           </Button>
                                        </children>
                                     </VBox>
-                                 </children></VBox>
+                                 </children>
+                              </VBox>
+                              <VBox id="map" minWidth="-Infinity" prefHeight="288.0" prefWidth="217.0" styleClass="container" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label styleClass="containerheader" text="Map">
+                                       <VBox.margin>
+                                          <Insets left="16.0" top="16.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <VBox alignment="TOP_CENTER" prefHeight="221.0" prefWidth="225.0">
+                                       <children>
+                                          <ImageView fitHeight="87.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../resources/icons/icons8-map-marker-100%20(1).png" />
+                                             </image>
+                                             <VBox.margin>
+                                                <Insets top="8.0" />
+                                             </VBox.margin>
+                                          </ImageView>
+                                          <Label prefHeight="56.0" prefWidth="133.0" styleClass="container-inner-txt" text="See facilities near you" textAlignment="CENTER" wrapText="true">
+                                             <VBox.margin>
+                                                <Insets top="4.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Button fx:id="mapview_btn" mnemonicParsing="false" prefHeight="41.0" prefWidth="104.0" styleClass="container-btn" text="View">
+                                             <VBox.margin>
+                                                <Insets top="8.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
                               <VBox id="exguide" minHeight="-Infinity" minWidth="-Infinity" prefHeight="288.0" prefWidth="243.0" styleClass="container" HBox.hgrow="ALWAYS">
                                  <children>
                                     <Label styleClass="containerheader" text="Exercise Guide">
