@@ -21,7 +21,7 @@
 {
   -fx-effect: none;
   -fx-background-color: transparent;
-  -fx-border-color: #044dbb;
+  -fx-border-color: #044dbb; /*temporary*/
 }
 
 #header, #monthyear

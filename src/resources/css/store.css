@@ -1,0 +1,123 @@
+@font-face {
+  src: url(../fonts/PlusJakartaSans-Regular.ttf);
+}
+@font-face {
+  src: url(../fonts/PlusJakartaSans-Medium.ttf);
+}
+@font-face {
+  src: url(../fonts/PlusJakartaSans-SemiBold.ttf);
+}
+@font-face {
+  src: url(../fonts/PlusJakartaSans-Bold.ttf);
+}
+
+
+.root
+{
+  -fx-font-family: "Plus Jakarta Sans Medium";
+}
+
+.scroll-pane > .viewport {
+  -fx-background-color: transparent;
+}
+
+.scroll-pane {
+  -fx-background-insets: 0;
+  -fx-padding: 0;
+  -fx-background: #fff;
+}
+
+
+.scroll-pane:focused {
+  -fx-background-insets: 0;
+}
+
+.scroll-pane .corner {
+  -fx-background-insets: 0;
+}
+
+.button
+{
+  -fx-effect: none;
+}
+
+#header
+{
+  -fx-font-family: "Plus Jakarta Sans Bold";
+  -fx-font-size: 36;
+  -fx-text-fill:#1d2366;
+}
+
+#headerbox
+{
+  -fx-background-color: white;
+  -fx-effect: dropshadow(one-pass-box, #002d7123, 12, 0.0, 0, 3);
+}
+
+.subheader
+{
+  -fx-font-size: 28;
+  -fx-text-fill: #1d2366;
+  -fx-font-family: "Plus Jakarta Sans Bold";
+}
+
+.notsearch, .search
+{
+  -fx-font-size: 18;
+  -fx-background-color: #044dbb;
+  -fx-border-radius: 12;
+  -fx-text-fill: #fff;
+  -fx-background-radius: 12;
+}
+
+.notsearch:hover, .search:hover
+{
+  -fx-background-color: #b7d0ff;
+  -fx-text-fill:#1d2366;
+}
+
+.search
+{
+  -fx-border-radius: 20;
+  -fx-background-radius: 20;
+}
+
+.searchbar
+{
+  -fx-text-fill: #1d2366;
+  -fx-font-size: 22;
+  -fx-background-color: #f5f8fc;
+  -fx-background-radius: 16px;
+  -fx-border-radius: 16px;
+  -fx-border-color: #a8b5cc;
+  -fx-font-family: "Plus Jakarta Sans";
+}
+
+/*purchase page*/
+.productdetails, #quantity
+{
+  -fx-font-size: 24;
+  -fx-text-fill:#1d2366;
+  -fx-font-family: "Plus Jakarta Sans Medium";
+}
+
+#quantity
+{
+  -fx-font-size: 20;
+}
+
+.bg-box
+{
+  -fx-background-color: #fff;
+  -fx-border-radius: 20;
+  -fx-background-radius: 20;
+  -fx-effect: dropshadow(one-pass-box, #002d7123, 20, 0.5, 0, 0);
+}
+
+/*cart*/
+#empty_cart
+{
+  -fx-font-family: "Plus Jakarta Sans Medium";
+  -fx-text-fill:#044dbb;
+  -fx-font-size: 24;
+}
