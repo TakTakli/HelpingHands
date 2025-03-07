@@ -3,21 +3,20 @@
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
-<?import javafx.scene.text.Font?>
 
 <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -153,7 +152,7 @@
                         <Insets left="60.0" />
                      </HBox.margin>
                   </StackPane>
-                  <Label id="header" text="Add Medicine">
+                  <Label id="header" text="View History">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
@@ -164,109 +163,82 @@
                <content>
                   <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1006.0">
                      <children>
-                        <Label styleClass="subheader" text="Type">
+                        <Label styleClass="subheader" text="Last 30 days">
                            <VBox.margin>
                               <Insets top="20.0" />
                            </VBox.margin>
                         </Label>
-                        <FlowPane alignment="CENTER_LEFT" columnHalignment="CENTER" hgap="40.0" prefHeight="200.0" prefWidth="200.0" vgap="40.0">
-                           <VBox.margin>
-                              <Insets top="24.0" />
-                           </VBox.margin>
-                           <children>
-                              <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="12.0" mnemonicParsing="false" prefHeight="164.0" prefWidth="164.0" styleClass="medtypebtn" text="Bottle">
-                                 <graphic>
-                                    <ImageView fitHeight="91.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../resources/icons/icons8-milk-bottle-100.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="12.0" mnemonicParsing="false" prefHeight="164.0" prefWidth="164.0" styleClass="medtypebtn" text="Tablet">
-                                 <graphic>
-                                    <ImageView fitHeight="75.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../resources/icons/tablet_blue.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="12.0" mnemonicParsing="false" prefHeight="164.0" prefWidth="164.0" styleClass="medtypebtn" text="Capsule">
-                                 <graphic>
-                                    <ImageView fitHeight="91.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../resources/icons/icons8-pill-100%20(2).png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="12.0" mnemonicParsing="false" prefHeight="164.0" prefWidth="164.0" styleClass="medtypebtn" text="Syringe">
-                                 <graphic>
-                                    <ImageView fitHeight="91.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../resources/icons/icons8-syringe-100.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="12.0" mnemonicParsing="false" prefHeight="164.0" prefWidth="164.0" styleClass="medtypebtn" text="Inhaler">
-                                 <graphic>
-                                    <ImageView fitHeight="91.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../resources/icons/icons8-inhaler-100.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                           </children>
-                        </FlowPane>
-                        <Label styleClass="subheader" text="Name">
-                           <VBox.margin>
-                              <Insets top="40.0" />
-                           </VBox.margin>
-                        </Label>
-                        <TextField fx:id="med_name" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="564.0">
+                        <Label id="history-desc" text="Hover to see which medicines were taken and/or missed.">
                            <VBox.margin>
                               <Insets top="8.0" />
                            </VBox.margin>
-                        </TextField>
-                        <Label fx:id="dose_txt" styleClass="subheader" text="Dosage">
+                        </Label>
+                        <GridPane hgap="8.0" maxWidth="-Infinity" prefHeight="152.0" prefWidth="299.0" vgap="8.0">
+                          <columnConstraints>
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="458.0" minWidth="10.0" prefWidth="47.0" />
+                            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="731.0" minWidth="10.0" prefWidth="274.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="32.0" minHeight="10.0" prefHeight="32.0" valignment="CENTER" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="44.0" minHeight="9.0" prefHeight="28.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="35.0" minHeight="9.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Circle fill="#044dbb" radius="12.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                              <Circle fill="#acc8ff" radius="12.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.rowIndex="1" />
+                              <Circle fill="#bf1111" radius="12.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.rowIndex="2" />
+                              <Circle fill="#d9d9d9" radius="12.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.rowIndex="3" />
+                              <Label id="somemeds" styleClass="legendtxt" text="Some medicine taken" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label id="allmeds" styleClass="legendtxt" text="All medicine taken" textFill="#044dbb" GridPane.columnIndex="1" />
+                              <Label id="allmissed" styleClass="legendtxt" text="All medicine missed" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label id="untracked" styleClass="legendtxt" text="Untracked" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                           </children>
                            <VBox.margin>
                               <Insets top="20.0" />
                            </VBox.margin>
-                        </Label>
-                        <HBox prefHeight="65.0" prefWidth="926.0" spacing="16.0">
+                        </GridPane>
+                        <StackPane prefHeight="150.0" prefWidth="200.0">
                            <children>
-                              <TextField fx:id="dosetxt" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="152.0" />
-                              <ComboBox fx:id="DoseBox" prefHeight="48.0" prefWidth="88.0" />
-                           </children>
-                           <VBox.margin>
-                              <Insets top="8.0" />
-                           </VBox.margin>
-                        </HBox>
-                        <Label styleClass="subheader" text="Time" />
-                        <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="926.0" spacing="16.0">
-                           <children>
-                              <HBox alignment="CENTER_LEFT" prefHeight="79.0" prefWidth="121.0" spacing="2.0">
+                              <FlowPane alignment="CENTER_LEFT" columnHalignment="CENTER" hgap="40.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="387.0" prefWidth="520.0" prefWrapLength="560.0" vgap="40.0">
                                  <children>
-                                    <TextField fx:id="hour" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="56.0" />
-                                    <Label text=":">
-                                       <font>
-                                          <Font size="48.0" />
-                                       </font>
-                                    </Label>
-                                    <TextField fx:id="min" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="56.0" />
+                                    <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" />
+                                    <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" />
+                                    <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" />
+                                    <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" />
+                                    <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" />
+                                    <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" />
+                                    <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" />
+                                    <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" />
+                                    <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" />
+                                    <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" />
+                                    <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" />
+                                    <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" />
+                                    <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" />
+                                    <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" />
+                                    <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" />
+                                    <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" />
+                                    <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" />
+                                    <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" />
+                                    <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" />
+                                    <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" />
+                                    <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" />
+                                    <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" />
+                                    <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" />
+                                    <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" />
+                                    <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" />
+                                    <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" />
+                                    <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" />
+                                    <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" />
+                                    <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" />
+                                    <Button contentDisplay="TEXT_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="historytrack" />
                                  </children>
-                              </HBox>
-                              <ChoiceBox fx:id="AmPmBox" prefHeight="48.0" prefWidth="88.0" />
+                              </FlowPane>
                            </children>
-                        </HBox>
-                        <ButtonBar prefHeight="40.0" prefWidth="200.0">
-                           <buttons>
-                            <Button fx:id="addbtn" mnemonicParsing="false" prefHeight="42.0" prefWidth="108.0" text="Add" />
-                           </buttons>
-                        </ButtonBar>
+                           <VBox.margin>
+                              <Insets top="32.0" />
+                           </VBox.margin>
+                        </StackPane>
                      </children>
                      <padding>
                         <Insets left="40.0" right="40.0" />

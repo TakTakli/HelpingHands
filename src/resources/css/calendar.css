@@ -1,0 +1,73 @@
+.scroll-pane > .viewport {
+  -fx-background-color: transparent;
+}
+
+.scroll-pane {
+  -fx-background-insets: 0;
+  -fx-padding: 0;
+  -fx-background: #fff;
+}
+
+
+.scroll-pane:focused {
+  -fx-background-insets: 0;
+}
+
+.scroll-pane .corner {
+  -fx-background-insets: 0;
+}
+
+.button
+{
+  -fx-effect: none;
+  -fx-background-color: transparent;
+  -fx-border-color: #044dbb;
+}
+
+#header, #monthyear
+{
+  -fx-font-size: 36;
+  -fx-text-fill:#1d2366;
+  -fx-font-family: "Plus Jakarta Sans Bold";
+}
+
+.desc
+{
+  -fx-font-family: "Plus Jakarta Sans Medium";
+  -fx-text-fill: #044dbb;
+  -fx-font-size: 24;
+}
+
+.calbg{
+  -fx-background-color: #fff;
+  -fx-border-radius: 20;
+  -fx-background-radius: 20;
+  -fx-effect: dropshadow(one-pass-box, #002d7123, 20, 0.5, 0, 0);
+  -fx-font-size: 20;
+  -fx-text-fill: #044dbb;
+  -fx-font-family: "Plus Jakarta Sans Medium";
+}
+
+#monthyear
+{
+  -fx-font-size: 28;
+}
+
+#appointment
+{
+  -fx-text-fill: #1d2366;
+}
+
+#duetxt
+{
+  -fx-font-size: 24;
+  -x-font-family: "Plus Jakarta Sans Medium";
+  -fx-text-fill: #1d2366;
+
+}
+
+.separator .line
+{
+  -fx-pref-height: 2;
+  -fx-border-color:null;
+}

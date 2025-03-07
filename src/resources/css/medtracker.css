@@ -14,7 +14,6 @@
 .root
 {
   -fx-font-family: "Plus Jakarta Sans Bold";
-  -fx-text-fill: #1d2366;
 }
 
 .scroll-pane > .viewport {
@@ -52,6 +51,7 @@
 #header
 {
   -fx-font-size: 36;
+  -fx-text-fill:#1d2366;
 }
 
 #headerbox
@@ -86,14 +86,20 @@
   -fx-effect: dropshadow(three-pass-box, 20, 0.5, 0, 0);
 }
 
-#viewlog-btn
+.viewlog-btn, #addbtn
 {
   -fx-font-size: 20;
   -fx-background-color: #044dbb;
   -fx-border-radius: 16;
+  -fx-text-fill: #fff;
   -fx-background-radius: 16;
 }
 
+.viewlog-btn:hover, #addbtn:hover
+{
+  -fx-background-color: #b7d0ff;
+  -fx-text-fill:#1d2366;
+}
 #medheader
 {
   -fx-font-size: 28;
@@ -109,7 +115,7 @@
 .subheader
 {
   -fx-font-size: 28;
-  -fx-text-fill: #044dbb;
+  -fx-text-fill: #1d2366;
 }
 
 .medtypebtn
@@ -121,4 +127,87 @@
   -fx-font-size: 20;
   -fx-text-fill: #044dbb;
   -fx-font-family: "Plus Jakarta Sans Medium";
+}
+
+.medtypebtn:hover, .medtypebtn:focused
+{
+  -fx-background-color: #e1edfd;
+  -fx-effect: dropshadow(one-pass-box, #002d7144, 20, 0.5, 0, 0);
+}
+
+.choice-box > .open-button > .arrow, .combo-box-base > .arrow-button > .arrow
+{
+  -fx-background-color: #044dbb;
+}
+.choice-box, .combo-box-base, .text-input
+{
+  -fx-background-color: #fff;
+  -fx-background-radius: 12px;
+  -fx-text-fill: #044dbb;
+  -fx-border-radius: 8px;
+  -fx-border-width: 2;
+  -fx-border-color: #044dbb;
+  -fx-font-family: "Plus Jakarta Sans";
+}
+
+.combo-box > .list-cell {
+  -fx-text-fill: #044dbb;
+}
+
+.combo-box-popup > .list-view {
+  -fx-effect: dropshadow(one-pass-box , #002d7123 , 12, 0.0 , 0 , 2 );
+}
+
+.text-input
+{
+  -fx-text-fill: #1d2366;
+  -fx-font-size: 22;
+}
+
+#addbtn
+{
+  -fx-font-size: 24;
+}
+
+
+/*history page*/
+
+#history-desc
+{
+  -fx-font-family: "Plus Jakarta Sans";
+  -fx-text-fill: #044dbb;
+  -fx-font-size: 22;
+}
+
+.legendtxt
+{
+  -fx-font-size: 20;
+  -fx-font-family: "Plus Jakarta Sans Medium";
+}
+
+#allmeds
+{
+  -fx-text-fill: #044dbb;
+}
+
+#somemeds
+{
+  -fx-text-fill: #acc8ff;
+}
+
+#allmissed
+{
+  -fx-text-fill: #bf1111;
+}
+
+#untracked
+{
+  -fx-text-fill: #949494;
+}
+
+.historytrack
+{
+  -fx-background-color: #d9d9d9;
+  -fx-border-radius: 0;
+  -fx-background-radius: 0;
 }

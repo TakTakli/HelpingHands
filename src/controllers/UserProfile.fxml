@@ -27,6 +27,9 @@
                      </image>
                   </ImageView>
                </graphic>
+               <padding>
+                  <Insets right="100.0" />
+               </padding>
             </Button>
             <Separator prefWidth="200.0" />
             <Button graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="283.0" styleClass="sidebar-btn" text="Home">
@@ -37,6 +40,9 @@
                      </image>
                   </ImageView>
                </graphic>
+               <padding>
+                  <Insets right="104.0" />
+               </padding>
             </Button>
             <Separator prefWidth="200.0" />
             <Button graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="284.0" styleClass="sidebar-btn" text="Calendar">
@@ -47,6 +53,9 @@
                      </image>
                   </ImageView>
                </graphic>
+               <padding>
+                  <Insets right="76.0" />
+               </padding>
             </Button>
             <Separator prefWidth="200.0" />
             <Button graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="281.0" styleClass="sidebar-btn" text="Medication Tracker" wrapText="true">
@@ -57,6 +66,9 @@
                      </image>
                   </ImageView>
                </graphic>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
             </Button>
             <Separator prefWidth="200.0" />
             <Button graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="279.0" styleClass="sidebar-btn" text="Meal Planner">
@@ -67,6 +79,9 @@
                      </image>
                   </ImageView>
                </graphic>
+               <padding>
+                  <Insets right="40.0" />
+               </padding>
             </Button>
             <Separator prefWidth="200.0" />
             <Button graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="336.0" styleClass="sidebar-btn" text="E-Store">
@@ -77,6 +92,9 @@
                      </image>
                   </ImageView>
                </graphic>
+               <padding>
+                  <Insets right="90.0" />
+               </padding>
             </Button>
             <Separator prefWidth="200.0" />
             <Button graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="315.0" styleClass="sidebar-btn" text="Map">
@@ -87,6 +105,12 @@
                      </image>
                   </ImageView>
                </graphic>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets right="120.0" />
+               </padding>
             </Button>
             <Separator prefWidth="200.0" />
             <Button graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="301.0" styleClass="sidebar-btn" text="Exercise Guide">
@@ -97,6 +121,9 @@
                      </image>
                   </ImageView>
                </graphic>
+               <padding>
+                  <Insets right="24.0" />
+               </padding>
             </Button>
          </children>
       </VBox>
