@@ -36,7 +36,7 @@
                   <Insets top="56.0" />
                </VBox.margin>
             </HBox>
-            <Button fx:id="next" contentDisplay="RIGHT" graphicTextGap="8.0" mnemonicParsing="false" onAction="#fadeout1" onMouseEntered="#ButtonHover" onMouseExited="#ButtonExit" onMousePressed="#ButtonClicked" onMouseReleased="#ButtonReleased" text="Next">
+            <Button fx:id="next" contentDisplay="RIGHT" graphicTextGap="8.0" mnemonicParsing="false" onMouseEntered="#ButtonHover" onMouseExited="#ButtonExit" onMousePressed="#ButtonClicked" onMouseReleased="#ButtonReleased" text="Next">
                <VBox.margin>
                   <Insets top="32.0" />
                </VBox.margin>

@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
 
-<VBox fx:id="vb4" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" stylesheets="@../resources/css/onboarding.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.OnboardingController">
+<VBox fx:id="vb4" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" stylesheets="@../resources/css/onboarding.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.OnboardingController4">
    <children>
       <VBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" spacing="24.0">
          <children>
@@ -51,7 +51,7 @@
                   <Insets top="20.0" />
                </VBox.margin>
             </HBox>
-            <Button fx:id="getstarted" contentDisplay="RIGHT" graphicTextGap="8.0" mnemonicParsing="false" onAction="#fadeout4" onMouseEntered="#getStartedButtonHover" onMouseExited="#getStartedButtonExit" onMousePressed="#getStartedButtonClick" onMouseReleased="#getStartedButtonRelease" text="Get Started">
+            <Button fx:id="getstarted" contentDisplay="RIGHT" graphicTextGap="8.0" mnemonicParsing="false" onMouseEntered="#getStartedButtonHover" onMouseExited="#getStartedButtonExit" onMousePressed="#getStartedButtonClick" onMouseReleased="#getStartedButtonRelease" text="Get Started">
                <VBox.margin>
                   <Insets top="32.0" />
                </VBox.margin>

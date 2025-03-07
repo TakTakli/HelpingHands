@@ -11,12 +11,12 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 
-public class OnboardingController extends TransitionUtils implements Initializable{
-	@FXML private Button next= new Button();
+public class OnboardingController2 extends TransitionUtils implements Initializable{
+	@FXML private Button next2= new Button();
 	@FXML private Line arrowbase = new Line();
 	@FXML private Line arrowtop = new Line();
 	@FXML private Line arrowbot = new Line();
-	@FXML private VBox vb1 = new VBox();
+	@FXML private VBox vb2 = new VBox();
 		
 	private void setArrowWhite()
 	{
@@ -34,7 +34,7 @@ public class OnboardingController extends TransitionUtils implements Initializab
 	
 	public void ButtonClicked(MouseEvent e)
 	{
-		next.setStyle(
+		next2.setStyle(
 				"-fx-background-color: #044dbb;"+
 				"-fx-text-fill: #fff;");
 		this.setArrowWhite();
@@ -42,7 +42,7 @@ public class OnboardingController extends TransitionUtils implements Initializab
 	
 	public void ButtonReleased(MouseEvent e)
 	{
-		next.setStyle(
+		next2.setStyle(
 				"-fx-background-color: #fff;"+
 				"-fx-text-fill: #044dbb;");
 		this.setArrowBlue();
@@ -50,7 +50,7 @@ public class OnboardingController extends TransitionUtils implements Initializab
 	
 	public void ButtonHover(MouseEvent e)
 	{
-		next.setStyle(
+		next2.setStyle(
 				  "-fx-background-color: #bcdcfa;"+
 				  "-fx-text-fill:#044dbb;"
 				);
@@ -58,20 +58,20 @@ public class OnboardingController extends TransitionUtils implements Initializab
 	}
 	public void ButtonExit(MouseEvent e)
 	{
-		next.setStyle("-fx-background-color: #fff");
+		next2.setStyle("-fx-background-color: #fff");
 	}
 	
 	
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		 vb1.setOpacity(0);
-	     fadeInToScene(vb1);
-	     next.setOnAction((e)->
+		 vb2.setOpacity(0);
+	     fadeInToScene(vb2);
+	     next2.setOnAction((e)->
 	     {
-	    	fadeOutToScene(vb1, "OnboardingScreen2"); 
+	    	fadeOutToScene(vb2, "OnboardingScreen3"); 
 	     });
-
 	}
-	
+	     
 }
+

@@ -52,7 +52,7 @@
                </children>
             </HBox>
 
-            <Button fx:id="signup" onAction="#signup" onMouseEntered="#signupButtonHover" onMouseExited="#signupButtonExit" onMousePressed="#signupButtonClick" onMouseReleased="#signupButtonRelease" prefHeight="52.0" prefWidth="171.0" text="Sign Up">
+            <Button fx:id="signup" onMouseEntered="#signupButtonHover" onMouseExited="#signupButtonExit" onMousePressed="#signupButtonClick" onMouseReleased="#signupButtonRelease" prefHeight="52.0" prefWidth="171.0" text="Sign Up">
                <VBox.margin>
                   <Insets top="36.0" />
                </VBox.margin>

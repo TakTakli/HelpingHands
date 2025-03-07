@@ -1,20 +1,15 @@
 package controllers;
 
-import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-import javafx.animation.FadeTransition;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
-import javafx.util.Duration;
 
-public class AccountExistingController {
+public class AccountExistingController extends TransitionUtils implements Initializable{
 	
 	@FXML private Button login = new Button();
 	@FXML private Button proceed = new Button();
@@ -77,66 +72,20 @@ public class AccountExistingController {
 				);
 	}
 	
-	private void switchToHealthProfile()
-	{
-		Parent root;
-		try 
-		{
-			root = FXMLLoader.load(getClass().getResource("/controllers/HealthProfile.fxml"));
-			Scene scene = new Scene(root);
-			Stage stage= (Stage)beginvb.getScene().getWindow();
-			stage.setScene(scene);
-			stage.show();
-			
-		} 
-		catch (IOException e1) {
-			e1.printStackTrace();
-		}
 
-	}
-	private void switchToLoginScreen()
-	{
-		Parent root;
-		try 
-		{
-			root = FXMLLoader.load(getClass().getResource("/controllers/Login.fxml"));
-			Scene scene = new Scene(root);
-			Stage stage= (Stage)beginvb.getScene().getWindow();
-			stage.setScene(scene);
-			stage.show();
-			
-		} 
-		catch (IOException e1) {
-			e1.printStackTrace();
-		}
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		 beginvb.setOpacity(0);
+	     fadeInToScene(beginvb);
+	     login.setOnAction((e)->
+	     {
+	    	fadeOutToScene(beginvb, "Login"); 
+	     });
+	     proceed.setOnAction((e)->
+	     {
+	    	 fadeOutToScene(beginvb, "HealthProfile"); 
+	     });
 		
-	}
-	
-	public void fadeOutToHealthProfile()
-	{
-		FadeTransition fade= new FadeTransition();
-		fade.setDuration(Duration.millis(200));
-		fade.setNode(beginvb);
-		fade.setFromValue(1);
-		fade.setToValue(0);
-		fade.setOnFinished((ActionEvent e)->
-		{
-			switchToHealthProfile();
-		});
-		fade.play();
-	}
-	public void fadeOutToLoginScreen()
-	{
-		FadeTransition fade= new FadeTransition();
-		fade.setDuration(Duration.millis(200));
-		fade.setNode(beginvb);
-		fade.setFromValue(1);
-		fade.setToValue(0);
-		fade.setOnFinished((ActionEvent e)->
-		{
-			switchToLoginScreen();
-		});
-		fade.play();
 	}
 	
 }

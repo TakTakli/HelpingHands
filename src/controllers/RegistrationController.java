@@ -19,7 +19,7 @@ import javafx.util.Duration;
 import javax.swing.JOptionPane;
 import org.mindrot.jbcrypt.BCrypt;
 
-public class RegistrationController implements Initializable {
+public class RegistrationController extends TransitionUtils implements Initializable {
 
     @FXML private VBox rootvb;
     @FXML private TextField username;
@@ -27,12 +27,15 @@ public class RegistrationController implements Initializable {
     @FXML private PasswordField password;
     @FXML private CheckBox showPassword;
     @FXML private TextField passwordVisible;
-    @FXML private Button signup;
+    @FXML private Button signup=new Button();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         rootvb.setOpacity(0);
-        fadeIn();
+        fadeInToScene(rootvb);
+        signup.setOnAction((ActionEvent e)->{
+        	signUp(e);
+        });
     }
 
     
@@ -67,7 +70,7 @@ public class RegistrationController implements Initializable {
 
   
     @FXML
-    public void signup(ActionEvent e) {
+    public void signUp(ActionEvent e) {
         if (username.getText().isEmpty() || email.getText().isEmpty() || password.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "All fields are required!");
             return;
@@ -87,7 +90,7 @@ public class RegistrationController implements Initializable {
 
             JOptionPane.showMessageDialog(null, "Successfully created new Account");
 
-            fadeOutToHome();
+            fadeOutToScene(rootvb, "Home");
 
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -115,32 +118,4 @@ public class RegistrationController implements Initializable {
         signup.setStyle("-fx-background-color: #044dbb; -fx-text-fill:#fff;");
     }
 
-  
-    private void switchToHome() {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("/controllers/Home.fxml"));
-            Stage stage = (Stage) rootvb.getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    
-    public void fadeOutToHome() {
-        FadeTransition fade = new FadeTransition(Duration.millis(200), rootvb);
-        fade.setFromValue(1);
-        fade.setToValue(0);
-        fade.setOnFinished(event -> switchToHome());
-        fade.play();
-    }
-
-    
-    public void fadeIn() {
-        FadeTransition fade = new FadeTransition(Duration.millis(500), rootvb);
-        fade.setFromValue(0);
-        fade.setToValue(1);
-        fade.play();
-    }
 }

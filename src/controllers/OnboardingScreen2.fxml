@@ -13,11 +13,11 @@
 
 <!-- <?import controllers.ImageViewPane?> -->
 
-<VBox fx:id="vb2" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" stylesheets="@../resources/css/onboarding.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.OnboardingController">
+<VBox fx:id="vb2" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" stylesheets="@../resources/css/onboarding.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.OnboardingController2">
    <children>
       <VBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0">
          <children>
-<!--          <ImageViewPane fx:id="ImageViewPane"> -->
+      <!--          <ImageViewPane fx:id="ImageViewPane"> -->
                 <ImageView fitHeight="208.0" fitWidth="152.0" pickOnBounds="true" preserveRatio="true" scaleX="4.5" scaleY="4.5" scaleZ="4.5" translateY="-20.0">
                <image>
                   <Image url="@../resources/icons/tracker_onboarding_gfx.png" />
@@ -48,7 +48,7 @@
                   <Insets top="56.0" />
                </VBox.margin>
             </HBox>
-            <Button fx:id="next" contentDisplay="RIGHT" graphicTextGap="8.0" mnemonicParsing="false" onAction="#fadeout2" onMouseEntered="#ButtonHover" onMouseExited="#ButtonExit" onMousePressed="#ButtonClicked" onMouseReleased="#ButtonReleased" text="Next">
+            <Button fx:id="next2" contentDisplay="RIGHT" graphicTextGap="8.0" mnemonicParsing="false" onMouseEntered="#ButtonHover" onMouseExited="#ButtonExit" onMousePressed="#ButtonClicked" onMouseReleased="#ButtonReleased" text="Next">
                <VBox.margin>
                   <Insets top="32.0" />
                </VBox.margin>

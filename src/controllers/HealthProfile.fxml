@@ -497,7 +497,7 @@
                         <Insets bottom="8.0" />
                      </padding>
                   </Label>
-                  <Button fx:id="submit" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#switchToSignupCheck" text="Submit">
+                  <Button fx:id="submit" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Submit">
                      <VBox.margin>
                         <Insets bottom="60.0" top="-28.0" />
                      </VBox.margin>
