@@ -12,6 +12,8 @@ import javafx.scene.layout.VBox;
 import javax.swing.JOptionPane;
 import org.mindrot.jbcrypt.BCrypt;
 
+import application.Main;
+
 public class LoginController extends TransitionUtils implements Initializable {
 
     @FXML private VBox rootvb;
@@ -63,6 +65,7 @@ public class LoginController extends TransitionUtils implements Initializable {
         if (authenticateUser(userInput, passInput)) {
             JOptionPane.showMessageDialog(null, "✅ Login successful!");
             fadeOutToScene(rootvb, "Home");
+            Main.remove_onboarding = 1;
         } else {
             JOptionPane.showMessageDialog(null, "❌ Invalid username/email or password!");
         }

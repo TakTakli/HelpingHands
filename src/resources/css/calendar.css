@@ -89,3 +89,36 @@
   -fx-text-fill: #044dbb;
   -fx-font-size: 24;
 }
+
+/*POPUP STYLE */
+.choice-box > .open-button > .arrow
+{
+  -fx-background-color: #044dbb;
+}
+.choice-box, .text-input
+{
+  -fx-background-color: #fff;
+  -fx-background-radius: 12px;
+  -fx-text-fill: #044dbb;
+  -fx-border-radius: 8px;
+  -fx-border-width: 2;
+  -fx-border-color: #044dbb;
+  -fx-font-family: "Plus Jakarta Sans";
+  -fx-font-size: 20;
+}
+
+
+.text-input
+{
+  -fx-text-fill: #1d2366;
+  -fx-font-size: 22;
+}
+
+.popupButton
+{
+  -fx-font-size: 20;
+  -fx-background-color: #044dbb;
+  -fx-border-radius: 16;
+  -fx-text-fill: #fff;
+  -fx-background-radius: 16;
+}

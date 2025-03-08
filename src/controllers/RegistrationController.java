@@ -19,6 +19,8 @@ import javafx.util.Duration;
 import javax.swing.JOptionPane;
 import org.mindrot.jbcrypt.BCrypt;
 
+import application.Main;
+
 public class RegistrationController extends TransitionUtils implements Initializable {
 
     @FXML private VBox rootvb;
@@ -89,7 +91,7 @@ public class RegistrationController extends TransitionUtils implements Initializ
             statement.executeUpdate();
 
             JOptionPane.showMessageDialog(null, "Successfully created new Account");
-
+            Main.remove_onboarding = 1;
             fadeOutToScene(rootvb, "Home");
 
         } catch (SQLException ex) {

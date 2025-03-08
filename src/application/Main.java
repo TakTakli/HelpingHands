@@ -13,14 +13,20 @@ import java.util.Objects;
 
 
 public class Main extends Application {
+	
+	public static int remove_onboarding=0; //flag to remove onboarding screen on next bootup after login/registration
+	Parent root;
+	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent root= FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/controllers/MedTracker1.fxml")));
+			if(remove_onboarding==0)
+				root= FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/controllers/Home.fxml")));
+			else
+				root= FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/controllers/Login.fxml")));
 			Scene scene = new Scene(root, Color.WHITE);
 //			scene.getStylesheets().add(getClass().getResource("/resources/css/onboarding.css").toExternalForm());
 			primaryStage.setScene(scene);
-//			primaryStage.setFullScreen(true);
 			primaryStage.getIcons().add(new Image(Objects.requireNonNull(Main.class.getResourceAsStream("/resources/icons/helpinghands_logo.png"))));
 			primaryStage.show();
 		} catch(Exception e) {
