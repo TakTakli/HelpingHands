@@ -11,6 +11,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javax.swing.JOptionPane;
 import org.mindrot.jbcrypt.BCrypt;
+import utils.DatabaseConnection;
+import utils.UserSession;
 
 import application.Main;
 
@@ -21,20 +23,13 @@ public class LoginController extends TransitionUtils implements Initializable {
     @FXML private PasswordField password;
     @FXML private CheckBox showPassword;
     @FXML private TextField passwordVisible;
-    @FXML private Button login=new Button();
-
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/signup";
-    private static final String DB_USER = "root";
-    private static final String DB_PASS = "satadafannum";
+    @FXML private Button login = new Button();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         rootvb.setOpacity(0);
         fadeInToScene(rootvb);
-        login.setOnAction((ActionEvent e)->
-        {
-        	handleLogin(e);
-        });
+        login.setOnAction(this::handleLogin);
     }
 
     /** Toggle password visibility */
@@ -62,7 +57,13 @@ public class LoginController extends TransitionUtils implements Initializable {
             return;
         }
 
-        if (authenticateUser(userInput, passInput)) {
+
+        User user = authenticateUser(userInput, passInput);
+
+        if (user != null) {
+           
+            UserProfileController.setUserData(user.getUsername(), user.getEmail());
+
             JOptionPane.showMessageDialog(null, "✅ Login successful!");
             fadeOutToScene(rootvb, "Home");
             Main.remove_onboarding = 1;
@@ -71,33 +72,36 @@ public class LoginController extends TransitionUtils implements Initializable {
         }
     }
 
-    /** Database Connection */
-    private Connection connectdb() {
-        try {
-            return DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    /** Authenticate User */
-    private boolean authenticateUser(String userInput, String passInput) {
-        String sql = "SELECT password FROM signup.user WHERE username = ? OR email = ?";
-        try (Connection con = connectdb();
+    private User authenticateUser(String userInput, String passInput) {
+        String sql = "SELECT id, username, email, password FROM signup.user WHERE username = ? OR email = ?";
+        try (Connection con = DatabaseConnection.connect();
              PreparedStatement statement = con.prepareStatement(sql)) {
 
             statement.setString(1, userInput);
             statement.setString(2, userInput);
+
             try (ResultSet rs = statement.executeQuery()) {
                 if (rs.next()) {
-                    return BCrypt.checkpw(passInput, rs.getString("password"));
+                    String dbPassword = rs.getString("password");
+                    if (BCrypt.checkpw(passInput, dbPassword)) {
+                        // Fetch user details
+                        int userId = rs.getInt("id");
+                        String username = rs.getString("username");
+                        String email = rs.getString("email");
+
+                        // Store user details in the session
+                        UserSession.getInstance().setUserId(userId);
+                        UserSession.getInstance().setUsername(username);
+
+                        // Create User object to store fetched details
+                        return new User(username, email);
+                    }
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return false;
+        return null;  
     }
 
     /** Button Effects */
@@ -121,4 +125,22 @@ public class LoginController extends TransitionUtils implements Initializable {
         login.setStyle("-fx-background-color: #044dbb; -fx-text-fill:#fff;");
     }
 
+    // Inner User class to store the user's details
+    public static class User {
+        private String username;
+        private String email;
+
+        public User(String username, String email) {
+            this.username = username;
+            this.email = email;
+        }
+
+        public String getUsername() {
+            return username;
+        }
+
+        public String getEmail() {
+            return email;
+        }
+    }
 }

@@ -21,9 +21,10 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			if(remove_onboarding==0)
-				root= FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/controllers/Home.fxml")));
+				root= FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/controllers/OnboardingScreen1.fxml")));
 			else
 				root= FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/controllers/Login.fxml")));
+
 			Scene scene = new Scene(root, Color.WHITE);
 //			scene.getStylesheets().add(getClass().getResource("/resources/css/onboarding.css").toExternalForm());
 			primaryStage.setScene(scene);
