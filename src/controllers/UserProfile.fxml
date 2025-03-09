@@ -163,17 +163,17 @@
                   <Label styleClass="details" text="Username" />
                   <Label styleClass="details" text="Password" GridPane.rowIndex="2" />
                   <Label styleClass="details" text="Email" GridPane.rowIndex="1" />
-                  <TextField editable="false" prefHeight="40.0" prefWidth="94.0" GridPane.columnIndex="1">
+                  <TextField fx:id="usernameField" editable="false" prefHeight="40.0" prefWidth="94.0" GridPane.columnIndex="1">
                      <GridPane.margin>
                         <Insets right="300.0" />
                      </GridPane.margin>
                   </TextField>
-                  <TextField editable="false" prefHeight="40.0" prefWidth="186.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <TextField fx:id="emailField" editable="false" prefHeight="40.0" prefWidth="186.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets right="300.0" />
                      </GridPane.margin>
                   </TextField>
-                  <TextField editable="false" prefHeight="40.0" prefWidth="77.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <TextField fx:id="passwordField" editable="false" prefHeight="40.0" prefWidth="77.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <GridPane.margin>
                         <Insets right="300.0" />
                      </GridPane.margin>
