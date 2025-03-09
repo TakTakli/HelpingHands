@@ -6,6 +6,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import utils.Medicine;
@@ -17,11 +19,13 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class MedTracker1Controller extends TransitionUtils implements Initializable {
-    @FXML private VBox medscontainer; // The container for medicines
+    @FXML private HBox roothb;
+    @FXML private StackPane return_btn;
+	@FXML private VBox medscontainer; // The container for medicines
     @FXML private Label duetxt; // Label to display "Nothing due" or other messages
     @FXML private Label TodayDate; // Label to display today's date
     @FXML private Button medadd_btn; // Add Button to navigate to MedicineAdd view
-
+    @FXML private Button viewhistory_btn ;
     private MedicineDAO medicineDAO = new MedicineDAO();
 
     @Override
@@ -38,9 +42,18 @@ public class MedTracker1Controller extends TransitionUtils implements Initializa
         // Set today's date
         setTodaysDate();
 
-        // Handle Add Button click
-        medadd_btn.setOnAction((e) -> {
-            fadeOutToScene(medscontainer, "MedicineAdd");
+        roothb.setOpacity(0);
+        fadeInToScene(roothb);
+        initializeSidebar(roothb);
+		return_btn.setOnMouseClicked((e)->{
+			fadeOutToScene(roothb, "Home");
+		});
+		viewhistory_btn.setOnAction((e)->{
+			fadeOutToScene(roothb, "MedHistory");
+		});
+		medadd_btn.setOnAction((e)->{
+			fadeOutToScene(roothb, "MedicineAdd");
+	
         });
     }
 
