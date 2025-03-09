@@ -14,6 +14,8 @@ import org.mindrot.jbcrypt.BCrypt;
 import utils.DatabaseConnection;
 import utils.UserSession;
 
+import application.Main;
+
 public class LoginController extends TransitionUtils implements Initializable {
 
     @FXML private VBox rootvb;
@@ -64,6 +66,7 @@ public class LoginController extends TransitionUtils implements Initializable {
 
             JOptionPane.showMessageDialog(null, "✅ Login successful!");
             fadeOutToScene(rootvb, "Home");
+            Main.remove_onboarding = 1;
         } else {
             JOptionPane.showMessageDialog(null, "❌ Invalid username/email or password!");
         }

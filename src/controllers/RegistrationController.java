@@ -15,6 +15,8 @@ import org.mindrot.jbcrypt.BCrypt;
 import utils.DatabaseConnection;
 import utils.UserSession;
 
+import application.Main;
+
 public class RegistrationController extends TransitionUtils implements Initializable {
 
     @FXML private VBox rootvb;
@@ -121,6 +123,7 @@ public class RegistrationController extends TransitionUtils implements Initializ
                     JOptionPane.showMessageDialog(null, "✅ Successfully created new account!");
                     UserProfileController.setUserData(userInput, emailInput);
 
+					Main.remove_onboarding = 1;
                     fadeOutToScene(rootvb, "Home");
                 } else {
                     JOptionPane.showMessageDialog(null, "❌ Failed to create account. Please try again.");
