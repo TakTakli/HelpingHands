@@ -24,6 +24,7 @@ public class Main extends Application {
 				root= FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/controllers/OnboardingScreen1.fxml")));
 			else
 				root= FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/controllers/Login.fxml")));
+
 			Scene scene = new Scene(root, Color.WHITE);
 //			scene.getStylesheets().add(getClass().getResource("/resources/css/onboarding.css").toExternalForm());
 			primaryStage.setScene(scene);
