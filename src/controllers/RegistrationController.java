@@ -105,13 +105,15 @@ public class RegistrationController extends TransitionUtils implements Initializ
         String sql = "INSERT INTO signup.user (username, email, password) VALUES (?, ?, ?)";
 
         try (Connection con = DatabaseConnection.connect();
-             PreparedStatement statement = con.prepareStatement(sql)) {
+             // Specify RETURN_GENERATED_KEYS here
+             PreparedStatement statement = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
             statement.setString(1, userInput);
             statement.setString(2, emailInput);
             statement.setString(3, hashedPassword);
             statement.executeUpdate();
-      
+
+            // Retrieve the generated keys
             try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
                 if (generatedKeys.next()) {
                     int userId = generatedKeys.getInt(1);
@@ -123,8 +125,8 @@ public class RegistrationController extends TransitionUtils implements Initializ
                     JOptionPane.showMessageDialog(null, "✅ Successfully created new account!");
                     UserProfileController.setUserData(userInput, emailInput);
 
-					Main.remove_onboarding = 1;
-                    fadeOutToScene(rootvb, "Home");
+                    Main.remove_onboarding = 1;
+                    fadeOutToScene(rootvb, "HealthProfile");
                 } else {
                     JOptionPane.showMessageDialog(null, "❌ Failed to create account. Please try again.");
                 }
@@ -133,7 +135,6 @@ public class RegistrationController extends TransitionUtils implements Initializ
             ex.printStackTrace();
         }
     }
-
     /** Button Effects */
     @FXML
     public void signupButtonClick(MouseEvent e) {

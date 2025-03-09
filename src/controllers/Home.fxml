@@ -50,7 +50,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Label id="logotxt" alignment="TOP_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="47.0" prefWidth="206.0" text="Welcome!" wrapText="true" />
+                  <Label id="logotxt" fx:id="Welcome" alignment="TOP_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="1046.0" text="Welcome!" wrapText="true" />
                </children>
             </HBox>
             <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="614.0" prefWidth="1161.0" spacing="28.0">

@@ -169,16 +169,17 @@
                               <Insets left="60.0" top="40.0" />
                            </VBox.margin>
                         </Label>
-                        <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="265.0" prefWidth="934.0" spacing="12.0" styleClass="bg-box">
+                      <Button fx:id="medadd_btn" mnemonicParsing="false" prefHeight="40.0" prefWidth="174.0" styleClass="viewlog-btn" text="Add Medicines">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="50.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <VBox fx:id="medscontainer" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="934.0" spacing="12.0" styleClass="bg-box">
                            <children>
                               <HBox alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="854.0">
                                  <children>
                                     <Label id="medheader" fx:id="MonthYearTxt1" prefHeight="37.0" prefWidth="401.0" text="Your medications for today" />
-                                    <ButtonBar maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="54.0" prefWidth="456.0">
-                                      <buttons>
-                                        <Button fx:id="medadd_btn" mnemonicParsing="false" prefHeight="41.0" prefWidth="116.0" styleClass="viewlog-btn" text="Add" />
-                                      </buttons>
-                                    </ButtonBar>
+                                    <ButtonBar maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="54.0" prefWidth="456.0" />
                                  </children>
                                  <VBox.margin>
                                     <Insets top="12.0" />

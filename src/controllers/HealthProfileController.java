@@ -149,7 +149,7 @@ public class HealthProfileController extends TransitionUtils implements Initiali
         // Check if all data was saved successfully
         if (isProfileSaved && areDiagnosesSaved && areAllergiesSaved) {
             JOptionPane.showMessageDialog(null, "✅ Health profile saved successfully!");
-            fadeOutToScene(rootvb, "SignUpOrNot"); // Navigate to SignUpOrNot screen
+            fadeOutToScene(rootvb, "Home"); // Navigate to Home screen
         } else {
             JOptionPane.showMessageDialog(null, "❌ Failed to save health profile. Please try again.");
         }

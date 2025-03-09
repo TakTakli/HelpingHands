@@ -3,6 +3,7 @@ package utils;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -60,6 +61,30 @@ public class HealthProfileDAO {
     }
 
     /**
+     * Checks if a diagnosis already exists for the user.
+     *
+     * @param userId      The ID of the user.
+     * @param diagnosisId The ID of the diagnosis.
+     * @return true if the diagnosis exists for the user, false otherwise.
+     */
+    private boolean isDiagnosisExists(int userId, int diagnosisId) {
+        String sql = "SELECT COUNT(*) FROM signup.user_diagnoses WHERE ID = ? AND diagnoses_id = ?";
+        try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, userId);
+            pstmt.setInt(2, diagnosisId);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next() && rs.getInt(1) > 0) {
+                    return true; // Diagnosis exists for the user
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false; // Diagnosis does not exist for the user
+    }
+
+    /**
      * Saves the selected diagnoses for the user.
      *
      * @param userId            The ID of the user.
@@ -72,9 +97,11 @@ public class HealthProfileDAO {
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             for (int diagnosisId : diagnosisIds) {
-                pstmt.setInt(1, userId);
-                pstmt.setInt(2, diagnosisId);
-                pstmt.addBatch();
+                if (!isDiagnosisExists(userId, diagnosisId)) { // Check if the diagnosis already exists
+                    pstmt.setInt(1, userId);
+                    pstmt.setInt(2, diagnosisId);
+                    pstmt.addBatch();
+                }
             }
 
             int[] rowsAffected = pstmt.executeBatch();
@@ -83,6 +110,30 @@ public class HealthProfileDAO {
             e.printStackTrace();
             return false; // Return false if an error occurs
         }
+    }
+
+    /**
+     * Checks if an allergy already exists for the user.
+     *
+     * @param userId      The ID of the user.
+     * @param allergyId   The ID of the allergy.
+     * @return true if the allergy exists for the user, false otherwise.
+     */
+    private boolean isAllergyExists(int userId, int allergyId) {
+        String sql = "SELECT COUNT(*) FROM signup.user_allergies WHERE userid = ? AND allergy_id = ?";
+        try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, userId);
+            pstmt.setInt(2, allergyId);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next() && rs.getInt(1) > 0) {
+                    return true; // Allergy exists for the user
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false; // Allergy does not exist for the user
     }
 
     /**
@@ -98,9 +149,11 @@ public class HealthProfileDAO {
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             for (int allergyId : allergyIds) {
-                pstmt.setInt(1, userId);
-                pstmt.setInt(2, allergyId);
-                pstmt.addBatch();
+                if (!isAllergyExists(userId, allergyId)) { // Check if the allergy already exists
+                    pstmt.setInt(1, userId);
+                    pstmt.setInt(2, allergyId);
+                    pstmt.addBatch();
+                }
             }
 
             int[] rowsAffected = pstmt.executeBatch();

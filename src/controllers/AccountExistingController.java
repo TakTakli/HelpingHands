@@ -83,7 +83,7 @@ public class AccountExistingController extends TransitionUtils implements Initia
 	     });
 	     proceed.setOnAction((e)->
 	     {
-	    	 fadeOutToScene(beginvb, "HealthProfile"); 
+	    	 fadeOutToScene(beginvb, "Registration"); 
 	     });
 		
 	}
