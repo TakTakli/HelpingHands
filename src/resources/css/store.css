@@ -90,6 +90,7 @@
   -fx-background-radius: 16px;
   -fx-border-radius: 16px;
   -fx-border-color: #a8b5cc;
+  -fx-border-width: 1;
   -fx-font-family: "Plus Jakarta Sans";
 }
 
@@ -125,6 +126,10 @@
 #quantity
 {
   -fx-font-size: 20;
+  -fx-border-width:1;
+  -fx-border-color: #a8b5cc;
+  -fx-border-radius: 4;
+
 }
 
 .bg-box

@@ -34,7 +34,7 @@
   -fx-effect: dropshadow(one-pass-box, #002d7123, 20, 0.5, 0, 0);
 }
 
-#namelabel
+#namelabel, #eqnamelabel
 {
   -fx-text-fill : #fff;
   -fx-font-size: 24;
@@ -44,6 +44,8 @@
 .detailsbox
 {
   -fx-background-color: #044dbb;
+  -fx-background-radius: 0 0 20 20;
+  -fx-border-radius: 0 0 20 20;
 }
 
 .details
@@ -52,7 +54,8 @@
   -fx-font-size: 16;
 }
 
-#price
+#medprice, #eqprice
 {
   -fx-font-family: "Plus Jakarta Sans Bold";
+  -fx-font-size: 18;
 }

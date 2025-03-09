@@ -5,18 +5,18 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 
-<HBox fx:id="roothb" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StoreMainController">
+<HBox fx:id="roothb" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EquipmentPurchaseController">
    <children>
       <VBox id="sidebar" alignment="TOP_CENTER" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="274.0">
          <children>
@@ -46,7 +46,7 @@
                </padding>
             </Button>
             <Separator prefWidth="200.0" />
-            <Button fx:id="calendar_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="284.0" styleClass="sidebar-btn" text="Calendar">
+            <Button graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="284.0" styleClass="sidebar-btn" text="Calendar">
                <graphic>
                   <ImageView fitHeight="38.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -130,7 +130,7 @@
       </VBox>
       <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1006.0" HBox.hgrow="ALWAYS">
          <children>
-            <HBox id="headerbox" alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="79.0" prefWidth="1006.0" spacing="12.0" VBox.vgrow="ALWAYS">
+            <HBox id="headerbox" alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="79.0" prefWidth="1006.0" spacing="12.0">
                <children>
                   <StackPane fx:id="return_btn" prefHeight="25.0" prefWidth="30.0">
                      <children>
@@ -150,68 +150,61 @@
                         <Insets left="60.0" />
                      </HBox.margin>
                   </StackPane>
-                  <Label id="header" text="Store">
+                  <Label id="header" prefHeight="49.0" prefWidth="225.0" text="Purchase">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
                   </Label>
-                  <ButtonBar prefHeight="79.0" prefWidth="794.0" HBox.hgrow="ALWAYS">
-                    <buttons>
-                      <Button fx:id="viewcart" mnemonicParsing="false" prefHeight="41.0" prefWidth="127.0" styleClass="notsearch" text="View Cart" />
-                    </buttons>
+                  <ButtonBar prefHeight="79.0" prefWidth="794.0">
                      <padding>
                         <Insets right="60.0" />
                      </padding>
                   </ButtonBar>
                </children>
             </HBox>
-            <ScrollPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="994.0" VBox.vgrow="ALWAYS">
-               <content>
-                  <VBox minHeight="-Infinity" minWidth="-Infinity" prefWidth="1006.0">
-                     <children>
-                        <HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="71.0" prefWidth="800.0" spacing="40.0" VBox.vgrow="ALWAYS">
-                           <children>
-                              <TextField fx:id="searchbar" prefHeight="45.0" prefWidth="520.0" styleClass="searchbar" />
-                              <Button fx:id="search_btn" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="search" text="Search" HBox.hgrow="ALWAYS" />
-                           </children>
-                           <VBox.margin>
-                              <Insets top="20.0" />
-                           </VBox.margin>
-                        </HBox>
-                        <Label styleClass="subheader" text="Categories">
-                           <VBox.margin>
-                              <Insets top="20.0" />
-                           </VBox.margin>
-                        </Label>
-                        <HBox alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="926.0" spacing="20.0">
-                           <children>
-                            <Button fx:id="medicine" mnemonicParsing="false" prefHeight="41.0" prefWidth="113.0" styleClass="notsearch" text="Medicine" />
-                              <Button fx:id="equipment" mnemonicParsing="false" prefHeight="41.0" prefWidth="132.0" styleClass="notsearch" text="Equipment" />
-                           </children>
-                           <VBox.margin>
-                              <Insets top="16.0" />
-                           </VBox.margin>
-                        </HBox>
-                        <Label styleClass="subheader" text="Products">
-                           <VBox.margin>
-                              <Insets top="40.0" />
-                           </VBox.margin>
-                        </Label>
-                        <FlowPane fx:id="itemflow" columnHalignment="CENTER" hgap="60.0" minWidth="-Infinity" prefHeight="309.0" prefWidth="926.0" vgap="80.0">
-                           <VBox.margin>
-                              <Insets top="28.0" />
-                           </VBox.margin>
-                        </FlowPane>
-                     </children>
-                     <padding>
-                        <Insets left="40.0" right="40.0" />
-                     </padding>
-                  </VBox>
-               </content>
+            <Label styleClass="subheader" text="Product">
                <VBox.margin>
-                  <Insets left="12.0" top="6.0" />
+                  <Insets left="60.0" top="40.0" />
                </VBox.margin>
-            </ScrollPane>
+            </Label>
+            <HBox prefHeight="150.0" prefWidth="934.0" spacing="40.0" styleClass="bg-box">
+               <children>
+                  <ImageView fx:id="prodimg" fitHeight="232.0" fitWidth="227.0" pickOnBounds="true" preserveRatio="true" />
+                  <GridPane fx:id="buygrid" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="86.0" prefWidth="608.0" vgap="16.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="342.0" minWidth="10.0" prefWidth="109.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="503.0" minWidth="10.0" prefWidth="502.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label styleClass="productdetails" text="Name :" />
+                        <Label fx:id="prodname" styleClass="productdetails" text="Label" GridPane.columnIndex="1" />
+                        <Label styleClass="productdetails" text="Price :" GridPane.rowIndex="1" />
+                        <Label fx:id="prodprice" styleClass="productdetails" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     </children>
+                     <HBox.margin>
+                        <Insets top="40.0" />
+                     </HBox.margin>
+                  </GridPane>
+               </children>
+               <VBox.margin>
+                  <Insets left="60.0" right="12.0" top="20.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+            </HBox>
+            <ButtonBar prefHeight="43.0" prefWidth="926.0">
+               <buttons>
+                  <Button fx:id="addcart" mnemonicParsing="false" prefHeight="42.0" prefWidth="143.0" styleClass="notsearch" text="Add to Cart" />
+               </buttons>
+               <VBox.margin>
+                  <Insets left="60.0" right="24.0" top="20.0" />
+               </VBox.margin>
+            </ButtonBar>
          </children>
       </VBox>
    </children>

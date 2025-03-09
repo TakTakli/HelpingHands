@@ -8,10 +8,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
-<VBox fx:id="itembox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="260.0" styleClass="bg-box" stylesheets="@../resources/css/productitem.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ItemController">
+<VBox fx:id="itembox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="333.0" prefWidth="260.0" styleClass="bg-box" stylesheets="@../resources/css/productitem.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ItemController">
    <children>
-      <ImageView fitHeight="163.0" fitWidth="226.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="prodimg" fitHeight="163.0" fitWidth="226.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../resources/img/Almex.jpg" />
          </image>
@@ -25,13 +24,13 @@
                </children>
             </HBox>
             <Label fx:id="medqt" styleClass="details" text="4 tablets/strip" />
-            <HBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="284.0" spacing="20.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="64.0" prefWidth="228.0" spacing="20.0">
                <children>
-                  <Label fx:id="price" prefHeight="45.0" prefWidth="109.0" styleClass="details" text="Tk. 5.00/unit" wrapText="true" />
-                  <Button mnemonicParsing="false" prefHeight="41.0" prefWidth="132.0" text="Buy" />
+                  <Label fx:id="medprice" prefHeight="55.0" prefWidth="122.0" styleClass="details" text="Tk. 5.00/unit" wrapText="true" />
+                  <Button fx:id="buybtn" mnemonicParsing="false" prefHeight="41.0" prefWidth="132.0" text="Buy" />
                </children>
                <VBox.margin>
-                  <Insets top="20.0" />
+                  <Insets top="12.0" />
                </VBox.margin>
             </HBox>
          </children>
