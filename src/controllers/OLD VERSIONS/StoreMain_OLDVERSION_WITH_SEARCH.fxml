@@ -7,6 +7,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.FlowPane?>
@@ -23,7 +24,7 @@
                <graphic>
                   <ImageView fitHeight="51.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../resources/icons/icons8-user-100-blue-filled.png" />
+                        <Image url="@../../resources/icons/icons8-user-100-blue-filled.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -36,7 +37,7 @@
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../resources/icons/icons8-home-100%20(1).png" />
+                        <Image url="@../../resources/icons/icons8-home-100%20(1).png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -49,7 +50,7 @@
                <graphic>
                   <ImageView fitHeight="38.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../resources/icons/icons8-calendar-100%20(3).png" />
+                        <Image url="@../../resources/icons/icons8-calendar-100%20(3).png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -62,7 +63,7 @@
                <graphic>
                   <ImageView fitHeight="41.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../resources/icons/icons8-pill-100%20(3).png" />
+                        <Image url="@../../resources/icons/icons8-pill-100%20(3).png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -75,7 +76,7 @@
                <graphic>
                   <ImageView fitHeight="61.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../resources/icons/icons8-meal-100%20(1).png" />
+                        <Image url="@../../resources/icons/icons8-meal-100%20(1).png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -88,7 +89,7 @@
                <graphic>
                   <ImageView fitHeight="48.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../resources/icons/icons8-add-shopping-cart-100.png" />
+                        <Image url="@../../resources/icons/icons8-add-shopping-cart-100.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -101,7 +102,7 @@
                <graphic>
                   <ImageView fitHeight="43.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../resources/icons/icons8-exercise-100%20(2).png" />
+                        <Image url="@../../resources/icons/icons8-exercise-100%20(2).png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -139,9 +140,9 @@
                      </HBox.margin>
                   </Label>
                   <ButtonBar prefHeight="79.0" prefWidth="794.0" HBox.hgrow="ALWAYS">
-                    <buttons>
-                      <Button fx:id="viewcart" mnemonicParsing="false" prefHeight="41.0" prefWidth="127.0" styleClass="notsearch" text="View Cart" />
-                    </buttons>
+                     <buttons>
+                        <Button fx:id="viewcart" mnemonicParsing="false" prefHeight="41.0" prefWidth="127.0" styleClass="notsearch" text="View Cart" />
+                     </buttons>
                      <padding>
                         <Insets right="60.0" />
                      </padding>
@@ -152,6 +153,15 @@
                <content>
                   <VBox minHeight="-Infinity" minWidth="-Infinity" prefWidth="1006.0">
                      <children>
+                        <HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="71.0" prefWidth="800.0" spacing="40.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <TextField fx:id="searchbar" prefHeight="45.0" prefWidth="520.0" styleClass="searchbar" />
+                              <Button fx:id="search_btn" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="search" text="Search" HBox.hgrow="ALWAYS" />
+                           </children>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </HBox>
                         <Label styleClass="subheader" text="Categories">
                            <VBox.margin>
                               <Insets top="20.0" />
@@ -159,7 +169,7 @@
                         </Label>
                         <HBox alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="926.0" spacing="20.0">
                            <children>
-                            <Button fx:id="medicine" mnemonicParsing="false" prefHeight="41.0" prefWidth="113.0" styleClass="notsearch" text="Medicine" />
+                              <Button fx:id="medicine" mnemonicParsing="false" prefHeight="41.0" prefWidth="113.0" styleClass="notsearch" text="Medicine" />
                               <Button fx:id="equipment" mnemonicParsing="false" prefHeight="41.0" prefWidth="132.0" styleClass="notsearch" text="Equipment" />
                            </children>
                            <VBox.margin>
@@ -190,7 +200,7 @@
       </VBox>
    </children>
    <stylesheets>
-      <URL value="@../resources/css/store.css" />
-      <URL value="@../resources/css/sidebar.css" />
+      <URL value="@../../resources/css/store.css" />
+      <URL value="@../../resources/css/sidebar.css" />
    </stylesheets>
 </HBox>

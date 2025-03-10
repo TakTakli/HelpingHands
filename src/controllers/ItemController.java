@@ -35,7 +35,7 @@ public class ItemController extends TransitionUtils implements Initializable{
 		
 		//set item data to be displayed in flowpane//
 		namelabel.setText(product.getName());
-		meddose.setText(String.valueOf(product.getDose())+product.getDoseUnit()); //400+mg
+		meddose.setText(String.valueOf(product.getDose())+" "+product.getDoseUnit()); //400+mg
 		medqt.setText(product.getAmount());
 		price.setText("Tk. "+String.valueOf(product.getPrice())+"/unit");
 		prodimg.setImage(new Image(getClass().getResourceAsStream(product.getImg()))); 
