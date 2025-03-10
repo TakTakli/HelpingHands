@@ -57,7 +57,7 @@ public class RegistrationController extends TransitionUtils implements Initializ
 
     /** Check if username already exists */
     private boolean isUsernameTaken(String username) {
-        String sql = "SELECT COUNT(*) FROM signup.user WHERE username = ?";
+        String sql = "SELECT COUNT(*) FROM user WHERE username = ?";
         try (Connection con = DatabaseConnection.connect();
              PreparedStatement statement = con.prepareStatement(sql)) {
             
@@ -102,7 +102,7 @@ public class RegistrationController extends TransitionUtils implements Initializ
 
         String hashedPassword = hashPassword(passInput);
 
-        String sql = "INSERT INTO signup.user (username, email, password) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO user (username, email, password) VALUES (?, ?, ?)";
 
         try (Connection con = DatabaseConnection.connect();
              // Specify RETURN_GENERATED_KEYS here

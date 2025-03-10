@@ -20,7 +20,7 @@ public class HomeController extends TransitionUtils implements Initializable{
 	@FXML private Button medtracker_btn = new Button();
 	@FXML private Button mealplan_btn = new Button();
 	@FXML private Button shop_btn = new Button();
-	@FXML private Button mapview_btn = new Button();
+//	@FXML private Button mapview_btn = new Button();
 	@FXML private Button exercise_btn = new Button();
 	@FXML private Label Welcome=new Label();
 	
@@ -56,9 +56,9 @@ public class HomeController extends TransitionUtils implements Initializable{
         shop_btn.setOnAction((e)->{
         	fadeOutToScene(roothb, "StoreMain");
         });
-        mapview_btn.setOnAction((e)->{
-        	fadeOutToScene(roothb, "Map");
-        });
+//        mapview_btn.setOnAction((e)->{
+//        	fadeOutToScene(roothb, "Map");
+//        });
         exercise_btn.setOnAction((e)->{
         	fadeOutToScene(roothb, "ExerciseGuide");
         });

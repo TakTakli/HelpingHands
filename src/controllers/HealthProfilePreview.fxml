@@ -438,20 +438,7 @@
                         <Insets />
                      </VBox.margin>
                   </VBox>
-                  <Label id="small-text" text="Click on 'Edit' to enable editing">
-                     <VBox.margin>
-                        <Insets top="8.0" />
-                     </VBox.margin>
-                  </Label>
-                  <Button fx:id="edit" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Edit">
-                     <VBox.margin>
-                        <Insets bottom="60.0" top="-28.0" />
-                     </VBox.margin>
-                  </Button>
-                  <Label id="small-text" layoutX="70.0" layoutY="2090.0" text="Save the changes after editing" />
-                  <Button fx:id="submit" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="70.0" layoutY="1978.0" mnemonicParsing="false" text="Save Changes" />
-                  <Label id="small-text" layoutX="70.0" layoutY="2150.0" text="Finally, Go Back!" />
-                  <Button fx:id="submit1" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="70.0" layoutY="1978.0" mnemonicParsing="false" text="&lt;- Back" />
+                  <Button fx:id="submit1" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="70.0" layoutY="1978.0" mnemonicParsing="false" text="Return to Home" />
                </children>
                <padding>
                   <Insets left="60.0" />

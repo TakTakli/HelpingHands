@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HealthProfilePreviewDAO {
-    private static final String URL = "jdbc:mysql://localhost:3306/signup";
+    private static final String URL = "jdbc:mysql://localhost:3306/helpinghands";
     private static final String USER = "root";
-    private static final String PASSWORD = "satadafannum";
+    private static final String PASSWORD = "Jelaushekodu!1";
 
     /**
      * Fetches the health profile of the user.

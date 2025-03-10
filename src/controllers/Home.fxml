@@ -26,15 +26,6 @@
                   <Insets top="20.0" />
                </VBox.margin>
             </Button>
-            <Button id="settings" fx:id="settings_btn" alignment="BOTTOM_CENTER" mnemonicParsing="false" VBox.vgrow="ALWAYS">
-               <graphic>
-                  <ImageView fitHeight="47.0" fitWidth="60.0" preserveRatio="true">
-                     <image>
-                        <Image url="@../resources/icons/icons8-gear-100.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
          </children>
       </VBox>
       <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1146.0" spacing="28.0" HBox.hgrow="ALWAYS">
