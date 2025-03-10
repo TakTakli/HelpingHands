@@ -53,7 +53,8 @@ public class LoginController extends TransitionUtils implements Initializable {
         String passInput = password.getText().trim();
 
         if (userInput.isEmpty() || passInput.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Username/Email and password are required!");
+            
+            showAlert(Alert.AlertType.ERROR,"Incomplete fields" ,"Username/Email and password are required!");
             return;
         }
 
@@ -63,17 +64,18 @@ public class LoginController extends TransitionUtils implements Initializable {
         if (user != null) {
            
             UserProfileController.setUserData(user.getUsername(), user.getEmail());
-
-            JOptionPane.showMessageDialog(null, "✅ Login successful!");
+            showAlert(Alert.AlertType.INFORMATION ,null,"Login Successful!!");
+            
             fadeOutToScene(rootvb, "Home");
             Main.remove_onboarding = 1;
         } else {
-            JOptionPane.showMessageDialog(null, "❌ Invalid username/email or password!");
+        	showAlert(Alert.AlertType.ERROR,"Invalid Input" ,"Invalid username/email or password!");
+           
         }
     }
 
     private User authenticateUser(String userInput, String passInput) {
-        String sql = "SELECT id, username, email, password FROM signup.user WHERE username = ? OR email = ?";
+        String sql = "SELECT id, username, email, password FROM user WHERE username = ? OR email = ?";
         try (Connection con = DatabaseConnection.connect();
              PreparedStatement statement = con.prepareStatement(sql)) {
 
@@ -143,4 +145,12 @@ public class LoginController extends TransitionUtils implements Initializable {
             return email;
         }
     }
+    private void showAlert(Alert.AlertType type, String title, String message) {
+        Alert alert = new Alert(type);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
 }
+}
+   

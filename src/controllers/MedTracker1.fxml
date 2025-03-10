@@ -162,7 +162,7 @@
             </HBox>
             <ScrollPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="994.0" VBox.vgrow="ALWAYS">
                <content>
-                  <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="1006.0">
+                  <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="682.0" prefWidth="1037.0">
                      <children>
                         <Label fx:id="TodayDate" text="Label">
                            <VBox.margin>
@@ -174,7 +174,7 @@
                               <Insets bottom="10.0" left="50.0" right="10.0" top="10.0" />
                            </VBox.margin>
                         </Button>
-                        <VBox fx:id="medscontainer" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="934.0" spacing="12.0" styleClass="bg-box">
+                        <VBox fx:id="medscontainer" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="908.0" spacing="12.0" styleClass="bg-box">
                            <children>
                               <HBox alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="854.0">
                                  <children>
@@ -186,6 +186,19 @@
                                  </VBox.margin>
                               </HBox>
                               <Label fx:id="duetxt" text="Nothing due" />
+                              <HBox prefHeight="346.0" prefWidth="886.0">
+                                 <children>
+                                    <HBox fx:id="pending_med" prefHeight="182.0" prefWidth="531.0" style="-fx-background-color: #90D5FF; -fx-background-radius: 20;" />
+                                    <HBox fx:id="taken_med" prefHeight="166.0" prefWidth="550.0" style="-fx-background-color: #044ddb; -fx-background-radius: 20;">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <HBox.margin>
+                                          <Insets left="20.0" />
+                                       </HBox.margin>
+                                    </HBox>
+                                 </children>
+                              </HBox>
                            </children>
                            <VBox.margin>
                               <Insets bottom="36.0" left="36.0" right="36.0" top="36.0" />
@@ -203,6 +216,7 @@
             </ScrollPane>
          </children>
       </VBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" />
    </children>
    <stylesheets>
       <URL value="@../resources/css/medtracker.css" />

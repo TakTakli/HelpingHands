@@ -33,7 +33,7 @@ public class HealthProfileDAO {
                                      String dateOfBirth, String gender, String emergencyContactName,
                                      String emergencyContactPhone, String emergencyContactEmail,
                                      String otherDisease, String otherAllergy) {
-        String sql = "INSERT INTO signup.health_profile (user_id, first_name, last_name, phone, email, date_of_birth, gender, " +
+        String sql = "INSERT INTO health_profile (user_id, first_name, last_name, phone, email, date_of_birth, gender, " +
                      "emergency_contact_name, emergency_contact_phone, emergency_contact_email, other_disease, other_allergy) " +
                      "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
@@ -68,7 +68,7 @@ public class HealthProfileDAO {
      * @return true if the diagnosis exists for the user, false otherwise.
      */
     private boolean isDiagnosisExists(int userId, int diagnosisId) {
-        String sql = "SELECT COUNT(*) FROM signup.user_diagnoses WHERE ID = ? AND diagnoses_id = ?";
+        String sql = "SELECT COUNT(*) FROM user_diagnoses WHERE ID = ? AND diagnoses_id = ?";
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setInt(1, userId);
@@ -92,7 +92,7 @@ public class HealthProfileDAO {
      * @return true if the diagnoses are saved successfully, false otherwise.
      */
     public boolean saveUserDiagnoses(int userId, List<Integer> diagnosisIds) {
-        String sql = "INSERT INTO signup.user_diagnoses (ID, diagnoses_id) VALUES (?, ?)";
+        String sql = "INSERT INTO user_diagnoses (ID, diagnoses_id) VALUES (?, ?)";
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 

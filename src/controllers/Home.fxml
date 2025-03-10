@@ -114,7 +114,7 @@
                                           </Pane>
                                           <VBox prefHeight="125.0" prefWidth="349.0">
                                              <children>
-                                                <Label id="duetxt" styleClass="container-inner-txt" text="Due today" />
+                                                <Label id="duetxt" fx:id="DueToday" styleClass="container-inner-txt" text="Due today" />
                                                 <Label fx:id="nothingDue" styleClass="container-inner-txt" text="Nothing due">
                                                    <VBox.margin>
                                                       <Insets top="4.0" />
