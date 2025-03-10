@@ -18,7 +18,7 @@
    <children>
       <VBox id="sidebar" alignment="TOP_CENTER" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="274.0">
          <children>
-            <Button fx:id="profile_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="341.0" styleClass="sidebar-btn" text="Profile">
+            <Button fx:id="profile_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="341.0" styleClass="sidebar-btn" text="Profile">
                <graphic>
                   <ImageView fitHeight="51.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -31,7 +31,7 @@
                </padding>
             </Button>
             <Separator prefWidth="200.0" />
-            <Button fx:id="home_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="283.0" styleClass="sidebar-btn" text="Home">
+            <Button fx:id="home_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="283.0" styleClass="sidebar-btn" text="Home">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -44,7 +44,7 @@
                </padding>
             </Button>
             <Separator prefWidth="200.0" />
-            <Button fx:id="calendar_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="284.0" styleClass="sidebar-btn" text="Calendar">
+            <Button fx:id="calendar_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="284.0" styleClass="sidebar-btn" text="Calendar">
                <graphic>
                   <ImageView fitHeight="38.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -57,7 +57,7 @@
                </padding>
             </Button>
             <Separator prefWidth="200.0" />
-            <Button id="selected" fx:id="med_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="281.0" styleClass="sidebar-btn" text="Medication Tracker" wrapText="true">
+            <Button id="selected" fx:id="med_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="281.0" styleClass="sidebar-btn" text="Medication Tracker" wrapText="true">
                <graphic>
                   <ImageView fitHeight="41.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -70,7 +70,7 @@
                </padding>
             </Button>
             <Separator prefWidth="200.0" />
-            <Button fx:id="meal_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="279.0" styleClass="sidebar-btn" text="Meal Planner">
+            <Button fx:id="meal_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="279.0" styleClass="sidebar-btn" text="Meal Planner">
                <graphic>
                   <ImageView fitHeight="61.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -83,7 +83,7 @@
                </padding>
             </Button>
             <Separator prefWidth="200.0" />
-            <Button fx:id="store_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="336.0" styleClass="sidebar-btn" text="E-Store">
+            <Button fx:id="store_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="336.0" styleClass="sidebar-btn" text="E-Store">
                <graphic>
                   <ImageView fitHeight="48.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -96,23 +96,7 @@
                </padding>
             </Button>
             <Separator prefWidth="200.0" />
-            <Button fx:id="map_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="315.0" styleClass="sidebar-btn" text="Map">
-               <graphic>
-                  <ImageView fitHeight="41.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../resources/icons/icons8-location-100%20(1).png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets right="120.0" />
-               </padding>
-            </Button>
-            <Separator prefWidth="200.0" />
-            <Button fx:id="guide_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="301.0" styleClass="sidebar-btn" text="Exercise Guide">
+            <Button fx:id="guide_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="301.0" styleClass="sidebar-btn" text="Exercise Guide">
                <graphic>
                   <ImageView fitHeight="43.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -166,28 +150,35 @@
                      <children>
                         <Label fx:id="TodayDate" text="Label">
                            <VBox.margin>
-                              <Insets left="60.0" top="40.0" />
+                              <Insets left="36.0" top="20.0" />
                            </VBox.margin>
                         </Label>
-                        <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="265.0" prefWidth="934.0" spacing="12.0" styleClass="bg-box">
+                        <HBox alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="854.0">
+                           <VBox.margin>
+                              <Insets left="36.0" />
+                           </VBox.margin>
                            <children>
-                              <HBox alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="854.0">
-                                 <children>
-                                    <Label id="medheader" fx:id="MonthYearTxt1" prefHeight="37.0" prefWidth="401.0" text="Your medications for today" />
-                                    <ButtonBar maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="54.0" prefWidth="456.0">
-                                      <buttons>
-                                        <Button fx:id="medadd_btn" mnemonicParsing="false" prefHeight="41.0" prefWidth="116.0" styleClass="viewlog-btn" text="Add" />
-                                      </buttons>
-                                    </ButtonBar>
-                                 </children>
+                              <Label id="medheader" prefHeight="37.0" prefWidth="815.0" text="Your medications for today" />
+                            <Button fx:id="medadd_btn" mnemonicParsing="false" prefHeight="82.0" prefWidth="68.0" styleClass="viewlog-btn">
+                                 <graphic>
+                                    <ImageView fitHeight="83.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/icons/icons8-plus-100.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <VBox fx:id="medscontainer" minHeight="-Infinity" minWidth="-Infinity" prefHeight="446.0" prefWidth="934.0" spacing="12.0" styleClass="bg-box">
+                           <children>
+                              <Label fx:id="duetxt" text="Nothing due">
                                  <VBox.margin>
-                                    <Insets top="12.0" />
-                                 </VBox.margin>
-                              </HBox>
-                              <Label fx:id="duetxt" text="Nothing due" />
+                                    <Insets top="32.0" />
+                                 </VBox.margin></Label>
                            </children>
                            <VBox.margin>
-                              <Insets bottom="36.0" left="36.0" right="36.0" top="36.0" />
+                              <Insets bottom="36.0" left="36.0" right="36.0" top="8.0" />
                            </VBox.margin>
                            <padding>
                               <Insets left="40.0" right="40.0" />

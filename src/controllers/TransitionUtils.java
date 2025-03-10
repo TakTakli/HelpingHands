@@ -98,7 +98,7 @@ public class TransitionUtils {
 	}
 	
 	
-	/*HBox Overload*/
+	/*Overload functions with hbox*/
 	public void switchToScene(HBox rootNode, String scene_name)
 	{
 		Parent root;

@@ -94,6 +94,12 @@
   -fx-text-fill: #fff;
   -fx-background-radius: 16;
 }
+#medadd_btn
+{
+  -fx-background-radius: 100;
+  -fx-border-radius: 100;
+  -fx-background-color: #fff;
+}
 
 .viewlog-btn:hover, #addbtn:hover
 {

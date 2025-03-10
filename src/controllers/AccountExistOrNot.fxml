@@ -45,8 +45,8 @@
                   </Button>
                   <VBox alignment="CENTER" prefHeight="84.0" prefWidth="192.0" spacing="8.0">
                      <children>
-                        <Button fx:id="proceed" contentDisplay="RIGHT" graphicTextGap="8.0" mnemonicParsing="false" onMouseEntered="#proceedButtonHover" onMouseExited="#proceedButtonExit" onMousePressed="#proceedButtonClicked" onMouseReleased="#proceedButtonReleased" prefHeight="52.0" prefWidth="192.0" text="No, proceed" />
-                        <Label id="proceedtxt" prefHeight="70.0" prefWidth="192.0" text="You will get the option to create one later" textAlignment="CENTER" wrapText="true" />
+                        <Button fx:id="proceed" contentDisplay="RIGHT" graphicTextGap="8.0" mnemonicParsing="false" onMouseEntered="#proceedButtonHover" onMouseExited="#proceedButtonExit" onMousePressed="#proceedButtonClicked" onMouseReleased="#proceedButtonReleased" prefHeight="52.0" prefWidth="192.0" text="No,Sign Up!" />
+                        <Label id="proceedtxt" prefHeight="58.0" prefWidth="217.0" text="Sign Up to Create Account" textAlignment="CENTER" wrapText="true" />
                      </children>
                   </VBox>
                </children>

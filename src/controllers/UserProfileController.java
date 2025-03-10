@@ -38,7 +38,7 @@ public class UserProfileController extends TransitionUtils implements Initializa
 
         // Action for "View Health" button
         viewhealth_btn.setOnAction((e) -> {
-            fadeOutToScene(roothb, "HealthProfile");  // Transition to HealthProfile scene
+            fadeOutToScene(roothb, "HealthProfilePreview");  // Transition to HealthProfile scene
         });
 
         // Action for "Logout" button

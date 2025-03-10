@@ -73,7 +73,7 @@ public class LoginController extends TransitionUtils implements Initializable {
     }
 
     private User authenticateUser(String userInput, String passInput) {
-        String sql = "SELECT id, username, email, password FROM signup.user WHERE username = ? OR email = ?";
+        String sql = "SELECT id, username, email, password FROM user WHERE username = ? OR email = ?";
         try (Connection con = DatabaseConnection.connect();
              PreparedStatement statement = con.prepareStatement(sql)) {
 
