@@ -21,16 +21,16 @@ import java.util.ResourceBundle;
 public class MedTracker1Controller extends TransitionUtils implements Initializable {
     @FXML private HBox roothb;
     @FXML private StackPane return_btn;
-	@FXML private VBox medscontainer; // The container for medicines
-    @FXML private Label duetxt; // Label to display "Nothing due" or other messages
-    @FXML private Label TodayDate; // Label to display today's date
-    @FXML private Button medadd_btn; // Add Button to navigate to MedicineAdd view
+	@FXML private VBox medscontainer; 
+    @FXML private Label duetxt; 
+    @FXML private Label TodayDate;
+    @FXML private Button medadd_btn; 
     @FXML private Button viewhistory_btn ;
     private MedicineDAO medicineDAO = new MedicineDAO();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // Fetch medicines for the logged-in user
+       
         int userId = UserSession.getInstance().getUserId();
         if (userId != -1) {
             List<Medicine> medicines = medicineDAO.getMedicines(userId);
@@ -57,9 +57,7 @@ public class MedTracker1Controller extends TransitionUtils implements Initializa
         });
     }
 
-    /**
-     * Displays the list of medicines in a table-like format.
-     */
+  
     private void displayMedicines(List<Medicine> medicines) {
         medscontainer.getChildren().clear(); // Clear existing content
 
@@ -68,13 +66,12 @@ public class MedTracker1Controller extends TransitionUtils implements Initializa
             return;
         }
 
-        // Create a GridPane for the table layout
         GridPane medicineTable = new GridPane();
-        medicineTable.setHgap(20); // Horizontal gap between columns
-        medicineTable.setVgap(10); // Vertical gap between rows
+        medicineTable.setHgap(20); 
+        medicineTable.setVgap(10);  
         medicineTable.setStyle("-fx-padding: 20;");
 
-        // Add column headers
+      
         Label serialHeader = new Label("No.");
         Label nameHeader = new Label("Medicine");
         Label typeHeader = new Label("Type");
@@ -83,7 +80,7 @@ public class MedTracker1Controller extends TransitionUtils implements Initializa
         Label statusHeader = new Label("Status");
         Label actionHeader = new Label("Action");
 
-        // Style the headers
+       
         String headerStyle = "-fx-font-size: 20px; -fx-font-family: 'Arial'; -fx-font-weight: bold;";
         serialHeader.setStyle(headerStyle);
         nameHeader.setStyle(headerStyle);
@@ -93,44 +90,44 @@ public class MedTracker1Controller extends TransitionUtils implements Initializa
         statusHeader.setStyle(headerStyle);
         actionHeader.setStyle(headerStyle);
 
-        // Add headers to the GridPane
+        
         medicineTable.addRow(0, serialHeader, nameHeader, typeHeader, dosageHeader, timeHeader, statusHeader, actionHeader);
 
-        // Add medicines to the GridPane
+        
         for (int i = 0; i < medicines.size(); i++) {
             Medicine medicine = medicines.get(i);
-            int rowIndex = i + 1; // Start rows from 1 (row 0 is for headers)
+            int rowIndex = i + 1; 
 
-            // Serial number
+          
             Label serialLabel = new Label(rowIndex + ".");
             serialLabel.setStyle("-fx-font-size: 20px; -fx-font-family: 'Arial';");
 
-            // Medicine name
+          
             Label nameLabel = new Label(medicine.getName());
             nameLabel.setStyle("-fx-font-size: 20px; -fx-font-family: 'Arial';");
 
-            // Medicine type
+            
             Label typeLabel = new Label(medicine.getType());
             typeLabel.setStyle("-fx-font-size: 20px; -fx-font-family: 'Arial';");
 
-            // Dosage
+          
             Label dosageLabel = new Label(medicine.getDosageAmount() + " " + medicine.getDosageUnit());
             dosageLabel.setStyle("-fx-font-size: 20px; -fx-font-family: 'Arial';");
 
-            // Time
+           
             Label timeLabel = new Label(medicine.getTime());
             timeLabel.setStyle("-fx-font-size: 20px; -fx-font-family: 'Arial';");
 
-            // Status
+            
             Label statusLabel = new Label(medicine.getStatus());
             statusLabel.setStyle("-fx-font-size: 20px; -fx-font-family: 'Arial';");
             if (medicine.getStatus().equalsIgnoreCase("taken")) {
-                statusLabel.setTextFill(Color.GREEN); // Make "Taken" status green
+                statusLabel.setTextFill(Color.GREEN); 
             } else {
-                statusLabel.setTextFill(Color.BLACK); // Default color for other statuses
+                statusLabel.setTextFill(Color.BLACK); 
             }
 
-            // CheckBox to mark medicine as taken
+          
             CheckBox takenCheckBox = new CheckBox("Taken");
             takenCheckBox.setSelected(medicine.getStatus().equalsIgnoreCase("taken"));
             takenCheckBox.setStyle("-fx-font-size: 20px; -fx-font-family: 'Arial';");
@@ -138,23 +135,18 @@ public class MedTracker1Controller extends TransitionUtils implements Initializa
                 boolean isTaken = takenCheckBox.isSelected();
                 updateMedicineStatus(medicine.getId(), isTaken ? "taken" : "pending");
                 statusLabel.setText(isTaken ? "taken" : "pending");
-                statusLabel.setTextFill(isTaken ? Color.GREEN : Color.BLACK); // Update color dynamically
+                statusLabel.setTextFill(isTaken ? Color.GREEN : Color.BLACK); 
             });
 
-            // Add the medicine details to the GridPane
+            
             medicineTable.addRow(rowIndex, serialLabel, nameLabel, typeLabel, dosageLabel, timeLabel, statusLabel, takenCheckBox);
         }
 
-        // Add the GridPane to the medscontainer
+       
         medscontainer.getChildren().add(medicineTable);
     }
 
-    /**
-     * Updates the status of a medicine in the database.
-     *
-     * @param medicineId The ID of the medicine to update.
-     * @param status     The new status (e.g., "taken" or "pending").
-     */
+   
     private void updateMedicineStatus(int medicineId, String status) {
         boolean isUpdated = medicineDAO.updateMedicineStatus(medicineId, status);
         if (!isUpdated) {
@@ -162,9 +154,7 @@ public class MedTracker1Controller extends TransitionUtils implements Initializa
         }
     }
 
-    /**
-     * Sets today's date in the TodayDate label.
-     */
+   
     private void setTodaysDate() {
         java.time.LocalDate today = java.time.LocalDate.now();
         String dayOfWeek = today.getDayOfWeek().toString();

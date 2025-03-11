@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+
+<HBox fx:id="roothb" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ExerciseController">
+   <children>
+      <VBox id="sidebar" alignment="TOP_CENTER" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="274.0">
+         <children>
+            <Button fx:id="profile_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="341.0" styleClass="sidebar-btn" text="Profile">
+               <graphic>
+                  <ImageView fitHeight="51.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/icons/icons8-user-100-blue-filled.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets right="100.0" />
+               </padding>
+            </Button>
+            <Separator prefWidth="200.0" />
+            <Button fx:id="home_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="283.0" styleClass="sidebar-btn" text="Home">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/icons/icons8-home-100%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets right="104.0" />
+               </padding>
+            </Button>
+            <Separator prefWidth="200.0" />
+            <Button id="selected" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="284.0" styleClass="sidebar-btn" text="Calendar">
+               <graphic>
+                  <ImageView fitHeight="38.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/icons/icons8-calendar-100%20(2).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets right="76.0" />
+               </padding>
+            </Button>
+            <Separator prefWidth="200.0" />
+            <Button fx:id="med_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="281.0" styleClass="sidebar-btn" text="Medication Tracker" wrapText="true">
+               <graphic>
+                  <ImageView fitHeight="41.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/icons/icons8-pill-100%20(3).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Button>
+            <Separator prefWidth="200.0" />
+            <Button fx:id="meal_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="279.0" styleClass="sidebar-btn" text="Meal Planner">
+               <graphic>
+                  <ImageView fitHeight="61.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/icons/icons8-meal-100%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets right="40.0" />
+               </padding>
+            </Button>
+            <Separator prefWidth="200.0" />
+            <Button fx:id="store_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="336.0" styleClass="sidebar-btn" text="E-Store">
+               <graphic>
+                  <ImageView fitHeight="48.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/icons/icons8-add-shopping-cart-100%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets right="90.0" />
+               </padding>
+            </Button>
+            <Separator prefWidth="200.0" />
+            <Button fx:id="guide_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="301.0" styleClass="sidebar-btn" text="Exercise Guide">
+               <graphic>
+                  <ImageView fitHeight="43.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/icons/icons8-exercise-100%20(2).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets right="24.0" />
+               </padding>
+            </Button>
+         </children>
+      </VBox>
+      <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1006.0" HBox.hgrow="ALWAYS">
+         <children>
+            <HBox id="headerbox" alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="79.0" prefWidth="1006.0" spacing="12.0">
+               <children>
+                  <StackPane fx:id="return_btn" prefHeight="25.0" prefWidth="30.0">
+                     <children>
+                        <Line fx:id="arrowbase" endX="20.0" stroke="#1d2366" strokeWidth="4.0" />
+                        <Line fx:id="arrowtop" endX="12.0" rotate="-135.0" stroke="#1d2366" strokeWidth="4.0">
+                           <StackPane.margin>
+                              <Insets left="-14.0" top="9.0" />
+                           </StackPane.margin>
+                        </Line>
+                        <Line fx:id="arrowbot" endX="12.0" rotate="135.0" stroke="#1d2366" strokeWidth="4.0">
+                           <StackPane.margin>
+                              <Insets bottom="10.0" left="-14.0" />
+                           </StackPane.margin>
+                        </Line>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="60.0" />
+                     </HBox.margin>
+                  </StackPane>
+                  <Label id="header" text="Exercise Guide">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <Label styleClass="desc" text="Click on the type of exercise you want to try!">
+               <VBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </VBox.margin>
+            </Label>
+            <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="990.0" prefWidth="1006.0">
+               <children>
+                  <HBox prefHeight="62.0" prefWidth="1006.0">
+                     <children>
+                        <Button fx:id="walkbtn" mnemonicParsing="false" prefHeight="60.0" prefWidth="260.0" styleClass="tabbutton" text="Walking Exercises" />
+                        <Separator minWidth="-Infinity" orientation="VERTICAL" prefHeight="71.0" prefWidth="2.0" style="-fx-background-color: white;" />
+                        <Button fx:id="balancebtn" mnemonicParsing="false" prefHeight="60.0" prefWidth="260.0" styleClass="tabbutton" text="Gentle Balance Exercise" wrapText="true" />
+                        <Separator minWidth="-Infinity" orientation="VERTICAL" prefHeight="71.0" prefWidth="2.0" style="-fx-background-color: white;" />
+                        <Button fx:id="legbtn" mnemonicParsing="false" prefHeight="60.0" prefWidth="260.0" styleClass="tabbutton" text="Leg Exercise" />
+                        <Separator minWidth="-Infinity" orientation="VERTICAL" prefHeight="71.0" prefWidth="2.0" style="-fx-background-color: white;" />
+                        <Button fx:id="backbtn" mnemonicParsing="false" prefHeight="60.0" prefWidth="260.0" styleClass="tabbutton" text="Back Exercise" />
+                        <Separator minWidth="-Infinity" orientation="VERTICAL" prefHeight="71.0" prefWidth="2.0" style="-fx-background-color: white;" />
+                        <Button fx:id="stretchbtn" mnemonicParsing="false" prefHeight="60.0" prefWidth="260.0" styleClass="tabbutton" text="Stretching" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <ScrollPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="611.0" prefWidth="1006.0">
+                     <content>
+                        <StackPane minWidth="-Infinity" prefHeight="1200.0" prefWidth="1014.0">
+                           <children>
+                              <VBox fx:id="walktab" alignment="TOP_CENTER" prefHeight="1000.0" prefWidth="100.0" spacing="8.0">
+                                 <children>
+                                    <Label prefHeight="66.0" prefWidth="923.0" styleClass="tabdesc" text="Walking is ideal to incorporate into a weekly exercise routine. It can be done almost anywhere - including inside your home! Here are two simple yet effective walking exercises for  you." wrapText="true" />
+                                    <Label prefHeight="30.0" prefWidth="923.0" styleClass="tabdescheader" text="Walking backwards and forwards" wrapText="true">
+                                       <VBox.margin>
+                                          <Insets top="12.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label prefHeight="56.0" prefWidth="923.0" styleClass="tabdesc" text="Walk from one room to another and back again if you still feel steady on your feet. Be sure to time how long this takes and try to beat your time each day." wrapText="true" />
+                                    <Label layoutX="56.0" layoutY="491.0" prefHeight="33.0" prefWidth="923.0" styleClass="tabdescheader" text="Walking heel-to-toe" wrapText="true">
+                                       <VBox.margin>
+                                          <Insets top="16.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label layoutX="56.0" layoutY="531.0" prefHeight="61.0" prefWidth="923.0" styleClass="tabdesc" text="1.Put your left foot in front of your right foot, ensuring the heel of your left foot is touching the toes of your right foot." wrapText="true" />
+                                    <Label layoutX="56.0" layoutY="195.0" prefHeight="61.0" prefWidth="923.0" styleClass="tabdesc" text="2. Place your right foot in front of your left, putting weight on your heel and ensuring your heel touches your toes." wrapText="true" />
+                                    <ImageView fitHeight="523.0" fitWidth="829.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/img/balance-training-heel-to-toe-balance-walk.png" />
+                                       </image>
+                                       <VBox.margin>
+                                          <Insets bottom="40.0" />
+                                       </VBox.margin>
+                                    </ImageView>
+                                 </children>
+                                 <padding>
+                                    <Insets left="20.0" right="20.0" top="20.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox fx:id="balancetab" alignment="TOP_CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="3200.0" prefWidth="100.0" spacing="8.0" visible="false">
+                                 <children>
+                                    <Label minHeight="-Infinity" prefHeight="67.0" prefWidth="974.0" styleClass="tabdesc" text="By improving your balance, you can stand tall and feel more confident when walking about. Here are six gentle balance exercises." wrapText="true" />
+                                    <Label layoutX="10.0" layoutY="28.0" minHeight="-Infinity" prefHeight="42.0" prefWidth="974.0" styleClass="tabdescheader" text="Head rotations" />
+                                    <Label layoutX="10.0" layoutY="10.0" minHeight="-Infinity" prefHeight="27.0" prefWidth="989.0" styleClass="tabdesc" text="1. Stand upright with your feet in line with your hips." wrapText="true" />
+                                    <Label layoutX="10.0" layoutY="28.0" minHeight="-Infinity" styleClass="tabdesc" text="2. Gently rotate your head from left to right and then up and down for 30 or so seconds. Repeat this several times." wrapText="true" />
+                                    <Label layoutX="10.0" layoutY="64.0" minHeight="-Infinity" styleClass="tabdesc" text="If you start to feel dizzy then either move your head more slowly or stop the exercise until this feeling of dizziness goes away." wrapText="true" />
+                                    <ImageView fitHeight="372.0" fitWidth="658.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/img/headrotate.png" />
+                                       </image>
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
+                                    </ImageView>
+                                    <Label layoutX="31.0" layoutY="92.0" minHeight="-Infinity" prefHeight="42.0" prefWidth="1093.0" styleClass="tabdescheader" text="Foot taps">
+                                       <VBox.margin>
+                                          <Insets top="40.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label layoutX="33.0" layoutY="132.0" minHeight="-Infinity" prefHeight="66.0" prefWidth="974.0" styleClass="tabdesc" text="1. Start by standing in front of a step.If you don’t have this piece of equipment then you can instead do this at the bottom of a staircase or with a sturdy stool." wrapText="true" />
+                                    <Label layoutX="30.0" layoutY="167.0" minHeight="-Infinity" prefHeight="27.0" prefWidth="1270.0" styleClass="tabdesc" text="2. Stand with your feet hip-width apart. Gradually lift your left leg and tap the top of the step or stair." wrapText="true" />
+                                    <Label layoutX="30.0" layoutY="229.0" minHeight="-Infinity" prefHeight="54.0" prefWidth="1328.0" styleClass="tabdesc" text="3. Repeat this 15 to 20 times with your left leg before switching to the right leg.As your balance improves, you can step onto the stair, rather than just tapping it (if you feel comfortable doing so)" wrapText="true">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </Label>
+                                    <ImageView fitHeight="372.0" fitWidth="658.0" layoutX="198.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/img/foot-taps.png" />
+                                       </image>
+                                       <VBox.margin>
+                                          <Insets top="40.0" />
+                                       </VBox.margin>
+                                    </ImageView>
+                                    <Label layoutX="30.0" layoutY="662.0" minHeight="-Infinity" prefHeight="42.0" prefWidth="1093.0" styleClass="tabdescheader" text="Marching">
+                                       <VBox.margin>
+                                          <Insets top="40.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label layoutX="30.0" layoutY="702.0" minHeight="-Infinity" prefHeight="66.0" prefWidth="974.0" styleClass="tabdesc" text="1. Stand upright with your feet hip-width apart. You can hold onto the back of a chair for added support if needed." wrapText="true" />
+                                    <Label layoutX="30.0" layoutY="776.0" minHeight="-Infinity" prefHeight="27.0" prefWidth="1270.0" styleClass="tabdesc" text="2. Slowly bend one of your knees and lift your foot until your thigh is parallel to the floor. " wrapText="true" />
+                                    <Label layoutX="30.0" layoutY="811.0" minHeight="-Infinity" prefHeight="54.0" prefWidth="1328.0" styleClass="tabdesc" text="3. Alternate legs until you’ve done around 10 marches on each leg." wrapText="true" />
+                                    <ImageView fitHeight="372.0" fitWidth="658.0" layoutX="188.0" layoutY="913.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/img/marching.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="30.0" layoutY="1204.0" minHeight="-Infinity" prefHeight="42.0" prefWidth="1093.0" styleClass="tabdescheader" text="Single leg raises">
+                                       <VBox.margin>
+                                          <Insets top="40.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label layoutX="30.0" layoutY="1254.0" minHeight="-Infinity" prefHeight="28.0" prefWidth="974.0" styleClass="tabdesc" text="1. Stand upright with your feet directly under your hips to provide support." wrapText="true" />
+                                    <Label layoutX="30.0" layoutY="1328.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="58.0" prefWidth="974.0" styleClass="tabdesc" text="2. Lift your left foot one inch off the ground and focus on not leaning to the right. You should keep your weight on your right leg while maintaining this upright position." wrapText="true" />
+                                    <Label layoutX="30.0" layoutY="1363.0" minHeight="-Infinity" prefHeight="54.0" prefWidth="1328.0" styleClass="tabdesc" text="3. Keep your left foot raised for 10 seconds before returning it to the ground. Alternate this exercise between both feet and do five or so repetitions on each side." wrapText="true" />
+                                    <ImageView fitHeight="372.0" fitWidth="658.0" layoutX="188.0" layoutY="1425.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/img/singlelegraise.png" />
+                                       </image>
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
+                                    </ImageView>
+                                    <Label layoutX="30.0" layoutY="1811.0" minHeight="-Infinity" prefHeight="42.0" prefWidth="1093.0" styleClass="tabdescheader" text="Rock the boat" />
+                                    <Label layoutX="30.0" layoutY="1861.0" minHeight="-Infinity" prefHeight="28.0" prefWidth="974.0" styleClass="tabdesc" text="1. Start by standing with your feet hip-width apart, making sure they’re firmly planted on the floor. " wrapText="true" />
+                                    <Label layoutX="30.0" layoutY="1935.0" minHeight="-Infinity" prefHeight="59.0" prefWidth="974.0" styleClass="tabdesc" text="2. Gradually lift your left leg out to the side or behind you and maintain this pose for 30 or so seconds. Repeat this on your right leg and do five repetitions on each side." wrapText="true" />
+                                    <ImageView fitHeight="372.0" fitWidth="658.0" layoutX="188.0" layoutY="2052.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/img/rocktheboat.png" />
+                                       </image>
+                                       <VBox.margin>
+                                          <Insets top="40.0" />
+                                       </VBox.margin>
+                                    </ImageView>
+                                 </children>
+                                 <padding>
+                                    <Insets left="20.0" right="20.0" top="20.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox fx:id="legtab" alignment="TOP_CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="3200.0" prefWidth="100.0" spacing="8.0" visible="false">
+                                 <children>
+                                    <Label minHeight="-Infinity" prefHeight="67.0" prefWidth="974.0" styleClass="tabdesc" text="Through leg and toe exercises, you can strengthen your lower body while improving balance and control." wrapText="true" />
+                                    <Label layoutX="10.0" layoutY="28.0" minHeight="-Infinity" prefHeight="42.0" prefWidth="974.0" styleClass="tabdescheader" text="Half squats" />
+                                    <Label layoutX="10.0" layoutY="10.0" minHeight="-Infinity" prefHeight="59.0" prefWidth="974.0" styleClass="tabdesc" text="1. Simply bend your knees as comfortably as possible (while holding onto the chair or counter if needed), then go back into your standing position." wrapText="true" />
+                                    <Label layoutX="10.0" layoutY="64.0" minHeight="-Infinity" prefHeight="27.0" prefWidth="1026.0" styleClass="tabdesc" text="Doing this repeatedly can help improve your balance while strengthening your knees, legs and hips." wrapText="true" />
+                                    <Label layoutX="31.0" layoutY="92.0" minHeight="-Infinity" prefHeight="42.0" prefWidth="1093.0" styleClass="tabdescheader" text="Knee extensions">
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label layoutX="33.0" layoutY="132.0" minHeight="-Infinity" prefHeight="31.0" prefWidth="974.0" styleClass="tabdesc" text="1. Sit in a chair and straighten out your right knee for a few seconds." wrapText="true" />
+                                    <Label layoutX="30.0" layoutY="167.0" minHeight="-Infinity" prefHeight="27.0" prefWidth="1270.0" styleClass="tabdesc" text="2. Do the same with your other knee. Repeat these two steps around 10 to 15 times for each leg." wrapText="true" />
+                                    <ImageView fitHeight="372.0" fitWidth="658.0" layoutX="198.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/img/kneeextension.png" />
+                                       </image>
+                                       <VBox.margin>
+                                          <Insets top="40.0" />
+                                       </VBox.margin>
+                                    </ImageView>
+                                    <Label layoutX="30.0" layoutY="662.0" minHeight="-Infinity" prefHeight="42.0" prefWidth="1093.0" styleClass="tabdescheader" text="Ankle circles">
+                                       <VBox.margin>
+                                          <Insets top="40.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label layoutX="30.0" layoutY="702.0" minHeight="-Infinity" prefHeight="66.0" prefWidth="974.0" styleClass="tabdesc" text="1. Lift your right leg off the floor and rotate your ankle 5 to 7 times. Then do the same in the opposite direction." wrapText="true" />
+                                    <Label layoutX="30.0" layoutY="776.0" minHeight="-Infinity" prefHeight="27.0" prefWidth="1270.0" styleClass="tabdesc" text="2. Repeat these two steps for your left ankle." wrapText="true" />
+                                    <Label layoutX="30.0" layoutY="811.0" minHeight="-Infinity" prefHeight="54.0" prefWidth="1328.0" styleClass="tabdesc" text="Depending on how comfortable you feel, ankle circles can either be performed sitting down or standing up." wrapText="true" />
+                                    <ImageView fitHeight="372.0" fitWidth="658.0" layoutX="188.0" layoutY="913.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/img/anklecircle.jpg" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                                 <padding>
+                                    <Insets left="20.0" right="20.0" top="20.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox fx:id="backtab" alignment="TOP_CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="3200.0" prefWidth="100.0" spacing="8.0" visible="false">
+                                 <children>
+                                    <Label minHeight="-Infinity" prefHeight="88.0" prefWidth="974.0" styleClass="tabdesc" text="If you find back pain to be a persistent and pesky issue then remember that this is totally normal amongst millions of other people. With that being said, there are plenty of back muscle strengthening exercises that will give you some much-needed stability." wrapText="true" />
+                                    <Label layoutX="10.0" layoutY="28.0" minHeight="-Infinity" prefHeight="42.0" prefWidth="974.0" styleClass="tabdescheader" text="Glute bridge" />
+                                    <Label layoutX="10.0" layoutY="10.0" minHeight="-Infinity" prefHeight="25.0" prefWidth="974.0" styleClass="tabdesc" text="1.Begin by laying on your back on a comfortable floor, such as a carpet or exercise mat." wrapText="true" />
+                                    <Label layoutX="10.0" layoutY="64.0" minHeight="-Infinity" prefHeight="61.0" prefWidth="974.0" styleClass="tabdesc" text="2. Place your feet flat on the floor with your knees pointing to the ceiling. Your arms should be on the floor, along the sides of your body." wrapText="true" />
+                                    <Label layoutX="30.0" layoutY="209.0" minHeight="-Infinity" prefHeight="83.0" prefWidth="974.0" styleClass="tabdesc" text="3.  Engaging your outer hips and glutes, push your hips up so they’re slightly raised off the floor. Then, gently lower your hips back down to the floor. Give yourself a couple of seconds to relax before doing this again." wrapText="true" />
+                                    <Label layoutX="30.0" layoutY="278.0" minHeight="-Infinity" prefHeight="25.0" prefWidth="974.0" styleClass="tabdesc" text="Repeat this exercise 10 to 12 times." wrapText="true" />
+                                    <ImageView fitHeight="372.0" fitWidth="658.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/img/hip-bridge.jpg" />
+                                       </image>
+                                       <VBox.margin>
+                                          <Insets top="40.0" />
+                                       </VBox.margin>
+                                    </ImageView>
+                                    <Label layoutX="31.0" layoutY="92.0" minHeight="-Infinity" prefHeight="42.0" prefWidth="1093.0" styleClass="tabdescheader" text="Shoulder shrugs">
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label layoutX="33.0" layoutY="132.0" minHeight="-Infinity" prefHeight="31.0" prefWidth="974.0" styleClass="tabdesc" text="1. Start in a standing or seated position, depending on what feels more comfortable for you." wrapText="true" />
+                                    <Label layoutX="30.0" layoutY="167.0" minHeight="-Infinity" prefHeight="27.0" prefWidth="1270.0" styleClass="tabdesc" text="2. Raise your shoulders upwards - doing this may cause some tension in your neck." wrapText="true" />
+                                    <Label layoutX="30.0" layoutY="931.0" minHeight="-Infinity" prefHeight="27.0" prefWidth="1270.0" styleClass="tabdesc" text="3. Relax your shoulders back down to their natural position.Repeat this several times." wrapText="true" />
+                                    <ImageView fitHeight="372.0" fitWidth="658.0" layoutX="198.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/img/shouldershrug.jpg" />
+                                       </image>
+                                       <VBox.margin>
+                                          <Insets top="40.0" />
+                                       </VBox.margin>
+                                    </ImageView>
+                                    <Label layoutX="30.0" layoutY="662.0" minHeight="-Infinity" prefHeight="42.0" prefWidth="1093.0" styleClass="tabdescheader" text="Standing lumbar extension">
+                                       <VBox.margin>
+                                          <Insets top="40.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label layoutX="30.0" layoutY="702.0" minHeight="-Infinity" prefHeight="66.0" prefWidth="974.0" styleClass="tabdesc" text="1. Start by standing upright with your feet facing forward and your arms at your side. Put your hands on your hips for support." wrapText="true" />
+                                    <Label layoutX="30.0" layoutY="776.0" minHeight="-Infinity" prefHeight="27.0" prefWidth="1270.0" styleClass="tabdesc" text="2. Bend your spine backwards - you should feel a good stretch throughout your spine." wrapText="true" />
+                                    <Label layoutX="30.0" layoutY="811.0" minHeight="-Infinity" prefHeight="54.0" prefWidth="1328.0" styleClass="tabdesc" text="3. Hold this position for three seconds before returning to the starting position.Repeat this 8 to 12 times." wrapText="true" />
+                                    <ImageView fitHeight="372.0" fitWidth="658.0" layoutX="188.0" layoutY="913.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/img/lumbarext.jpg" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                                 <padding>
+                                    <Insets left="20.0" right="20.0" top="20.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox fx:id="stretchtab" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="3200.0" prefWidth="100.0" spacing="8.0" visible="false">
+                                 <children>
+                                    <Label minHeight="-Infinity" prefHeight="88.0" prefWidth="974.0" styleClass="tabdesc" text="When exercising, properly stretching is really important as this will loosen your muscles and tendons, massively decreasing the risk of exercise-related injuries. Stretching will also get your blood flowing and increase your range of motion when exercising." wrapText="true" />
+                                    <Label layoutX="10.0" layoutY="28.0" minHeight="-Infinity" prefHeight="42.0" prefWidth="974.0" styleClass="tabdescheader" text="Stretching Techniques" />
+                                    <Label layoutX="10.0" layoutY="10.0" minHeight="-Infinity" prefHeight="55.0" prefWidth="974.0" styleClass="tabdesc" text="• While sitting or lying, bring your toes towards your shin and then point them towards the floor. Repeat this for both feet" wrapText="true" />
+                                    <Label layoutX="10.0" layoutY="64.0" minHeight="-Infinity" prefHeight="61.0" prefWidth="974.0" styleClass="tabdesc" text="• When sitting on a chair, lift your leg up off the seat while keeping your knee bent. Return to the starting position and repeat" wrapText="true" />
+                                    <Label layoutX="30.0" layoutY="209.0" minHeight="-Infinity" prefHeight="63.0" prefWidth="974.0" styleClass="tabdesc" text="• When sitting on a chair with your feet on the floor, bend your knee as much as possible. Repeat this for both legs" wrapText="true" />
+                                    <Label layoutX="30.0" layoutY="308.0" minHeight="-Infinity" prefHeight="90.0" prefWidth="974.0" styleClass="tabdesc" text="• When sitting on a chair, pull your toes up, tighten your thigh muscle and straighten your knee. If you can, hold this position for around five seconds before gradually relaxing your leg. Repeat this for both legs" wrapText="true" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="20.0" right="20.0" top="20.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+         </children>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </VBox>
+   </children>
+   <stylesheets>
+      <URL value="@../resources/css/sidebar.css" />
+      <URL value="@../resources/css/exercise.css" />
+   </stylesheets>
+</HBox>

@@ -73,8 +73,8 @@ public class HealthProfilePreviewController extends TransitionUtils implements I
         loadHealthProfile();
 
         // Set up button actions
-        edit.setOnAction(e -> setFieldsEditable(true));
-        submit.setOnAction(e -> saveHealthProfile()); // Save Changes
+//        edit.setOnAction(e -> setFieldsEditable(true));
+//        submit.setOnAction(e -> saveHealthProfile()); // Save Changes
         submit1.setOnAction(e -> fadeOutToScene(rootvb, "Home")); // Go Back
     }
 

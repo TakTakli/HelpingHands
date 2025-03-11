@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+
+<HBox fx:id="roothb" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StoreMainController">
+   <children>
+      <VBox id="sidebar" alignment="TOP_CENTER" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="274.0">
+         <children>
+            <Button fx:id="profile_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="341.0" styleClass="sidebar-btn" text="Profile">
+               <graphic>
+                  <ImageView fitHeight="51.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/icons/icons8-user-100-blue-filled.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets right="100.0" />
+               </padding>
+            </Button>
+            <Separator prefWidth="200.0" />
+            <Button fx:id="home_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="283.0" styleClass="sidebar-btn" text="Home">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/icons/icons8-home-100%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets right="104.0" />
+               </padding>
+            </Button>
+            <Separator prefWidth="200.0" />
+            <Button fx:id="calendar_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="284.0" styleClass="sidebar-btn" text="Calendar">
+               <graphic>
+                  <ImageView fitHeight="38.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/icons/icons8-calendar-100%20(3).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets right="76.0" />
+               </padding>
+            </Button>
+            <Separator prefWidth="200.0" />
+            <Button fx:id="med_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="281.0" styleClass="sidebar-btn" text="Medication Tracker" wrapText="true">
+               <graphic>
+                  <ImageView fitHeight="41.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/icons/icons8-pill-100%20(3).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Button>
+            <Separator prefWidth="200.0" />
+            <Button fx:id="meal_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="279.0" styleClass="sidebar-btn" text="Meal Planner">
+               <graphic>
+                  <ImageView fitHeight="61.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/icons/icons8-meal-100%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets right="40.0" />
+               </padding>
+            </Button>
+            <Separator prefWidth="200.0" />
+            <Button id="selected" fx:id="store_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="336.0" styleClass="sidebar-btn" text="E-Store">
+               <graphic>
+                  <ImageView fitHeight="48.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/icons/icons8-add-shopping-cart-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets right="90.0" />
+               </padding>
+            </Button>
+            <Separator prefWidth="200.0" />
+            <Button fx:id="guide_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="301.0" styleClass="sidebar-btn" text="Exercise Guide">
+               <graphic>
+                  <ImageView fitHeight="43.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/icons/icons8-exercise-100%20(2).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets right="24.0" />
+               </padding>
+            </Button>
+         </children>
+      </VBox>
+      <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1006.0" HBox.hgrow="ALWAYS">
+         <children>
+            <HBox id="headerbox" alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="79.0" prefWidth="1006.0" spacing="12.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <StackPane fx:id="return_btn" prefHeight="25.0" prefWidth="30.0">
+                     <children>
+                        <Line fx:id="arrowbase" endX="20.0" stroke="#1d2366" strokeWidth="4.0" />
+                        <Line fx:id="arrowtop" endX="12.0" rotate="-135.0" stroke="#1d2366" strokeWidth="4.0">
+                           <StackPane.margin>
+                              <Insets left="-14.0" top="9.0" />
+                           </StackPane.margin>
+                        </Line>
+                        <Line fx:id="arrowbot" endX="12.0" rotate="135.0" stroke="#1d2366" strokeWidth="4.0">
+                           <StackPane.margin>
+                              <Insets bottom="10.0" left="-14.0" />
+                           </StackPane.margin>
+                        </Line>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="60.0" />
+                     </HBox.margin>
+                  </StackPane>
+                  <Label id="header" text="Store">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <ButtonBar prefHeight="79.0" prefWidth="794.0" HBox.hgrow="ALWAYS">
+                     <buttons>
+                        <Button fx:id="viewcart" mnemonicParsing="false" prefHeight="41.0" prefWidth="127.0" styleClass="notsearch" text="View Cart" />
+                     </buttons>
+                     <padding>
+                        <Insets right="60.0" />
+                     </padding>
+                  </ButtonBar>
+               </children>
+            </HBox>
+            <ScrollPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="994.0" VBox.vgrow="ALWAYS">
+               <content>
+                  <VBox minHeight="-Infinity" minWidth="-Infinity" prefWidth="1006.0">
+                     <children>
+                        <HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="71.0" prefWidth="800.0" spacing="40.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <TextField fx:id="searchbar" prefHeight="45.0" prefWidth="520.0" styleClass="searchbar" />
+                              <Button fx:id="search_btn" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="search" text="Search" HBox.hgrow="ALWAYS" />
+                           </children>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Label styleClass="subheader" text="Categories">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="926.0" spacing="20.0">
+                           <children>
+                              <Button fx:id="medicine" mnemonicParsing="false" prefHeight="41.0" prefWidth="113.0" styleClass="notsearch" text="Medicine" />
+                              <Button fx:id="equipment" mnemonicParsing="false" prefHeight="41.0" prefWidth="132.0" styleClass="notsearch" text="Equipment" />
+                           </children>
+                           <VBox.margin>
+                              <Insets top="16.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Label styleClass="subheader" text="Products">
+                           <VBox.margin>
+                              <Insets top="40.0" />
+                           </VBox.margin>
+                        </Label>
+                        <FlowPane fx:id="itemflow" columnHalignment="CENTER" hgap="60.0" minWidth="-Infinity" prefHeight="309.0" prefWidth="926.0" vgap="80.0">
+                           <VBox.margin>
+                              <Insets top="28.0" />
+                           </VBox.margin>
+                        </FlowPane>
+                     </children>
+                     <padding>
+                        <Insets left="40.0" right="40.0" />
+                     </padding>
+                  </VBox>
+               </content>
+               <VBox.margin>
+                  <Insets left="12.0" top="6.0" />
+               </VBox.margin>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </children>
+   <stylesheets>
+      <URL value="@../../resources/css/store.css" />
+      <URL value="@../../resources/css/sidebar.css" />
+   </stylesheets>
+</HBox>

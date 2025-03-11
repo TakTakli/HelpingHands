@@ -36,7 +36,7 @@ public class RegistrationController extends TransitionUtils implements Initializ
         signup.setOnAction(this::signUp);
     }
 
-    /** Toggle password visibility */
+   
     @FXML
     public void togglePasswordVisibility() {
         if (showPassword.isSelected()) {
@@ -50,14 +50,17 @@ public class RegistrationController extends TransitionUtils implements Initializ
         }
     }
 
-    /** Validate email format */
+  
     private boolean isValidEmail(String email) {
         return Pattern.matches(EMAIL_REGEX, email);
     }
 
-    /** Check if email already exists */
+
+  
     private boolean isEMAILTaken(String email) {
         String sql = "SELECT COUNT(*) FROM 	user WHERE email = ?";
+
+
         try (Connection con = DatabaseConnection.connect();
              PreparedStatement statement = con.prepareStatement(sql)) {
             
@@ -73,12 +76,11 @@ public class RegistrationController extends TransitionUtils implements Initializ
         return false;
     }
 
-    /** Hash Password with BCrypt */
+  
     private String hashPassword(String password) {
         return BCrypt.hashpw(password, BCrypt.gensalt());
     }
 
-    /** Handle Signup */
     @FXML
     public void signUp(ActionEvent e) {
         String userInput = username.getText().trim();
@@ -108,7 +110,7 @@ public class RegistrationController extends TransitionUtils implements Initializ
         String sql = "INSERT INTO user (username, email, password) VALUES (?, ?, ?)";
 
         try (Connection con = DatabaseConnection.connect();
-             // Specify RETURN_GENERATED_KEYS here
+           
              PreparedStatement statement = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
             statement.setString(1, userInput);
@@ -116,12 +118,12 @@ public class RegistrationController extends TransitionUtils implements Initializ
             statement.setString(3, hashedPassword);
             statement.executeUpdate();
 
-            // Retrieve the generated keys
+          
             try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
                 if (generatedKeys.next()) {
                     int userId = generatedKeys.getInt(1);
 
-                    // Store user details in the session
+                  
                     UserSession.getInstance().setUserId(userId);
                     UserSession.getInstance().setUsername(userInput);
                     showAlert(Alert.AlertType.INFORMATION,"" ,"Successfully Created New Account");

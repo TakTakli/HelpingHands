@@ -1,0 +1,105 @@
+.scroll-pane > .viewport {
+  -fx-background-color: transparent;
+}
+
+.scroll-pane {
+  -fx-background-insets: 0;
+  -fx-padding: 0;
+  -fx-background: #fff;
+}
+
+
+.scroll-pane:focused {
+  -fx-background-insets: 0;
+}
+
+.scroll-pane .corner {
+  -fx-background-insets: 0;
+}
+
+.button
+{
+  -fx-effect: none;
+}
+
+#header
+{
+  -fx-font-size: 36;
+  -fx-text-fill:#1d2366;
+  -fx-font-family: "Plus Jakarta Sans Bold";
+}
+
+#headerbox
+{
+  -fx-background-color: white;
+  -fx-effect: dropshadow(one-pass-box, #002d7123, 12, 0.0, 0, 3);
+}
+
+.desc
+{
+  -fx-font-family: "Plus Jakarta Sans Medium";
+  -fx-text-fill: #044dbb;
+  -fx-font-size: 24;
+}
+
+.tabdesc
+{
+  -fx-font-family: "Plus Jakarta Sans";
+  -fx-text-fill: #1d2366;
+  -fx-font-size: 20;
+}
+
+.tabdescheader
+{
+  -fx-font-size: 28;
+  -fx-text-fill:#044dbb;
+  -fx-font-family: "Plus Jakarta Sans Bold";
+
+}
+
+.tabbutton
+{
+  -fx-text-fill : #fff;
+  -fx-font-size: 16;
+  -fx-font-family: "Plus Jakarta Sans Medium";
+  -fx-background-color: #044dbb;
+}
+
+.tabbutton:focused, .tabbutton:hover
+{
+  -fx-background-color: #4081e3;
+  -fx-effect: none;
+}
+
+/* 
+.tab-pane > .tab-header-area > .headers-region > .tab > .tab-container > .tab-label {
+  -fx-text-fill : #fff;
+  -fx-font-size: 16;
+  -fx-font-family: "Plus Jakarta Sans Medium";
+} */
+
+/* .tab-pane > .tab-header-area > .headers-region > .tab {
+  -fx-background-color: #044dbb;
+
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab:selected > .tab-container > .tab-label
+{
+  -fx-text-fill: #fff;
+} 
+
+.tab-pane > .tab-header-area > .headers-region > .tab:selected
+{
+  -fx-background-color: #4081e3;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab:hover > .tab-container > .tab-label
+{
+  -fx-text-fill: #fff;
+} 
+
+.tab-pane > .tab-header-area > .headers-region > .tab:hover
+{
+  -fx-background-color: #4081e3;
+} */
+

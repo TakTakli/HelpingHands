@@ -7,7 +7,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.FlowPane?>
@@ -20,7 +19,7 @@
    <children>
       <VBox id="sidebar" alignment="TOP_CENTER" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="274.0">
          <children>
-            <Button fx:id="profile_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="341.0" styleClass="sidebar-btn" text="Profile">
+            <Button fx:id="profile_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="341.0" styleClass="sidebar-btn" text="Profile">
                <graphic>
                   <ImageView fitHeight="51.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -33,7 +32,7 @@
                </padding>
             </Button>
             <Separator prefWidth="200.0" />
-            <Button fx:id="home_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="283.0" styleClass="sidebar-btn" text="Home">
+            <Button fx:id="home_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="283.0" styleClass="sidebar-btn" text="Home">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -46,7 +45,7 @@
                </padding>
             </Button>
             <Separator prefWidth="200.0" />
-            <Button fx:id="calendar_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="284.0" styleClass="sidebar-btn" text="Calendar">
+            <Button fx:id="calendar_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="284.0" styleClass="sidebar-btn" text="Calendar">
                <graphic>
                   <ImageView fitHeight="38.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -59,7 +58,7 @@
                </padding>
             </Button>
             <Separator prefWidth="200.0" />
-            <Button fx:id="med_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="281.0" styleClass="sidebar-btn" text="Medication Tracker" wrapText="true">
+            <Button fx:id="med_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="281.0" styleClass="sidebar-btn" text="Medication Tracker" wrapText="true">
                <graphic>
                   <ImageView fitHeight="41.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -72,7 +71,7 @@
                </padding>
             </Button>
             <Separator prefWidth="200.0" />
-            <Button fx:id="meal_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="279.0" styleClass="sidebar-btn" text="Meal Planner">
+            <Button fx:id="meal_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="279.0" styleClass="sidebar-btn" text="Meal Planner">
                <graphic>
                   <ImageView fitHeight="61.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -85,7 +84,7 @@
                </padding>
             </Button>
             <Separator prefWidth="200.0" />
-            <Button id="selected" fx:id="store_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="336.0" styleClass="sidebar-btn" text="E-Store">
+            <Button id="selected" fx:id="store_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="336.0" styleClass="sidebar-btn" text="E-Store">
                <graphic>
                   <ImageView fitHeight="48.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -98,23 +97,7 @@
                </padding>
             </Button>
             <Separator prefWidth="200.0" />
-            <Button fx:id="map_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="315.0" styleClass="sidebar-btn" text="Map">
-               <graphic>
-                  <ImageView fitHeight="41.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../resources/icons/icons8-location-100%20(1).png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets right="120.0" />
-               </padding>
-            </Button>
-            <Separator prefWidth="200.0" />
-            <Button fx:id="guide_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="90.0" prefWidth="301.0" styleClass="sidebar-btn" text="Exercise Guide">
+            <Button fx:id="guide_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="301.0" styleClass="sidebar-btn" text="Exercise Guide">
                <graphic>
                   <ImageView fitHeight="43.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -169,15 +152,6 @@
                <content>
                   <VBox minHeight="-Infinity" minWidth="-Infinity" prefWidth="1006.0">
                      <children>
-                        <HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="71.0" prefWidth="800.0" spacing="40.0" VBox.vgrow="ALWAYS">
-                           <children>
-                              <TextField fx:id="searchbar" prefHeight="45.0" prefWidth="520.0" styleClass="searchbar" />
-                              <Button fx:id="search_btn" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="search" text="Search" HBox.hgrow="ALWAYS" />
-                           </children>
-                           <VBox.margin>
-                              <Insets top="20.0" />
-                           </VBox.margin>
-                        </HBox>
                         <Label styleClass="subheader" text="Categories">
                            <VBox.margin>
                               <Insets top="20.0" />
@@ -197,604 +171,11 @@
                               <Insets top="40.0" />
                            </VBox.margin>
                         </Label>
-                        <StackPane prefHeight="150.0" prefWidth="200.0">
-                           <children>
-                              <FlowPane fx:id="medflow" columnHalignment="CENTER" hgap="60.0" minWidth="-Infinity" prefHeight="309.0" prefWidth="926.0" vgap="80.0">
-                                 <children>
-                                    <VBox alignment="CENTER" prefHeight="306.0" prefWidth="248.0" styleClass="bg-box">
-                                       <children>
-                                          <ImageView fitHeight="132.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../resources/img/Almex.jpg" />
-                                             </image>
-                                          </ImageView>
-                                          <Separator id="prodseparator" prefWidth="200.0" />
-                                          <Label fx:id="prodname" styleClass="productname" text="Almex">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label fx:id="proddose" styleClass="productsubdetails" text="400 mg" />
-                                          <Label fx:id="prodqt" styleClass="productsubdetails" text="4 tablets/strip" />
-                                          <Button fx:id="buy" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="search" text="Buy">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Button>
-                                       </children>
-                                    </VBox>
-                                    <VBox alignment="CENTER" prefHeight="306.0" prefWidth="248.0" styleClass="bg-box">
-                                       <children>
-                                          <ImageView fitHeight="139.0" fitWidth="136.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../resources/img/amdocal.jpg" />
-                                             </image>
-                                          </ImageView>
-                                          <Separator id="prodseparator" prefWidth="200.0" />
-                                          <Label fx:id="prodname1" styleClass="productname" text="Amdocal">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label fx:id="proddose1" styleClass="productsubdetails" text="5 mg" />
-                                          <Label fx:id="prodqt1" styleClass="productsubdetails" text="10 tablets/strip" />
-                                          <Button fx:id="buy1" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="search" text="Buy">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Button>
-                                       </children>
-                                    </VBox>
-                                    <VBox alignment="CENTER" prefHeight="306.0" prefWidth="248.0" styleClass="bg-box">
-                                       <children>
-                                          <ImageView fitHeight="132.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../resources/img/aristophen.jpg" />
-                                             </image>
-                                          </ImageView>
-                                          <Separator id="prodseparator" prefWidth="200.0" />
-                                          <Label fx:id="prodname2" styleClass="productname" text="Aristophen">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label fx:id="proddose2" styleClass="productsubdetails" text="10 ml" />
-                                          <Label fx:id="prodqt2" styleClass="productsubdetails" text="1 bottle/pack" />
-                                          <Button fx:id="buy2" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="search" text="Buy">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Button>
-                                       </children>
-                                    </VBox>
-                                    <VBox alignment="CENTER" prefHeight="306.0" prefWidth="248.0" styleClass="bg-box">
-                                       <children>
-                                          <ImageView fitHeight="132.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../resources/img/azepam.jpg" />
-                                             </image>
-                                          </ImageView>
-                                          <Separator id="prodseparator" prefWidth="200.0" />
-                                          <Label fx:id="prodname3" styleClass="productname" text="Azepam">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label fx:id="proddose3" styleClass="productsubdetails" text="5 mg" />
-                                          <Label fx:id="prodqt3" styleClass="productsubdetails" text="10 tablets/strip" />
-                                          <Button fx:id="buy3" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="search" text="Buy">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Button>
-                                       </children>
-                                    </VBox>
-                                    <VBox alignment="CENTER" prefHeight="306.0" prefWidth="248.0" styleClass="bg-box">
-                                       <children>
-                                          <ImageView fitHeight="132.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../resources/img/Ceevit.jpg" />
-                                             </image>
-                                          </ImageView>
-                                          <Separator id="prodseparator" prefWidth="200.0" />
-                                          <Label fx:id="prodname4" styleClass="productname" text="Ceevit">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label fx:id="proddose4" styleClass="productsubdetails" text="250 mg" />
-                                          <Label fx:id="prodqt4" styleClass="productsubdetails" text="10 tablets/strip" />
-                                          <Button fx:id="buy4" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="search" text="Buy">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Button>
-                                       </children>
-                                    </VBox>
-                                    <VBox alignment="CENTER" prefHeight="306.0" prefWidth="248.0" styleClass="bg-box">
-                                       <children>
-                                          <ImageView fitHeight="132.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../resources/img/ENTACYD-PLUS-200.jpg" />
-                                             </image>
-                                          </ImageView>
-                                          <Separator id="prodseparator" prefWidth="200.0" />
-                                          <Label fx:id="prodname5" styleClass="productname" text="Entacyd Plus">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label fx:id="proddose5" styleClass="productsubdetails" text="200 ml" />
-                                          <Label fx:id="prodqt5" styleClass="productsubdetails" text="1 bottle/pack" />
-                                          <Button fx:id="buy5" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="search" text="Buy">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Button>
-                                       </children>
-                                    </VBox>
-                                    <VBox alignment="CENTER" prefHeight="306.0" prefWidth="248.0" styleClass="bg-box">
-                                       <children>
-                                          <ImageView fitHeight="132.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../resources/img/EROMYCIN-100ML.jpg" />
-                                             </image>
-                                          </ImageView>
-                                          <Separator id="prodseparator" prefWidth="200.0" />
-                                          <Label fx:id="prodname6" styleClass="productname" text="Eromycin">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label fx:id="proddose6" styleClass="productsubdetails" text="100 ml" />
-                                          <Label fx:id="prodqt6" styleClass="productsubdetails" text="1 bottle/pack" />
-                                          <Button fx:id="buy6" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="search" text="Buy">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Button>
-                                       </children>
-                                    </VBox>
-                                    <VBox alignment="CENTER" prefHeight="306.0" prefWidth="248.0" styleClass="bg-box">
-                                       <children>
-                                          <ImageView fitHeight="132.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../resources/img/folison.jpg" />
-                                             </image>
-                                          </ImageView>
-                                          <Separator id="prodseparator" prefWidth="200.0" />
-                                          <Label fx:id="prodname7" styleClass="productname" text="Folison">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label fx:id="proddose7" styleClass="productsubdetails" text="5 mg" />
-                                          <Label fx:id="prodqt7" styleClass="productsubdetails" text="10 tablets/strip" />
-                                          <Button fx:id="buy7" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="search" text="Buy">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Button>
-                                       </children>
-                                    </VBox>
-                                    <VBox alignment="CENTER" prefHeight="306.0" prefWidth="248.0" styleClass="bg-box">
-                                       <children>
-                                          <ImageView fitHeight="132.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../resources/img/glucomax.jpg" />
-                                             </image>
-                                          </ImageView>
-                                          <Separator id="prodseparator" prefWidth="200.0" />
-                                          <Label fx:id="prodname8" styleClass="productname" text="Glucomax D">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label fx:id="proddose8" styleClass="productsubdetails" text="75 g" />
-                                          <Label fx:id="prodqt8" styleClass="productsubdetails" text="1 sachet" />
-                                          <Button fx:id="buy8" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="search" text="Buy">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Button>
-                                       </children>
-                                    </VBox>
-                                    <VBox alignment="CENTER" prefHeight="306.0" prefWidth="248.0" styleClass="bg-box">
-                                       <children>
-                                          <ImageView fitHeight="132.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../resources/img/larsulin.jpg" />
-                                             </image>
-                                          </ImageView>
-                                          <Separator id="prodseparator" prefWidth="200.0" />
-                                          <Label fx:id="prodname9" styleClass="productname" text="Larsulin">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label fx:id="proddose9" styleClass="productsubdetails" text="100 IU/ml - 3ml" />
-                                          <Label fx:id="prodqt9" styleClass="productsubdetails" text="1 bottle/pack" />
-                                          <Button fx:id="buy9" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="search" text="Buy">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Button>
-                                       </children>
-                                    </VBox>
-                                    <VBox alignment="CENTER" prefHeight="306.0" prefWidth="248.0" styleClass="bg-box">
-                                       <children>
-                                          <ImageView fitHeight="132.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../resources/img/Moxaclav.jpg" />
-                                             </image>
-                                          </ImageView>
-                                          <Separator id="prodseparator" prefWidth="200.0" />
-                                          <Label fx:id="prodname10" styleClass="productname" text="Moxaclav 375">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label fx:id="proddose10" styleClass="productsubdetails" text="250 mg+125 mg" />
-                                          <Label fx:id="prodqt10" styleClass="productsubdetails" text="9 capsules/strip" />
-                                          <Button fx:id="buy10" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="search" text="Buy">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Button>
-                                       </children>
-                                    </VBox>
-                                    <VBox alignment="CENTER" prefHeight="306.0" prefWidth="248.0" styleClass="bg-box">
-                                       <children>
-                                          <ImageView fitHeight="132.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../resources/img/napa.jpg" />
-                                             </image>
-                                          </ImageView>
-                                          <Separator id="prodseparator" prefWidth="200.0" />
-                                          <Label fx:id="prodname11" styleClass="productname" text="Napa">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label fx:id="proddose11" styleClass="productsubdetails" text="500 mg" />
-                                          <Label fx:id="prodqt11" styleClass="productsubdetails" text="10 tablets/strip" />
-                                          <Button fx:id="buy11" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="search" text="Buy">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Button>
-                                       </children>
-                                    </VBox>
-                                    <VBox alignment="CENTER" prefHeight="306.0" prefWidth="248.0" styleClass="bg-box">
-                                       <children>
-                                          <ImageView fitHeight="132.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../resources/img/orsaline.jpg" />
-                                             </image>
-                                          </ImageView>
-                                          <Separator id="prodseparator" prefWidth="200.0" />
-                                          <Label fx:id="prodname12" styleClass="productname" text="Orsaline-N">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label fx:id="proddose12" styleClass="productsubdetails" text="500 mg" />
-                                          <Label fx:id="prodqt12" styleClass="productsubdetails" text="20 packets/box" />
-                                          <Button fx:id="buy12" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="search" text="Buy">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Button>
-                                       </children>
-                                    </VBox>
-                                    <VBox alignment="CENTER" prefHeight="306.0" prefWidth="248.0" styleClass="bg-box">
-                                       <children>
-                                          <ImageView fitHeight="132.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../resources/img/Pantonix-20-Tab.jpg" />
-                                             </image>
-                                          </ImageView>
-                                          <Separator id="prodseparator" prefWidth="200.0" />
-                                          <Label fx:id="prodname13" styleClass="productname" text="Pantonix">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label fx:id="proddose13" styleClass="productsubdetails" text="20 mg" />
-                                          <Label fx:id="prodqt13" styleClass="productsubdetails" text="14 tablets/strip" />
-                                          <Button fx:id="buy13" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="search" text="Buy">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Button>
-                                       </children>
-                                    </VBox>
-                                    <VBox alignment="CENTER" prefHeight="306.0" prefWidth="248.0" styleClass="bg-box">
-                                       <children>
-                                          <ImageView fitHeight="132.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../resources/img/profen.jpg" />
-                                             </image>
-                                          </ImageView>
-                                          <Separator id="prodseparator" prefWidth="200.0" />
-                                          <Label fx:id="prodname14" styleClass="productname" text="Profen">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label fx:id="proddose14" styleClass="productsubdetails" text="100 ml" />
-                                          <Label fx:id="prodqt14" styleClass="productsubdetails" text="1 bottle/pack" />
-                                          <Button fx:id="buy14" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="search" text="Buy">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Button>
-                                       </children>
-                                    </VBox>
-                                    <VBox alignment="CENTER" prefHeight="306.0" prefWidth="248.0" styleClass="bg-box">
-                                       <children>
-                                          <ImageView fitHeight="132.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../resources/img/propranolol.png" />
-                                             </image>
-                                          </ImageView>
-                                          <Separator id="prodseparator" prefWidth="200.0" />
-                                          <Label fx:id="prodname15" styleClass="productname" text="Propranol">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label fx:id="proddose15" styleClass="productsubdetails" text="10 mg" />
-                                          <Label fx:id="prodqt15" styleClass="productsubdetails" text="10 tablets/strip" />
-                                          <Button fx:id="buy15" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="search" text="Buy">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Button>
-                                       </children>
-                                    </VBox>
-                                    <VBox alignment="CENTER" prefHeight="306.0" prefWidth="248.0" styleClass="bg-box">
-                                       <children>
-                                          <ImageView fitHeight="132.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../resources/img/riboflavin.jpg" />
-                                             </image>
-                                          </ImageView>
-                                          <Separator id="prodseparator" prefWidth="200.0" />
-                                          <Label fx:id="prodname16" styleClass="productname" text="Riboflavin">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label fx:id="proddose16" styleClass="productsubdetails" text="5 mg" />
-                                          <Label fx:id="prodqt16" styleClass="productsubdetails" text="10 tablets/strip" />
-                                          <Button fx:id="buy16" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="search" text="Buy">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Button>
-                                       </children>
-                                    </VBox>
-                                    <VBox alignment="CENTER" prefHeight="306.0" prefWidth="248.0" styleClass="bg-box">
-                                       <children>
-                                          <ImageView fitHeight="132.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../resources/img/rice_saline.jpg" />
-                                             </image>
-                                          </ImageView>
-                                          <Separator id="prodseparator" prefWidth="200.0" />
-                                          <Label fx:id="prodname17" styleClass="productname" text="Rice ORS">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label fx:id="proddose17" styleClass="productsubdetails" text="500 ml" />
-                                          <Label fx:id="prodqt17" styleClass="productsubdetails" text="10 packets/box" />
-                                          <Button fx:id="buy17" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="search" text="Buy">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Button>
-                                       </children>
-                                    </VBox>
-                                    <VBox alignment="CENTER" prefHeight="306.0" prefWidth="248.0" styleClass="bg-box">
-                                       <children>
-                                          <ImageView fitHeight="132.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../resources/img/Seclo.jpg" />
-                                             </image>
-                                          </ImageView>
-                                          <Separator id="prodseparator" prefWidth="200.0" />
-                                          <Label fx:id="prodname18" styleClass="productname" text="Seclo">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label fx:id="proddose18" styleClass="productsubdetails" text="40 mg" />
-                                          <Label fx:id="prodqt18" styleClass="productsubdetails" text="6 capsules/strip" />
-                                          <Button fx:id="buy18" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="search" text="Buy">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Button>
-                                       </children>
-                                    </VBox>
-                                    <VBox alignment="CENTER" prefHeight="306.0" prefWidth="248.0" styleClass="bg-box">
-                                       <children>
-                                          <ImageView fitHeight="132.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../resources/img/sergel.jpg" />
-                                             </image>
-                                          </ImageView>
-                                          <Separator id="prodseparator" prefWidth="200.0" />
-                                          <Label fx:id="prodname19" styleClass="productname" text="Sergel">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label fx:id="proddose19" styleClass="productsubdetails" text="20 mg" />
-                                          <Label fx:id="prodqt19" styleClass="productsubdetails" text="10 tablets/strip" />
-                                          <Button fx:id="buy19" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="search" text="Buy">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Button>
-                                       </children>
-                                    </VBox>
-                                 </children>
-                              </FlowPane>
-                              <FlowPane fx:id="eqflow" columnHalignment="CENTER" hgap="60.0" prefHeight="200.0" prefWidth="200.0" vgap="80.0" visible="false">
-                                 <children>
-                                    <VBox alignment="CENTER" prefHeight="306.0" prefWidth="248.0" styleClass="bg-box">
-                                       <children>
-                                          <ImageView fitHeight="132.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../resources/img/bloodsugar.jpg" />
-                                             </image>
-                                          </ImageView>
-                                          <Separator id="prodseparator" prefWidth="200.0" />
-                                          <Label fx:id="e_prodname" alignment="CENTER" prefHeight="70.0" prefWidth="168.0" styleClass="productname" text="Blood Sugar Machine" textAlignment="CENTER" wrapText="true">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Button fx:id="e_buy" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="search" text="Buy">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Button>
-                                       </children>
-                                    </VBox>
-                                    <VBox alignment="CENTER" prefHeight="306.0" prefWidth="248.0" styleClass="bg-box">
-                                       <children>
-                                          <ImageView fitHeight="132.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../resources/img/digitalbp.jpg" />
-                                             </image>
-                                          </ImageView>
-                                          <Separator id="prodseparator" prefWidth="200.0" />
-                                          <Label fx:id="e_prodname1" alignment="CENTER" prefHeight="70.0" prefWidth="184.0" styleClass="productname" text="Digital Pressure Machine" textAlignment="CENTER" wrapText="true">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Button fx:id="e_buy1" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="search" text="Buy">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Button>
-                                       </children>
-                                    </VBox>
-                                    <VBox alignment="CENTER" prefHeight="306.0" prefWidth="248.0" styleClass="bg-box">
-                                       <children>
-                                          <ImageView fitHeight="132.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../resources/img/manual-blood-pressure-machine.jpg" />
-                                             </image>
-                                          </ImageView>
-                                          <Separator id="prodseparator" prefWidth="200.0" />
-                                          <Label fx:id="e_prodname2" alignment="CENTER" prefHeight="70.0" prefWidth="189.0" styleClass="productname" text="Manual Pressure Machine" textAlignment="CENTER" wrapText="true">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Button fx:id="e_buy2" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="search" text="Buy">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Button>
-                                       </children>
-                                    </VBox>
-                                    <VBox alignment="CENTER" prefHeight="306.0" prefWidth="248.0" styleClass="bg-box">
-                                       <children>
-                                          <ImageView fitHeight="132.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../resources/img/oximeter.png" />
-                                             </image>
-                                          </ImageView>
-                                          <Separator id="prodseparator" prefWidth="200.0" />
-                                          <Label fx:id="e_prodname3" alignment="CENTER" prefHeight="70.0" prefWidth="168.0" styleClass="productname" text="Oximeter" textAlignment="CENTER" wrapText="true">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Button fx:id="e_buy3" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="search" text="Buy">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Button>
-                                       </children>
-                                    </VBox>
-                                    <VBox alignment="CENTER" prefHeight="306.0" prefWidth="248.0" styleClass="bg-box">
-                                       <children>
-                                          <ImageView fitHeight="132.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../resources/img/crutch.jpg" />
-                                             </image>
-                                          </ImageView>
-                                          <Separator id="prodseparator" prefWidth="200.0" />
-                                          <Label fx:id="e_prodname4" alignment="CENTER" prefHeight="70.0" prefWidth="168.0" styleClass="productname" text="Crutch" textAlignment="CENTER" wrapText="true">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="8.0">
-                                             <children>
-                                                <Button fx:id="e_buy4" mnemonicParsing="false" prefHeight="36.0" prefWidth="96.0" styleClass="search" text="Buy" />
-                                                <Button fx:id="e_rent4" mnemonicParsing="false" prefHeight="36.0" prefWidth="96.0" styleClass="search" text="Rent" />
-                                             </children>
-                                          </HBox>
-                                       </children>
-                                    </VBox>
-                                    <VBox alignment="CENTER" prefHeight="306.0" prefWidth="248.0" styleClass="bg-box">
-                                       <children>
-                                          <ImageView fitHeight="132.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../resources/img/elbowcrutch.jpg" />
-                                             </image>
-                                          </ImageView>
-                                          <Separator id="prodseparator" prefWidth="200.0" />
-                                          <Label fx:id="e_prodname5" alignment="CENTER" prefHeight="70.0" prefWidth="168.0" styleClass="productname" text="Elbow Crutch" textAlignment="CENTER" wrapText="true">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="8.0">
-                                             <children>
-                                                <Button fx:id="e_buy5" mnemonicParsing="false" prefHeight="36.0" prefWidth="96.0" styleClass="search" text="Buy" />
-                                                <Button fx:id="e_rent5" mnemonicParsing="false" prefHeight="36.0" prefWidth="96.0" styleClass="search" text="Rent" />
-                                             </children>
-                                          </HBox>
-                                       </children>
-                                    </VBox>
-                                    <VBox alignment="CENTER" prefHeight="306.0" prefWidth="248.0" styleClass="bg-box">
-                                       <children>
-                                          <ImageView fitHeight="132.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../resources/img/wheelchair.jpg" />
-                                             </image>
-                                          </ImageView>
-                                          <Separator id="prodseparator" prefWidth="200.0" />
-                                          <Label fx:id="e_prodname6" alignment="CENTER" prefHeight="70.0" prefWidth="168.0" styleClass="productname" text="Wheelchair" textAlignment="CENTER" wrapText="true">
-                                             <VBox.margin>
-                                                <Insets top="12.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="8.0">
-                                             <children>
-                                                <Button fx:id="e_buy6" mnemonicParsing="false" prefHeight="36.0" prefWidth="96.0" styleClass="search" text="Buy" />
-                                                <Button fx:id="e_rent6" mnemonicParsing="false" prefHeight="36.0" prefWidth="96.0" styleClass="search" text="Rent" />
-                                             </children>
-                                          </HBox>
-                                       </children>
-                                    </VBox>
-                                 </children>
-                              </FlowPane>
-                           </children>
+                        <FlowPane fx:id="itemflow" columnHalignment="CENTER" hgap="60.0" minWidth="-Infinity" prefHeight="309.0" prefWidth="926.0" vgap="80.0">
                            <VBox.margin>
-                              <Insets bottom="20.0" top="20.0" />
+                              <Insets top="28.0" />
                            </VBox.margin>
-                        </StackPane>
+                        </FlowPane>
                      </children>
                      <padding>
                         <Insets left="40.0" right="40.0" />

@@ -1,0 +1,61 @@
+@font-face {
+  src: url(../fonts/PlusJakartaSans-Regular.ttf);
+}
+@font-face {
+  src: url(../fonts/PlusJakartaSans-Medium.ttf);
+}
+@font-face {
+  src: url(../fonts/PlusJakartaSans-SemiBold.ttf);
+}
+@font-face {
+  src: url(../fonts/PlusJakartaSans-Bold.ttf);
+}
+
+.root
+{
+  -fx-font-family: "Plus Jakarta Sans Medium";
+}
+
+.button
+{
+  -fx-effect: none;
+  -fx-font-size: 20;
+  -fx-background-color: #fff;
+  -fx-border-radius: 16;
+  -fx-text-fill: #044dbb;
+  -fx-background-radius: 16;
+}
+
+.bg-box
+{
+  -fx-background-color: #fff;
+  -fx-border-radius: 20;
+  -fx-background-radius: 20;
+  -fx-effect: dropshadow(one-pass-box, #002d7123, 20, 0.5, 0, 0);
+}
+
+#namelabel, #eqnamelabel
+{
+  -fx-text-fill : #fff;
+  -fx-font-size: 24;
+  -fx-font-family: "Plus Jakarta Sans Bold";
+}
+
+.detailsbox
+{
+  -fx-background-color: #044dbb;
+  -fx-background-radius: 0 0 20 20;
+  -fx-border-radius: 0 0 20 20;
+}
+
+.details
+{
+  -fx-text-fill : #fff;
+  -fx-font-size: 16;
+}
+
+#medprice, #eqprice
+{
+  -fx-font-family: "Plus Jakarta Sans Bold";
+  -fx-font-size: 18;
+}

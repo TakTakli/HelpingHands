@@ -20,7 +20,7 @@ public class UserProfileController extends TransitionUtils implements Initializa
     @FXML private TextField emailField; 
     @FXML private TextField passwordField; 
 
-    // Store logged-in user's data
+   
     private static String username;
     private static String email;
 
@@ -33,17 +33,17 @@ public class UserProfileController extends TransitionUtils implements Initializa
         if (username != null && email != null) {
             usernameField.setText(username);
             emailField.setText(email);
-            passwordField.setText("*********");  // Display password as masked text (if needed)
+            passwordField.setText("*********"); 
         }
 
-        // Action for "View Health" button
+       
         viewhealth_btn.setOnAction((e) -> {
-            fadeOutToScene(roothb, "HealthProfilePreview");  // Transition to HealthProfile scene
+            fadeOutToScene(roothb, "HealthProfilePreview");  
         });
 
-        // Action for "Logout" button
+     
         logout_btn.setOnAction((e) -> {
-            confirmLogout();  // Confirm logout before proceeding
+            confirmLogout(); 
         });
 
         initializeSidebar(roothb);  
@@ -56,15 +56,15 @@ public class UserProfileController extends TransitionUtils implements Initializa
         alert.setHeaderText(null);
         alert.setContentText("Are you sure you want to log out?");
 
-        // Show confirmation dialog
+       
         alert.showAndWait().ifPresent(response -> {
             if (response == ButtonType.OK) {
-                fadeOutToScene(roothb, "Login");  // Transition to Login scene after confirmation
+                fadeOutToScene(roothb, "Login");  
             }
         });
     }
 
-    // Static method to set user data
+   
     public static void setUserData(String usernameData, String emailData) {
         username = usernameData;
         email = emailData;

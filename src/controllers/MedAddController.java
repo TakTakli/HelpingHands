@@ -122,7 +122,7 @@ public class MedAddController extends TransitionUtils implements Initializable {
             // Clear input fields after successful save
             clearFields();
             // Redirect to MedTracker1 view
-            fadeOutToScene(roothb, "MedTracker1_OLDVERSION");
+            fadeOutToScene(roothb, "MedTracker1");
         } else {
             showAlert(Alert.AlertType.ERROR, "Error", "Failed to save medicine. Please try again.");
         }

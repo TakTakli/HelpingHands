@@ -9,6 +9,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
+import utils.Appointment;
+import utils.DatabaseUtil;
 import utils.Medicine;
 import utils.MedicineDAO;
 import utils.UserSession;
@@ -24,7 +26,7 @@ public class HomeController extends TransitionUtils implements Initializable {
 	@FXML private Button medtracker_btn = new Button();
 	@FXML private Button mealplan_btn = new Button();
 	@FXML private Button shop_btn = new Button();
-	@FXML private Button mapview_btn = new Button();
+//	@FXML private Button mapview_btn = new Button();
 	@FXML private Button exercise_btn = new Button();
 	@FXML private Label Welcome=new Label();
 
@@ -35,7 +37,7 @@ public class HomeController extends TransitionUtils implements Initializable {
         roothb.setOpacity(0);
         fadeInToScene(roothb);
 
-        // Fetch the logged-in user's username
+        
         UserSession userSession = UserSession.getInstance();
         String username = userSession.getUsername();
         if (username != null) {
@@ -44,7 +46,7 @@ public class HomeController extends TransitionUtils implements Initializable {
             Welcome.setText("Welcome!");
         }
 
-        // Fetch and display pending medications
+
         int userId = userSession.getUserId();
         if (userId != -1) {
             List<Medicine> pendingMedicines = medicineDAO.getPendingMedicines(userId);
@@ -52,16 +54,36 @@ public class HomeController extends TransitionUtils implements Initializable {
         } else {
             nothingDue.setText("No user is logged in.");
         }
+        updateAppointmentsLabel();
+       
 
-        // Set up button actions
-        profile_btn.setOnAction((e) -> fadeOutToScene(roothb, "UserProfile"));
-        settings_btn.setOnAction((e) -> fadeOutToScene(roothb, "Settings"));
-        caldetails_btn.setOnAction((e) -> fadeOutToScene(roothb, "Calendar"));
-        medtracker_btn.setOnAction((e) -> fadeOutToScene(roothb, "MedTracker1"));
-        mealplan_btn.setOnAction((e) -> fadeOutToScene(roothb, "MealPlanner"));
-        shop_btn.setOnAction((e) -> fadeOutToScene(roothb, "StoreMain"));
-        mapview_btn.setOnAction((e) -> fadeOutToScene(roothb, "Map"));
-        exercise_btn.setOnAction((e) -> fadeOutToScene(roothb, "ExerciseGuide"));
+        
+        profile_btn.setOnAction((e)->{
+        	fadeOutToScene(roothb, "UserProfile");
+        });
+        settings_btn.setOnAction((e)->{
+        	fadeOutToScene(roothb, "Settings");
+        });
+        caldetails_btn.setOnAction((e)->{
+        	fadeOutToScene(roothb, "Calendar");
+        });
+        medtracker_btn.setOnAction((e)->{
+        	fadeOutToScene(roothb, "MedTracker1");
+        });
+        mealplan_btn.setOnAction((e)->{
+        	fadeOutToScene(roothb, "MealPlanner");
+        });
+        shop_btn.setOnAction((e)->{
+        	fadeOutToScene(roothb, "StoreMain");
+        });
+//        mapview_btn.setOnAction((e)->{
+//        	fadeOutToScene(roothb, "Map");
+//        });
+        exercise_btn.setOnAction((e)->{
+        	fadeOutToScene(roothb, "ExerciseGuide");
+        });
+        
+
     }
 
     /**
@@ -84,6 +106,36 @@ public class HomeController extends TransitionUtils implements Initializable {
                         .append("\n");
             }
             nothingDue.setText(medicationsText.toString());
+        }
+    }
+    private void updateAppointmentsLabel() {
+        int userId = UserSession.getInstance().getUserId();
+        if (userId != -1) {
+            List<Appointment> appointments = DatabaseUtil.getAppointmentsForUser(userId);
+
+            if (appointments.isEmpty()) {
+                noAppointment.setText("Nothing Scheduled");
+            } else {
+                StringBuilder appointmentsText = new StringBuilder("Appointments:\n");
+                for (Appointment appt : appointments) {
+                    appointmentsText.append("• ")
+                            
+                            .append(appt.getDay())
+                            .append("/")
+                            .append(appt.getMonth())
+                            .append("/")
+                            .append(appt.getYear())
+                            .append("\n")
+                            .append("  ")
+                            .append(appt.getType())
+                            .append("-")
+                            .append(appt.getTime())
+                            .append("\n");
+                }
+                noAppointment.setText(appointmentsText.toString());
+            }
+        } else {
+            noAppointment.setText("No user is logged in.");
         }
     }
 }

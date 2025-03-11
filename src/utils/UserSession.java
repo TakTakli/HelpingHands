@@ -6,7 +6,7 @@ public class UserSession {
     private String username;
 
     private UserSession() {
-        // Private constructor to prevent instantiation
+        
     }
 
     public static UserSession getInstance() {
