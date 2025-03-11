@@ -15,14 +15,21 @@ import application.Product;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import utils.DatabaseConnection;
+import utils.Medicine;
 import utils.ProductListener;
+import utils.UserSession;
 
 public class StoreMainController extends TransitionUtils implements Initializable{
 	
@@ -32,11 +39,21 @@ public class StoreMainController extends TransitionUtils implements Initializabl
 	@FXML private Button viewcart = new Button();
 	@FXML private Button medicine = new Button();
 	@FXML private Button equipment = new Button();
-	@FXML private Button search_btn = new Button();
+//	@FXML private Button search_btn = new Button();
 	
-	@FXML private TextField searchbar = new TextField();
+//	@FXML private TextField searchbar = new TextField();
 	
 	@FXML private FlowPane itemflow = new FlowPane();
+	
+	@FXML private VBox purchasebox = new VBox();
+	@FXML private VBox contentbox = new VBox();
+	@FXML private Button confirmbuy = new Button();
+	@FXML private Button cross_btn = new Button();
+	@FXML private Label buyname = new Label();
+	@FXML private Label buydetails = new Label();
+	@FXML private Label total = new Label();
+	@FXML private TextField purchaseqt = new TextField();
+	@FXML private ImageView buyimg = new ImageView();
 	
 	private ProductListener<Product> medlistener;
 	private ProductListener<Equipment> eqlistener;
@@ -132,23 +149,83 @@ public class StoreMainController extends TransitionUtils implements Initializabl
 	
 	private void setSelectedMed(Product p)
 	{
-		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/controllers/PurchasePage.fxml"));
-		StorePurchaseController spc = loader.getController();
-		spc.setData(p);
+		purchasebox.setVisible(true);
+		VBox.setMargin(purchasebox, new Insets((-1)*contentbox.getWidth(), 0,0,0));
+		buyimg.setImage(new Image(getClass().getResourceAsStream(p.getImg())));
+		buyname.setText(p.getName());
+		buydetails.setText("Dose: "+p.getDose()+" "+p.getDoseUnit()+
+				"\nAmount: "+p.getAmount()+
+				"\nPrice/Unit: "+p.getPrice());
+		int quantity = Integer.valueOf(purchaseqt.getText());
+		double totalprice =  quantity*p.getPrice();
+		if(!purchaseqt.getText().isBlank())
+			total.setText("Total: "+String.valueOf(totalprice));
+		passToDelivery(p, quantity, totalprice);
 	}
 	
 	private void setSelectedEq(Equipment e)
 	{
-		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/controllers/EquipmentPurchase.fxml"));
-		EquipmentPurchaseController eqpc = loader.getController();
-		eqpc.setData(e);
+		purchasebox.setVisible(true);
+		VBox.setMargin(purchasebox, new Insets((-1)*contentbox.getWidth(), 0,0,0));
+		buyimg.setImage(new Image(getClass().getResourceAsStream(e.getImg())));
+		buyname.setText(e.getName());
+		buydetails.setText("Price: "+e.getPrice());
+		int quantity = Integer.valueOf(purchaseqt.getText());
+		double totalprice =  quantity*e.getPrice();
+		if(!purchaseqt.getText().isBlank())
+			total.setText("Total: "+String.valueOf(totalprice));
+		passToDelivery(e, quantity, totalprice);
 	}
 	
+    private void showAlert(Alert.AlertType type, String title, String message) {
+        Alert alert = new Alert(type);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+	
+    public void passToDelivery(Product p, int q, double t)
+    {
+		int userId = UserSession.getInstance().getUserId();
+	    if (userId == -1) {
+            showAlert(Alert.AlertType.ERROR, "Error", "No user is logged in!");
+            return;
+        }
+	    
+	    FXMLLoader load = new FXMLLoader();
+	    load.setLocation(getClass().getResource("/controllers/StoreDelivery.fxml"));
+	    try {
+			HBox root = load.load();
+			StoreDeliveryController deliverycontrol = new StoreDeliveryController();
+			deliverycontrol.setData(p, userId, q, t);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	    
+	    
+    }
+    public void passToDelivery(Equipment e, int q, double t)
+    {
+    	int userId = UserSession.getInstance().getUserId();
+    	if (userId == -1) {
+    		showAlert(Alert.AlertType.ERROR, "Error", "No user is logged in!");
+    		return;
+    	}
+	    FXMLLoader load = new FXMLLoader();
+	    load.setLocation(getClass().getResource("/controllers/StoreDelivery.fxml"));
+	    try {
+			HBox root = load.load();
+			StoreDeliveryController deliverycontrol = new StoreDeliveryController();
+			deliverycontrol.setData(e, userId, q, t);
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+    }
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		
+
 		roothb.setOpacity(0);
         fadeInToScene(roothb);
         initializeSidebar(roothb);
@@ -157,9 +234,14 @@ public class StoreMainController extends TransitionUtils implements Initializabl
 		return_btn.setOnMouseClicked((e)->{
 			fadeOutToScene(roothb, "Home");
 		});
-		viewcart.setOnAction((e)->{
-			fadeOutToScene(roothb, "StoreCart");
+		cross_btn.setOnAction((e)->{
+			purchasebox.setVisible(false);
+			VBox.setMargin(purchasebox, new Insets(contentbox.getWidth(), 0,0,0));
 		});
+//		viewcart.setOnAction((e)->{
+//			fadeOutToScene(roothb, "StoreCart");
+//		});
+		purchasebox.setVisible(false);
 		
 		medlistener = new ProductListener<Product>()
 				{
@@ -188,6 +270,11 @@ public class StoreMainController extends TransitionUtils implements Initializabl
 		equipment.setOnAction((e)->{
 			itemflow.getChildren().clear();
 			drawEqFlow();
+		});
+		
+		confirmbuy.setOnAction((e)->{
+			
+			fadeOutToScene(roothb, "StoreDelivery");
 		});
 //		search_btn.setOnAction((e)->{
 //			//db connection

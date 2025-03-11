@@ -147,3 +147,36 @@
   -fx-text-fill:#044dbb;
   -fx-font-size: 24;
 }
+
+.purchaseheader
+{
+  -fx-font-family: "Plus Jakarta Sans Bold";
+  -fx-text-fill:#1d2336;
+  -fx-font-size: 28;
+}
+
+#confirmbuy
+{
+  -fx-font-size: 22;
+}
+
+#purchaseqt
+{
+  -fx-border-color: #a8b5cc;
+  -fx-border-width: 1;
+  -fx-border-radius: 2px;
+  -fx-text-fill: #1d2366;
+  -fx-font-size: 16;
+}
+
+#buyname, #proddetlabel, #purchqtlabel, #total
+{
+  -fx-font-family: "Plus Jakarta Sans Bold";
+}
+
+#cross_btn
+{
+  -fx-background-radius: 100;
+  -fx-border-radius: 100;
+  -fx-background-color: #fff;
+}

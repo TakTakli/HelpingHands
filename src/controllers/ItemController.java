@@ -45,7 +45,6 @@ public class ItemController extends TransitionUtils implements Initializable{
 	private void buyBtnOnClick(ActionEvent e)
 	{
 		clickListener.selectedItemListener(product);
-		fadeOutToScene(itembox, "PurchasePage");
 	}
 
 	@Override

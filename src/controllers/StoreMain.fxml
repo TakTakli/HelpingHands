@@ -3,10 +3,10 @@
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.FlowPane?>
@@ -111,7 +111,7 @@
             </Button>
          </children>
       </VBox>
-      <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1006.0" HBox.hgrow="ALWAYS">
+      <VBox fx:id="contentbox" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1006.0" HBox.hgrow="ALWAYS">
          <children>
             <HBox id="headerbox" alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="79.0" prefWidth="1006.0" spacing="12.0" VBox.vgrow="ALWAYS">
                <children>
@@ -138,14 +138,6 @@
                         <Insets />
                      </HBox.margin>
                   </Label>
-                  <ButtonBar prefHeight="79.0" prefWidth="794.0" HBox.hgrow="ALWAYS">
-                    <buttons>
-                      <Button fx:id="viewcart" mnemonicParsing="false" prefHeight="41.0" prefWidth="127.0" styleClass="notsearch" text="View Cart" />
-                    </buttons>
-                     <padding>
-                        <Insets right="60.0" />
-                     </padding>
-                  </ButtonBar>
                </children>
             </HBox>
             <ScrollPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="994.0" VBox.vgrow="ALWAYS">
@@ -171,7 +163,7 @@
                               <Insets top="40.0" />
                            </VBox.margin>
                         </Label>
-                        <FlowPane fx:id="itemflow" columnHalignment="CENTER" hgap="60.0" minWidth="-Infinity" prefHeight="309.0" prefWidth="926.0" vgap="80.0">
+                        <FlowPane fx:id="itemflow" columnHalignment="CENTER" hgap="60.0" minWidth="-Infinity" prefHeight="1500.0" prefWidth="926.0" vgap="80.0">
                            <VBox.margin>
                               <Insets top="28.0" />
                            </VBox.margin>
@@ -186,6 +178,66 @@
                   <Insets left="12.0" top="6.0" />
                </VBox.margin>
             </ScrollPane>
+            <VBox fx:id="purchasebox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="396.0" styleClass="bg-box">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="396.0">
+                     <children>
+                        <Label prefHeight="37.0" prefWidth="287.0" styleClass="purchaseheader" text="Purchase" />
+                        <Button fx:id="cross_btn" contentDisplay="GRAPHIC_ONLY" minWidth="36.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="36.0">
+                           <graphic>
+                              <ImageView fitHeight="43.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../resources/icons/icons8-cross-100.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="40.0" top="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="166.0" prefWidth="461.0">
+                     <children>
+                        <ImageView fx:id="buyimg" fitHeight="164.0" fitWidth="187.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </VBox>
+                  <Label fx:id="buyname" styleClass="productdetails" text="Label">
+                     <VBox.margin>
+                        <Insets left="40.0" top="12.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="proddetlabel" styleClass="productdetails" text="Product Details:">
+                     <VBox.margin>
+                        <Insets left="40.0" top="12.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="buydetails" alignment="TOP_LEFT" prefHeight="135.0" prefWidth="379.0" styleClass="productdetails" text="Label">
+                     <VBox.margin>
+                        <Insets left="40.0" top="12.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox prefHeight="50.0" prefWidth="421.0" spacing="12.0">
+                     <children>
+                        <Label fx:id="purchqtlabel" styleClass="productdetails" text="Purchase Quantity: " />
+                        <TextField fx:id="purchaseqt" prefHeight="34.0" prefWidth="73.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="40.0" top="12.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Label fx:id="total" prefHeight="104.0" prefWidth="391.0" styleClass="productdetails" text="Please specify the quantity you want to purchase." wrapText="true">
+                     <VBox.margin>
+                        <Insets left="40.0" top="12.0" />
+                     </VBox.margin>
+                  </Label>
+                  <StackPane prefHeight="135.0" prefWidth="461.0">
+                     <children>
+                        <Button fx:id="confirmbuy" mnemonicParsing="false" prefHeight="42.0" prefWidth="144.0" styleClass="notsearch" text="Order" />
+                     </children>
+                  </StackPane>
+               </children>
+            </VBox>
          </children>
       </VBox>
    </children>

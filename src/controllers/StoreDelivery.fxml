@@ -151,7 +151,7 @@
                         <Insets top="40.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField prefHeight="48.0" prefWidth="926.0">
+                  <TextField id="purchaseqt" fx:id="address" prefHeight="48.0" prefWidth="926.0">
                      <VBox.margin>
                         <Insets top="12.0" />
                      </VBox.margin>
@@ -161,14 +161,14 @@
                         <Insets top="16.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField maxWidth="-Infinity" prefHeight="48.0" prefWidth="339.0">
+                  <TextField id="purchaseqt" fx:id="phoneno" maxWidth="-Infinity" prefHeight="48.0" prefWidth="339.0">
                      <VBox.margin>
                         <Insets top="12.0" />
                      </VBox.margin>
                   </TextField>
                   <ButtonBar prefHeight="61.0" prefWidth="926.0">
                      <buttons>
-                        <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="153.0" styleClass="notsearch" text="Place Order" />
+                        <Button fx:id="orderplacebtn" mnemonicParsing="false" prefHeight="45.0" prefWidth="153.0" styleClass="notsearch" text="Place Order" />
                      </buttons>
                      <VBox.margin>
                         <Insets top="20.0" />

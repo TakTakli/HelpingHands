@@ -37,3 +37,6 @@ insert into equipment(name, price, img)  values('Oximeter', 350.00, '/resources/
 insert into equipment(name, price, img)  values('Crutch', 480.00, '/resources/img/crutch.jpg');
 insert into equipment(name, price, img)  values('Elbow Crutch', 650.00, '/resources/img/elbowcrutch.jpg');
 insert into equipment(name, price, img)  values('Wheelchair', 1500.00, '/resources/img/wheelchair.jpg');
+
+
+create table user_orders(order_id int primary key, user_id int, quantity int, total_price double, address varchar(100), phone varchar(13) );
