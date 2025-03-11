@@ -146,7 +146,7 @@
             </HBox>
             <ScrollPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="994.0" VBox.vgrow="ALWAYS">
                <content>
-                  <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="1006.0">
+                  <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="682.0" prefWidth="1037.0">
                      <children>
                         <Label fx:id="TodayDate" text="Label">
                            <VBox.margin>
@@ -157,6 +157,7 @@
                            <VBox.margin>
                               <Insets left="36.0" />
                            </VBox.margin>
+
                            <children>
                               <Label id="medheader" prefHeight="37.0" prefWidth="815.0" text="Your medications for today" />
                             <Button fx:id="medadd_btn" mnemonicParsing="false" prefHeight="82.0" prefWidth="68.0" styleClass="viewlog-btn">
@@ -174,8 +175,12 @@
                            <children>
                               <Label fx:id="duetxt" text="Nothing due">
                                  <VBox.margin>
+
+                              
+
                                     <Insets top="32.0" />
                                  </VBox.margin></Label>
+
                            </children>
                            <VBox.margin>
                               <Insets bottom="36.0" left="36.0" right="36.0" top="8.0" />
@@ -193,6 +198,7 @@
             </ScrollPane>
          </children>
       </VBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" />
    </children>
    <stylesheets>
       <URL value="@../resources/css/medtracker.css" />

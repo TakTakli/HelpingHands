@@ -9,21 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MedicineDAO {
-    private static final String URL = "jdbc:mysql://localhost:3306/helpinghands";
+    private static final String URL = "jdbc:mysql://localhost:3306/signup";
     private static final String USER = "root";
-    private static final String PASSWORD = "Jelaushekodu!1";
+    private static final String PASSWORD = "satadafannum";
 
-    /**
-     * Saves medicine details to the database.
-     *
-     * @param userId        The ID of the user.
-     * @param type          The type of medicine (e.g., Bottle, Tablet).
-     * @param name          The name of the medicine.
-     * @param dosageAmount  The dosage amount.
-     * @param dosageUnit    The dosage unit (e.g., mg, g).
-     * @param time          The time to take the medicine (in HH:MM format).
-     * @return true if the medicine is saved successfully, false otherwise.
-     */
+ 
     public boolean updateMedicineStatus(int medicineId, String status) {
         String sql = "UPDATE medicines SET status = ? WHERE id = ?";
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
@@ -58,13 +48,36 @@ public class MedicineDAO {
             return false;
         }
     }
+   
+    public List<Medicine> getPendingMedicines(int userId) {
+        List<Medicine> pendingMedicines = new ArrayList<>();
+        String sql = "SELECT * FROM medicines WHERE medicine_id = ? AND status = 'pending'";
+        try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, userId);
+            ResultSet rs = pstmt.executeQuery();
 
-    /**
-     * Retrieves all medicines for a specific user.
-     *
-     * @param userId The ID of the user.
-     * @return A list of Medicine objects for the user.
-     */
+            while (rs.next()) {
+                Medicine medicine = new Medicine(
+                        rs.getInt("id"),
+                        rs.getString("type"),
+                        rs.getString("name"),
+                        rs.getDouble("dosage_amount"),
+                        rs.getString("dosage_unit"),
+                        rs.getString("time"),
+                        rs.getString("status")
+                );
+                pendingMedicines.add(medicine);
+            }
+        } catch (SQLException e) {
+            System.err.println("Error fetching pending medicines: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return pendingMedicines;
+    }
+
+    
+    
     public List<Medicine> getMedicines(int userId) {
         List<Medicine> medicines = new ArrayList<>();
         String sql = "SELECT * FROM medicines WHERE medicine_id = ?";

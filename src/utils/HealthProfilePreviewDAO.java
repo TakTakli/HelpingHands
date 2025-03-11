@@ -5,16 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HealthProfilePreviewDAO {
-    private static final String URL = "jdbc:mysql://localhost:3306/helpinghands";
+    private static final String URL = "jdbc:mysql://localhost:3306/signup";
     private static final String USER = "root";
-    private static final String PASSWORD = "Jelaushekodu!1";
+    private static final String PASSWORD = "satadafannum";
 
-    /**
-     * Fetches the health profile of the user.
-     *
-     * @param userId The ID of the user.
-     * @return A ResultSet containing the health profile data, or null if not found.
-     */
+   
     public ResultSet getHealthProfile(int userId) {
         Connection conn = null;
         PreparedStatement pstmt = null;
@@ -34,12 +29,7 @@ public class HealthProfilePreviewDAO {
         }
     }
 
-    /**
-     * Fetches the diagnoses of the user.
-     *
-     * @param userId The ID of the user.
-     * @return A list of diagnosis IDs for the user.
-     */
+   
     public List<Integer> getUserDiagnoses(int userId) {
         List<Integer> diagnosisIds = new ArrayList<>();
         Connection conn = null;
@@ -62,12 +52,7 @@ public class HealthProfilePreviewDAO {
         return diagnosisIds;
     }
 
-    /**
-     * Fetches the allergies of the user.
-     *
-     * @param userId The ID of the user.
-     * @return A list of allergy IDs for the user.
-     */
+   
     public List<Integer> getUserAllergies(int userId) {
         List<Integer> allergyIds = new ArrayList<>();
         Connection conn = null;
@@ -90,13 +75,6 @@ public class HealthProfilePreviewDAO {
         return allergyIds;
     }
 
-    /**
-     * Closes the database resources.
-     *
-     * @param conn The database connection.
-     * @param stmt The SQL statement.
-     * @param rs   The result set.
-     */
     private void closeResources(Connection conn, Statement stmt, ResultSet rs) {
         try {
             if (rs != null) rs.close();

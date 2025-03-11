@@ -36,7 +36,7 @@ public class RegistrationController extends TransitionUtils implements Initializ
         signup.setOnAction(this::signUp);
     }
 
-    /** Toggle password visibility */
+   
     @FXML
     public void togglePasswordVisibility() {
         if (showPassword.isSelected()) {
@@ -50,21 +50,24 @@ public class RegistrationController extends TransitionUtils implements Initializ
         }
     }
 
-    /** Validate email format */
+  
     private boolean isValidEmail(String email) {
         return Pattern.matches(EMAIL_REGEX, email);
     }
 
-    /** Check if username already exists */
-    private boolean isUsernameTaken(String username) {
-        String sql = "SELECT COUNT(*) FROM user WHERE username = ?";
+
+  
+    private boolean isEMAILTaken(String email) {
+        String sql = "SELECT COUNT(*) FROM 	user WHERE email = ?";
+
+
         try (Connection con = DatabaseConnection.connect();
              PreparedStatement statement = con.prepareStatement(sql)) {
             
-            statement.setString(1, username);
+            statement.setString(1, email);
             try (ResultSet rs = statement.executeQuery()) {
                 if (rs.next() && rs.getInt(1) > 0) {
-                    return true; // Username already exists
+                    return true; 
                 }
             }
         } catch (SQLException e) {
@@ -73,12 +76,11 @@ public class RegistrationController extends TransitionUtils implements Initializ
         return false;
     }
 
-    /** Hash Password with BCrypt */
+  
     private String hashPassword(String password) {
         return BCrypt.hashpw(password, BCrypt.gensalt());
     }
 
-    /** Handle Signup */
     @FXML
     public void signUp(ActionEvent e) {
         String userInput = username.getText().trim();
@@ -86,17 +88,20 @@ public class RegistrationController extends TransitionUtils implements Initializ
         String passInput = password.getText().trim();
 
         if (userInput.isEmpty() || emailInput.isEmpty() || passInput.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "All fields are required!");
+        	 showAlert(Alert.AlertType.ERROR,"Incomplete fields" ,"Username/Email and password are required!");
+           
             return;
         }
 
         if (!isValidEmail(emailInput)) {
-            JOptionPane.showMessageDialog(null, "❌ Invalid email format! Please enter a valid email.");
+        	 showAlert(Alert.AlertType.ERROR,"Invalid email format!" ,"  Please enter a valid email.");
+         
             return;
         }
 
-        if (isUsernameTaken(userInput)) {
-            JOptionPane.showMessageDialog(null, "❌ Username already exists! Please choose another.");
+        if (isEMAILTaken(userInput)) {
+        	showAlert(Alert.AlertType.ERROR,"" ,"Email already exists! Please choose another.");
+            
             return;
         }
 
@@ -105,7 +110,7 @@ public class RegistrationController extends TransitionUtils implements Initializ
         String sql = "INSERT INTO user (username, email, password) VALUES (?, ?, ?)";
 
         try (Connection con = DatabaseConnection.connect();
-             // Specify RETURN_GENERATED_KEYS here
+           
              PreparedStatement statement = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
             statement.setString(1, userInput);
@@ -113,22 +118,24 @@ public class RegistrationController extends TransitionUtils implements Initializ
             statement.setString(3, hashedPassword);
             statement.executeUpdate();
 
-            // Retrieve the generated keys
+          
             try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
                 if (generatedKeys.next()) {
                     int userId = generatedKeys.getInt(1);
 
-                    // Store user details in the session
+                  
                     UserSession.getInstance().setUserId(userId);
                     UserSession.getInstance().setUsername(userInput);
-
-                    JOptionPane.showMessageDialog(null, "✅ Successfully created new account!");
+                    showAlert(Alert.AlertType.INFORMATION,"" ,"Successfully Created New Account");
+                    
                     UserProfileController.setUserData(userInput, emailInput);
 
                     Main.remove_onboarding = 1;
                     fadeOutToScene(rootvb, "HealthProfile");
                 } else {
-                    JOptionPane.showMessageDialog(null, "❌ Failed to create account. Please try again.");
+                	showAlert(Alert.AlertType.ERROR,"" ,"Failed to create account. Please try again");
+                    
+                    
                 }
             }
         } catch (SQLException ex) {
@@ -155,4 +162,11 @@ public class RegistrationController extends TransitionUtils implements Initializ
     public void signupButtonExit(MouseEvent e) {
         signup.setStyle("-fx-background-color: #044dbb; -fx-text-fill:#fff;");
     }
+    private void showAlert(Alert.AlertType type, String title, String message) {
+        Alert alert = new Alert(type);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+}
 }
