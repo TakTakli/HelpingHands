@@ -42,10 +42,13 @@ Our UI is incredibly simple and straightforward to make it easier to navigate th
    
 ## Contributions
 - Alvi Binte Zamil
+
   E-mail: alvi.binte.zamil@gmail.com
 
 - Than Than Thay  
+
   E-mail: thanmumu13@gmail.com
 
 - Refa Jahan
+
   E-mail: 
