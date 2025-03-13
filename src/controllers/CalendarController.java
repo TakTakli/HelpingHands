@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -227,7 +228,9 @@ public class CalendarController extends TransitionUtils implements Initializable
 
 	        if (appointments.isEmpty()) {
 	            Label noAppointmentsLabel = new Label("Nothing Due");
-	            noAppointmentsLabel.setStyle("-fx-font-size: 24; -fx-font-weight: bold;");
+	            noAppointmentsLabel.setStyle("-fx-font-size: 24;"
+	            		+"-fx-font-family:'Plus Jakarta Sans Bold;'");
+	            VBox.setMargin(noAppointmentsLabel, new Insets(20, 0,0, 0));
 	            appointmentContainer.getChildren().add(noAppointmentsLabel);
 	        } else {
 	            for (Appointment appt : appointments) {

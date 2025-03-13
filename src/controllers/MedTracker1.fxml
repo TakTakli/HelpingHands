@@ -137,11 +137,7 @@
                         <Insets />
                      </HBox.margin>
                   </Label>
-                  <ButtonBar prefHeight="79.0" prefWidth="564.0">
-                     <buttons>
-                      <Button fx:id="viewhistory_btn" mnemonicParsing="false" prefHeight="48.0" prefWidth="178.0" styleClass="viewlog-btn" text="View  Past Logs" />
-                     </buttons>
-                  </ButtonBar>
+                  <ButtonBar prefHeight="79.0" prefWidth="564.0" />
                </children>
             </HBox>
             <ScrollPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="994.0" VBox.vgrow="ALWAYS">

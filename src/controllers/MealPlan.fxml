@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+
+<HBox fx:id="roothb" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MealPlanController">
+   <children>
+      <VBox id="sidebar" alignment="TOP_CENTER" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="274.0">
+         <children>
+            <Button fx:id="profile_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="341.0" styleClass="sidebar-btn" text="Profile">
+               <graphic>
+                  <ImageView fitHeight="51.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/icons/icons8-user-100-blue-filled.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets right="100.0" />
+               </padding>
+            </Button>
+            <Separator prefWidth="200.0" />
+            <Button fx:id="home_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="283.0" styleClass="sidebar-btn" text="Home">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/icons/icons8-home-100%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets right="104.0" />
+               </padding>
+            </Button>
+            <Separator prefWidth="200.0" />
+            <Button fx:id="calendar_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="284.0" styleClass="sidebar-btn" text="Calendar">
+               <graphic>
+                  <ImageView fitHeight="38.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/icons/icons8-calendar-100%20(3).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets right="76.0" />
+               </padding>
+            </Button>
+            <Separator prefWidth="200.0" />
+            <Button fx:id="med_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="281.0" styleClass="sidebar-btn" text="Medication Tracker" wrapText="true">
+               <graphic>
+                  <ImageView fitHeight="41.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/icons/icons8-pill-100%20(3).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Button>
+            <Separator prefWidth="200.0" />
+            <Button fx:id="meal_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="279.0" styleClass="sidebar-btn" text="Meal Planner">
+               <graphic>
+                  <ImageView fitHeight="61.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/icons/icons8-meal-100%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets right="40.0" />
+               </padding>
+            </Button>
+            <Separator prefWidth="200.0" />
+            <Button id="selected" fx:id="store_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="336.0" styleClass="sidebar-btn" text="E-Store">
+               <graphic>
+                  <ImageView fitHeight="48.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/icons/icons8-add-shopping-cart-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets right="90.0" />
+               </padding>
+            </Button>
+            <Separator prefWidth="200.0" />
+            <Button fx:id="guide_btn" graphicTextGap="8.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="103.0" prefWidth="301.0" styleClass="sidebar-btn" text="Exercise Guide">
+               <graphic>
+                  <ImageView fitHeight="43.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/icons/icons8-exercise-100%20(2).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets right="24.0" />
+               </padding>
+            </Button>
+         </children>
+      </VBox>
+      <VBox fx:id="contentbox" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1006.0" HBox.hgrow="ALWAYS">
+         <children>
+            <HBox id="headerbox" alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="79.0" prefWidth="1006.0" spacing="12.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <StackPane fx:id="return_btn" prefHeight="25.0" prefWidth="30.0">
+                     <children>
+                        <Line fx:id="arrowbase" endX="20.0" stroke="#1d2366" strokeWidth="4.0" />
+                        <Line fx:id="arrowtop" endX="12.0" rotate="-135.0" stroke="#1d2366" strokeWidth="4.0">
+                           <StackPane.margin>
+                              <Insets left="-14.0" top="9.0" />
+                           </StackPane.margin>
+                        </Line>
+                        <Line fx:id="arrowbot" endX="12.0" rotate="135.0" stroke="#1d2366" strokeWidth="4.0">
+                           <StackPane.margin>
+                              <Insets bottom="10.0" left="-14.0" />
+                           </StackPane.margin>
+                        </Line>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="60.0" />
+                     </HBox.margin>
+                  </StackPane>
+                  <Label id="header" text="Meal Planner">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <TabPane prefHeight="720.0" prefWidth="1280.0">
+               <tabs>
+                  <Tab text="Diabetes">
+                     <content>
+                        <VBox spacing="10">
+                           <padding>
+                              <Insets bottom="10.0" left="40.0" right="10.0" top="20.0" />
+                           </padding>
+                           <children>
+                              <Label styleClass="tabdescheader" text="❌ Avoid:" />
+                              <TextArea editable="false" styleClass="tabdesc" text="Sugary foods (sweets, sodas, pastries)&#10;White bread, white rice, and refined carbs&#10;Processed snacks and fast food&#10;Saturated fats (fried foods, butter, processed meats)" wrapText="true" />
+                              <Label styleClass="tabdescheader" text="✅ Recommended:" />
+                              <TextArea editable="false" styleClass="tabdesc" text="Whole grains, vegetables, lean proteins&#10;High-fiber foods (beans, lentils, oats)&#10;Healthy fats (avocados, nuts, olive oil)" wrapText="true" />
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+                  <Tab text="Hypertension">
+                     <content>
+                        <VBox spacing="10">
+                           <padding>
+                              <Insets bottom="10.0" left="40.0" right="10.0" top="20.0" />
+                           </padding>
+                           <children>
+                              <Label styleClass="tabdescheader" text="❌ Avoid:" />
+                              <TextArea editable="false" styleClass="tabdesc" text="High-sodium foods (processed foods, canned soups, chips)&#10;Caffeine and alcohol (can spike blood pressure)&#10;Red meat and fatty foods" wrapText="true" />
+                              <Label styleClass="tabdescheader" text="✅ Recommended:" />
+                              <TextArea editable="false" styleClass="tabdesc" text="Potassium-rich foods (bananas, spinach, oranges)&#10;Whole grains, lean proteins (chicken, fish)&#10;Low-fat dairy" wrapText="true" />
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+                  <Tab text="Low Blood Pressure">
+                     <content>
+                        <VBox spacing="10">
+                           <padding>
+                              <Insets bottom="10.0" left="40.0" right="10.0" top="20.0" />
+                           </padding>
+                           <children>
+                              <Label styleClass="tabdescheader" text="❌ Avoid:" />
+                              <TextArea editable="false" styleClass="tabdesc" text="Alcohol (lowers blood pressure further)&#10;Large high-carb meals (can cause drops in BP)" wrapText="true" />
+                              <Label styleClass="tabdescheader" text="✅ Recommended:" />
+                              <TextArea editable="false" styleClass="tabdesc" text="More fluids (water, herbal tea)&#10;Salty foods (in moderation)&#10;Small, frequent meals" wrapText="true" />
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+                  <Tab text="Arthritis">
+                     <content>
+                        <VBox spacing="10">
+                           <padding>
+                              <Insets bottom="10.0" left="40.0" right="10.0" top="20.0" />
+                           </padding>
+                           <children>
+                              <Label styleClass="tabdescheader" text="❌ Avoid:" />
+                              <TextArea editable="false" styleClass="tabdesc" text="Processed foods (high in trans fats)&#10;Sugary foods (increase inflammation)&#10;Red meat and fried foods" wrapText="true" />
+                              <Label styleClass="tabdescheader" text="✅ Recommended:" />
+                              <TextArea editable="false" styleClass="tabdesc" text="Omega-3 rich foods (salmon, walnuts)&#10;Leafy greens, berries, nuts&#10;Anti-inflammatory spices (turmeric, ginger)" wrapText="true" />
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+                  <Tab text="Chronic Bronchitis">
+                     <content>
+                        <VBox spacing="10">
+                           <padding>
+                              <Insets bottom="10.0" left="40.0" right="10.0" top="20.0" />
+                           </padding>
+                           <children>
+                              <Label styleClass="tabdescheader" text="❌ Avoid:" />
+                              <TextArea editable="false" styleClass="tabdesc" text="Dairy (can thicken mucus)&#10;Fried and processed foods&#10;Sugary drinks" wrapText="true" />
+                              <Label styleClass="tabdescheader" text="✅ Recommended:" />
+                              <TextArea editable="false" styleClass="tabdesc" text="Warm fluids (herbal teas, broths)&#10;Vitamin C foods (oranges, bell peppers)&#10;Garlic, ginger (reduce inflammation)" wrapText="true" />
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+                  <Tab text="Fatty Liver Disease">
+                     <content>
+                        <VBox spacing="10">
+                           <padding>
+                              <Insets bottom="10.0" left="40.0" right="10.0" top="20.0" />
+                           </padding>
+                           <children>
+                              <Label styleClass="tabdescheader" text="❌ Avoid:" />
+                              <TextArea editable="false" styleClass="tabdesc" text="Alcohol (primary cause of liver damage)&#10;Sugary foods (increases fat accumulation)&#10;Processed and fried foods" wrapText="true" />
+                              <Label styleClass="tabdescheader" text="✅ Recommended:" />
+                              <TextArea editable="false" styleClass="tabdesc" text="High-fiber foods (vegetables, legumes)&#10;Lean proteins (chicken, tofu, fish)&#10;Green tea, coffee (may help liver health)" wrapText="true" />
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+                  <Tab text="Osteoporosis">
+                     <content>
+                        <VBox spacing="10">
+                           <padding>
+                              <Insets bottom="10.0" left="40.0" right="10.0" top="20.0" />
+                           </padding>
+                           <children>
+                              <Label styleClass="tabdescheader" text="❌ Avoid:" />
+                              <TextArea editable="false" styleClass="tabdesc" text="Excess salt (reduces calcium retention)&#10;Soft drinks (phosphoric acid weakens bones)&#10;Excess caffeine and alcohol" wrapText="true" />
+                              <Label styleClass="tabdescheader" text="✅ Recommended:" />
+                              <TextArea editable="false" styleClass="tabdesc" text="Calcium-rich foods (milk, yogurt, leafy greens)&#10;Vitamin D (eggs, fish, sunlight exposure)&#10;Magnesium-rich foods (nuts, seeds)" wrapText="true" />
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+                  <Tab text="Chronic Kidney Disease">
+                     <content>
+                        <VBox spacing="10">
+                           <padding>
+                              <Insets bottom="10.0" left="40.0" right="10.0" top="20.0" />
+                           </padding>
+                           <children>
+                              <Label styleClass="tabdescheader" text="❌ Avoid:" />
+                              <TextArea editable="false" styleClass="tabdesc" text="High-potassium foods (bananas, potatoes, oranges)&#10;High-phosphorus foods (dairy, nuts, processed meats)&#10;Too much protein (strains kidneys)" wrapText="true" />
+                              <Label styleClass="tabdescheader" text="✅ Recommended:" />
+                              <TextArea editable="false" styleClass="tabdesc" text="Low-sodium diet (fresh vegetables, lean meats)&#10;Controlled protein intake (eggs, fish)&#10;Hydration (as per doctor’s advice)" wrapText="true" />
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+                  <Tab text="Asthma">
+                     <content>
+                        <VBox spacing="10">
+                           <padding>
+                              <Insets bottom="10.0" left="40.0" right="10.0" top="20.0" />
+                           </padding>
+                           <children>
+                              <Label styleClass="tabdescheader" text="❌ Avoid:" />
+                              <TextArea editable="false" styleClass="tabdesc" text="Dairy (may trigger mucus production)&#10;Processed foods and artificial additives&#10;Sulfites (found in wine, dried fruits)" wrapText="true" />
+                              <Label styleClass="tabdescheader" text="✅ Recommended:" />
+                              <TextArea editable="false" styleClass="tabdesc" text="Omega-3 (salmon, flaxseeds)&#10;Antioxidants (apples, carrots, turmeric)&#10;Warm herbal teas and hydration" wrapText="true" />
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+                  <Tab text="Cancer">
+                     <content>
+                        <VBox spacing="10">
+                           <padding>
+                              <Insets bottom="10.0" left="40.0" right="10.0" top="20.0" />
+                           </padding>
+                           <children>
+                              <Label styleClass="tabdescheader" text="❌ Avoid:" />
+                              <TextArea editable="false" styleClass="tabdesc" text="Processed meats (bacon, sausage)&#10;Excess sugar (feeds tumor growth)&#10;Alcohol and smoking-related foods" wrapText="true" />
+                              <Label styleClass="tabdescheader" text="✅ Recommended:" />
+                              <TextArea editable="false" styleClass="tabdesc" text="Antioxidant-rich foods (berries, broccoli)&#10;Whole grains and fiber-rich foods&#10;Lean proteins and healthy fats" wrapText="true" />
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+                  <Tab text="Dementia &amp; Alzheimer’s">
+                     <content>
+                        <VBox spacing="10">
+                           <padding>
+                              <Insets bottom="10.0" left="40.0" right="10.0" top="20.0" />
+                           </padding>
+                           <children>
+                              <Label styleClass="tabdescheader" text="❌ Avoid:" />
+                              <TextArea editable="false" styleClass="tabdesc" text="High-sugar foods (causes inflammation)&#10;Trans fats (processed junk food)&#10;Artificial sweeteners (some studies link them to memory loss)" wrapText="true" />
+                              <Label styleClass="tabdescheader" text="✅ Recommended:" />
+                              <TextArea editable="false" styleClass="tabdesc" text="Mediterranean diet (fish, nuts, olive oil)&#10;Blueberries, dark chocolate (brain boosters)&#10;Leafy greens, turmeric (anti-inflammatory)" wrapText="true" />
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
+         </children>
+      </VBox>
+   </children>
+   <stylesheets>
+      <URL value="@../resources/css/sidebar.css" />
+      <URL value="@../resources/css/mealplan.css" />
+   </stylesheets>
+</HBox>

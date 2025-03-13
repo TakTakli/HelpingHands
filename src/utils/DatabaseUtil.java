@@ -11,9 +11,10 @@ import utils.Appointment;
 
 public class DatabaseUtil {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/signup";
-    private static final String USER = "root";
-    private static final String PASSWORD = "satadafannum";
+	 private static final String URL = "jdbc:mysql://localhost:3306/helpinghands";
+	    private static final String USER = "root";
+	    private static final String PASSWORD = "Jelaushekodu!1";
+
 
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);

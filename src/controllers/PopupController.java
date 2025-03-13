@@ -29,7 +29,7 @@ public class PopupController {
         this.year = year;
         this.calendarController = calendarController;
 
-        appoint_choice.getItems().addAll("Consultation", "Meeting", "Reminder", "Task", "Event");
+        appoint_choice.getItems().addAll("Doctor", "Private Consultation", "Operation", "Dentist", "Family Event");
         amorpm.getItems().addAll("AM", "PM");
 
     

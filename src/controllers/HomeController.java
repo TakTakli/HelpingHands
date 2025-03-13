@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import utils.Appointment;
 import utils.DatabaseUtil;
 import utils.Medicine;
@@ -71,7 +72,7 @@ public class HomeController extends TransitionUtils implements Initializable {
         	fadeOutToScene(roothb, "MedTracker1");
         });
         mealplan_btn.setOnAction((e)->{
-        	fadeOutToScene(roothb, "MealPlanner");
+        	fadeOutToScene(roothb, "MealPlan");
         });
         shop_btn.setOnAction((e)->{
         	fadeOutToScene(roothb, "StoreMain");

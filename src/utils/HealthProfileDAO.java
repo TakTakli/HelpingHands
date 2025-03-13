@@ -8,9 +8,9 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class HealthProfileDAO {
-    private static final String URL = "jdbc:mysql://localhost:3306/signup";
-    private static final String USER = "root";
-    private static final String PASSWORD = "satadafannum";
+	 private static final String URL = "jdbc:mysql://localhost:3306/helpinghands";
+	    private static final String USER = "root";
+	    private static final String PASSWORD = "Jelaushekodu!1";
 
     
     public boolean saveHealthProfile(int userId, String firstName, String lastName, String phone, String email,
